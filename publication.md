@@ -16,13 +16,17 @@ permalink: /publication/
 
 **2024**
 
-  <span style="font-size: 24px;">•</span> [__Dynamic Per-Flow Queues for TSN Switches__](https://ieeexplore.ieee.org/document/10546696)
+ * [__Dynamic Per-Flow Queues for TSN Switches__](https://ieeexplore.ieee.org/document/10546696)
+
     **Wenxue Wu**, Zhen Li, Tong Zhang, Xiaoqin Feng, Liwei Zhang, Xuelong Qi, Fenyuan Ren*
+
     Accepted by IEEE Design, Automation and Test in Europe Conference (DATE 2024, CCF-B).
 
 
-  <span style="font-size: 24px;">•</span> [__Fault-Tolerant Cyclic Queuing and Forwarding in Time-Sensitive Networking__](https://ieeexplore.ieee.org/document/10546689)
+ * [__Fault-Tolerant Cyclic Queuing and Forwarding in Time-Sensitive Networking__](https://ieeexplore.ieee.org/document/10546689)
+
     Liwei Zhang, Tong Zhang, **Wenxue Wu**, Xiaoqin Feng, Guoxi Lin, Fenyuan Ren*
+
     Accepted by IEEE Design, Automation and Test in Europe Conference (DATE 2024, CCF-B).
 
 ### 期刊论文

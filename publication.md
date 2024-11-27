@@ -16,7 +16,7 @@ permalink: /publication/
 
 **2024**
 
- + [__Dynamic Per-Flow Queues for TSN Switches__](https://ieeexplore.ieee.org/iel8/10546498/10546499/10546696.pdf)
+ + [__Dynamic Per-Flow Queues for TSN Switches__](https://ieeexplore.ieee.org/document/10546696)
 
     **Wenxue Wu**, Zhen Li, Tong Zhang, Xiaoqin Feng, Liwei Zhang, Xuelong Qi, Fenyuan Ren*
 

@@ -8,7 +8,7 @@ author: DHF1999SD
 ---
 
 <!-- more -->
-## PTP的概念
+# PTP的概念
 PTP域中的节点称为时钟节点，PTP协议定义了以下三种类型的基本时钟节点：
 OC（Ordinary Clock，普通时钟）：只有一个PTP通信端口的时钟是普通时钟。
 BC（Boundary Clock，边界时钟）：有一个以上PTP通信端口的时钟。

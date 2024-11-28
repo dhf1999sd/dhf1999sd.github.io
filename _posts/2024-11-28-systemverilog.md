@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "SystemVerilog"
+title: "SystemVerilogœ‡πÿ—ßœ∞"
 date:   2024-11-28
 tags: [Technology]
 comments: true

@@ -3,7 +3,6 @@ description: "大黄蜂的博客"
 
 avatar: https://dhf1999sd.github.io/images/tiao.jpg
 favicon: https://dhf1999sd.github.io/images/favicon.ico
-
 navigation:
   - name: 首页
     url: /

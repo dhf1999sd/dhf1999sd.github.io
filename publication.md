@@ -5,7 +5,7 @@ tags: [Publication]
 permalink: /publication/
 ---
 
-### 会议论文
+### Conference Paper
 
 
 
@@ -28,7 +28,7 @@ permalink: /publication/
 
    Accepted by IEEE Design, Automation and Test in Europe Conference (DATE 2024, CCF-B).
 
-### 期刊论文
+### Journal Paper
 
 **2025**
 

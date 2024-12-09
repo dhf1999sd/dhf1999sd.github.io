@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "LinuxPTP实现时间同步（Ubuntu 2022.2）"
+title: "LinuxPTP实现时间同步"
 date:   2024-8-7
 tags: [Technology]
 comments: true

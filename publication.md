@@ -4,17 +4,17 @@ title: Publication
 tags: [Publication]
 permalink: /publication/
 ---
+ (#: equal contributions, *: corresponding author).
+## Conference Paper
 
-### 会议论文
 
 
-
-**2025**
+### 2025
 
 + 待定
 
 
-**2024**
+### 2024
 * [__Dynamic Per-Flow Queues for TSN Switches__](https://ieeexplore.ieee.org/document/10546696)
 
    **Wenxue Wu**, Zhen Li, Tong Zhang, Xiaoqin Feng, Liwei Zhang, Xuelong Qi, Fenyuan Ren*
@@ -28,9 +28,9 @@ permalink: /publication/
 
    Accepted by IEEE Design, Automation and Test in Europe Conference (DATE 2024, CCF-B).
 
-### 期刊论文
+## Journal Paper
 
-**2025**
+### 2025
 
 + 待定
 

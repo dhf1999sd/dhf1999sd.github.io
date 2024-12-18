@@ -14,8 +14,15 @@ author: DHF1999SD
 FPGA硬件描述语言
 ### 介绍
 
-### 与verilog的区别
-
+### 数据类型
+#### 内建数据类型
+##### 1.按照四值逻辑和二值逻辑分类
+    四值逻辑类型：integer、logic、reg、wire等线网类型
+    二值逻辑类型：byte、shortint、int、longint、bit
+##### 2.按照有符号和无符号分类
+    有符号类型：byte、shortint、int、longint、integer
+    无符号类型：bit、logic、reg、wire等线网类型
+    ※记忆：按位定义的变量是无符号的。
 ## 常用语法
 
 

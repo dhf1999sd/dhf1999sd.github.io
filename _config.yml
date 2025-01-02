@@ -1,13 +1,13 @@
 # Site settings
-title: BY Blog
-SEOTitle: 柏荧的博客 | BY Blog
+title: DHF Blog
+SEOTitle: 大黄蜂的博客 | DHF Blog
 header-img: img/post-bg-desk.jpg
-email: qiubaiying@gmail.com
+email: dahuangfeng1999@gmail.com
 description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
-url: "http://qiubaiying.github.io"          # your host, for absolute URL
+keyword: "DHF, DHF Blog, 大黄蜂的博客, dhf1999sd, 大黄蜂, iOS, Apple, iPhone"
+url: "http://dhf1999sd.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/dhf1999sd/dhf1999sd.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
@@ -22,8 +22,8 @@ RSS: false
 zhihu_username:     qiubaiying
 github_username:    qiubaiying
 facebook_username:  baiying.qiu.7
-jianshu_username:   e71990ada2fd
-#twitter_username:   qiubaiying
+# jianshu_username:   e71990ada2fd
+twitter_username:   qiubaiying
 
 
 
@@ -102,7 +102,7 @@ friends: [
         title: "WY",
         href: "http://zhengwuyang.com"
     },{
-        title: "简书·BY",
+        title: "简书·DHF",
         href: "http://www.jianshu.com/u/e71990ada2fd"
     },{
         title: "Apple",

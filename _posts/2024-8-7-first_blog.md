@@ -2,7 +2,7 @@
 layout: post
 title: LinuxPTP实现时间同步
 date:   2024-8-7
-header-img: img/post-bg-re-vs-ng2.jpg
+header-img: img/fengjing.jpg
 author:     DHF1999SD
 tags: 
     - Technology

@@ -6,6 +6,7 @@ header-img: img/tiao.jpg
 author:     DHF1999SD
 tags: 
     - Technology
+    - FPGA
 catalog: true
 comments: true
 author: DHF1999SD

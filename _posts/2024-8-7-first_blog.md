@@ -5,7 +5,8 @@ date:   2024-8-7
 header-img: img/post-bg-re-vs-ng2.jpg
 author:     DHF1999SD
 tags: 
-    - 技术
+    - Technology
+    - Linux
 catalog: true
 comments: true
 author: DHF1999SD

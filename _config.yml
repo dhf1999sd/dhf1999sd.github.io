@@ -4,7 +4,7 @@ SEOTitle: 大黄蜂的个人主页 | DHF's Personal homepage
 header-img: img/fengjing.jpg
 email: dahuangfeng1999@gmail.com
 description: "Every failure is leading towards success."
-keyword: "DHF, DHF Blog, 大黄蜂的博客, dhf1999sd, 大黄蜂, iOS, Apple, iPhone"
+keyword: "DHF, DHF Blog, 大黄蜂的博客, dhf1999sd, 大黄蜂, iOS, Apple, iPhone,FPGA,Verilog,数字电路,数字逻辑,数字信号处理"
 url: "http://dhf1999sd.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/dhf1999sd/dhf1999sd.github.io.git" # you code repository

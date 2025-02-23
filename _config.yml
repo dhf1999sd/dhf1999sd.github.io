@@ -18,7 +18,7 @@ sidebar-avatar: /img/tiao.jpg      # use absolute URL, seeing it's used in both 
 
 # SNS settings
 RSS: false
-weibo_username: 大黄蜂199时代
+# weibo_username: 大黄蜂199时代
 zhihu_username: da-huang-feng-1999shi-dai
 github_username: dhf1999sd
 google_scholar_username: https://scholar.google.com/citations?user=2XCLe8IAAAAJ

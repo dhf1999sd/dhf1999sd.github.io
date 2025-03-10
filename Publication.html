@@ -229,25 +229,48 @@ header-img: "img/fengjing.jpg"
     }
 
 
+    /* 添加打字机效果的样式 */
     .typing-text {
-        overflow: hidden;
-        border-right: 3px solid #4285f4;
-        white-space: nowrap;
+        text-align: center;
+        position: relative;
         margin: 0 auto;
         letter-spacing: 2px;
-        animation: typing 3.5s steps(4, end), blink-caret 0.75s step-end infinite;
+        font-weight: 500;
     }
 
-    @keyframes typing {
-        from { width: 0 }
-        to { width: 100% }
+    .typing-text span {
+        opacity: 0;
+        display: inline-block;
+        animation: fadeInChar 0.5s ease forwards;
     }
 
-    @keyframes blink-caret {
-        from, to { border-color: transparent }
-        50% { border-color: #4285f4 }
+    .typing-text span:nth-child(1) {
+        animation-delay: 0.5s;
     }
 
+    .typing-text span:nth-child(2) {
+        animation-delay: 1s;
+    }
+
+    .typing-text span:nth-child(3) {
+        animation-delay: 1.5s;
+    }
+
+    .typing-text span:nth-child(4) {
+        animation-delay: 2s;
+    }
+
+    @keyframes fadeInChar {
+        from {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
 </style>
 
 <!-- 添加页面加载动画 -->
@@ -261,10 +284,12 @@ header-img: "img/fengjing.jpg"
     <!--copied from markdown -->
     <div class="quote-container">
         <blockquote class="fancy-quote">
-            <p class="typing-text">無限進步</p>
+            <p class="typing-text">
+                <span>無</span><span>限</span><span>進</span><span>步</span>
+            </p>
         </blockquote>
     </div>
-        <h4 class="section-title">Conference Paper</h4>
+    <h4 class="section-title">Conference Paper</h4>
 
     <h5 class="year-title">2024</h5>
     <ul>
@@ -274,24 +299,24 @@ header-img: "img/fengjing.jpg"
             <div class="publication-authors">
                 <strong>Authors:</strong> <strong>Wenxue Wu</strong>, Zhen Li, Tong Zhang, Xiaoqin Feng, Liwei Zhang,
                 Xuelong Qi, Fenyuan Ren*
-                </div>
-                <div class="publication-venue">
-                    <em>Accepted by IEEE Design, Automation and Test in Europe Conference, DATE, 2024 (CCF-B).</em>
-                </div>
-                </li>
-                
-                <li class="publication-item">
+            </div>
+            <div class="publication-venue">
+                <em>Accepted by IEEE Design, Automation and Test in Europe Conference, DATE, 2024 (CCF-B).</em>
+            </div>
+            </li>
+            
+            <li class="publication-item">
             <a href="https://ieeexplore.ieee.org/document/10546689" class="publication-title">Fault-Tolerant Cyclic
                 Queuing and Forwarding in Time-Sensitive Networking</a>
             <div class="publication-authors">
                 <strong>Authors:</strong> Liwei Zhang, Tong Zhang, <strong>Wenxue Wu</strong>, Xiaoqin Feng, Guoxi Lin,
                 Fenyuan Ren*
-                </div>
-                <div class="publication-venue">
-                    <em>Accepted by IEEE Design, Automation and Test in Europe Conference, DATE, 2024 (CCF-B).</em>
-                </div>
-                </li>
-                </ul>
+            </div>
+            <div class="publication-venue">
+                <em>Accepted by IEEE Design, Automation and Test in Europe Conference, DATE, 2024 (CCF-B).</em>
+            </div>
+            </li>
+            </ul>
 
     <h4 class="section-title">Journal Paper</h4>
 
@@ -303,24 +328,24 @@ header-img: "img/fengjing.jpg"
             <div class="publication-authors">
                 <strong>Authors:</strong> <strong>Wenxue Wu</strong>, Tong Zhang, Zhen Li, Xiaoqin Feng, Liwei Zhang,
                 Fenyuan Ren*
-                </div>
-                <div class="publication-venue">
-                    <em>Accepted by ACM Transactions on Design Automation of Electronic Systems, TODAES, 2025 (CCF-B).</em>
-                </div>
-                </li>
-                </ul>
-                
-                <!-- 添加页面加载脚本 -->
-                <script>
+            </div>
+            <div class="publication-venue">
+                <em>Accepted by ACM Transactions on Design Automation of Electronic Systems, TODAES, 2025 (CCF-B).</em>
+            </div>
+            </li>
+            </ul>
+            
+            <!-- 添加页面加载脚本 -->
+            <script>
                 window.addEventListener('load', function () {
-                // 隐藏加载动画
-                setTimeout(function () {
-                    document.querySelector('.page-loader').classList.add('loader-hidden');
-                }, 500);
+                    // 隐藏加载动画
+                    setTimeout(function () {
+                        document.querySelector('.page-loader').classList.add('loader-hidden');
+                    }, 500);
 
-                // 为论文项添加鼠标悬停效果
-                const items = document.querySelectorAll('.publication-item');
-                items.forEach(item => {
+                    // 为论文项添加鼠标悬停效果
+                    const items = document.querySelectorAll('.publication-item');
+                    items.forEach(item => {
                 item.addEventListener('mouseenter', function () {
                     this.style.borderLeftWidth = '8px';
                 });
@@ -328,7 +353,7 @@ header-img: "img/fengjing.jpg"
                     this.style.borderLeftWidth = '4px';
                 });
             });
-            });
+                });
                 </script>
 </div>
 

@@ -1,10 +1,10 @@
 # Site settings
-title: DHF's Blog
-SEOTitle: 大黄蜂的博客 | DHF's Blog
+title: DHF's Personal Homepage
+SEOTitle: 大黄蜂的个人主页 | DHF's Personal Homepage
 header-img: img/fengjing.jpg
 email: dahuangfeng1999@gmail.com
 description: "Every failure is leading towards success."
-keyword: "DHF, DHF Blog, 大黄蜂的博客, dhf1999sd, 大黄蜂, iOS, Apple, iPhone"
+keyword: "DHF, DHF Blog, 大黄蜂的博客, dhf1999sd, 大黄蜂, iOS, Apple, iPhone,FPGA,Verilog,数字电路,数字逻辑,数字信号处理"
 url: "http://dhf1999sd.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/dhf1999sd/dhf1999sd.github.io.git" # you code repository
@@ -18,9 +18,12 @@ sidebar-avatar: /img/tiao.jpg      # use absolute URL, seeing it's used in both 
 
 # SNS settings
 RSS: false
-weibo_username:    大黄蜂199时代
-zhihu_username:     da-huang-feng-1999shi-dai
-github_username:    dhf1999sd
+# weibo_username: 大黄蜂199时代
+
+github_username: dhf1999sd
+google_scholar_username: 2XCLe8IAAAAJ
+researchgate: https://www.researchgate.net/profile/Wenxue-Wu-8
+zhihu_username: da-huang-feng-1999shi-dai
 # facebook_username:  baiying.qiu.7
 # jianshu_username:   e71990ada2fd
 # twitter_username:   dhf1999sd

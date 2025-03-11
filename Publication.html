@@ -236,7 +236,8 @@ header-img: "img/fengjing.jpg"
         margin: 0 auto;
         letter-spacing: 2px;
         font-weight: 500;
-         font-size: 23px; /* 增加字体大小 */
+        font-size: 23px;
+        /* 增加字体大小 */
     }
 
     .typing-text span {
@@ -248,6 +249,7 @@ header-img: "img/fengjing.jpg"
     .typing-text span:nth-child(1) {
         animation-delay: 1s;
     }
+
 
     .typing-text span:nth-child(2) {
         animation-delay: 2s;
@@ -304,9 +306,9 @@ header-img: "img/fengjing.jpg"
             <div class="publication-venue">
                 <em>Accepted by IEEE Design, Automation and Test in Europe Conference, DATE, 2024 (CCF-B).</em>
             </div>
-            </li>
-            
-            <li class="publication-item">
+        </li>
+        
+        <li class="publication-item">
             <a href="https://ieeexplore.ieee.org/document/10546689" class="publication-title">Fault-Tolerant Cyclic
                 Queuing and Forwarding in Time-Sensitive Networking</a>
             <div class="publication-authors">
@@ -316,8 +318,20 @@ header-img: "img/fengjing.jpg"
             <div class="publication-venue">
                 <em>Accepted by IEEE Design, Automation and Test in Europe Conference, DATE, 2024 (CCF-B).</em>
             </div>
-            </li>
-            </ul>
+        </li>
+<li class="publication-item">
+    <a href="https://ieeexplore.ieee.org/document/10546689" class="publication-title">Fault-Tolerant Cyclic
+        Queuing and Forwarding in Time-Sensitive Networking</a>
+    <div class="publication-authors">
+        <strong>Authors:</strong> Liwei Zhang, Tong Zhang, <strong>Wenxue Wu</strong>, Xiaoqin Feng, Guoxi Lin,
+        Fenyuan Ren*
+    </div>
+    <div class="publication-venue">
+        <em>Accepted by IEEE Design, Automation and Test in Europe Conference, DATE, 2024 (CCF-B).</em>
+    </div>
+</li>
+
+    </ul>
 
     <h4 class="section-title">Journal Paper</h4>
 
@@ -333,20 +347,20 @@ header-img: "img/fengjing.jpg"
             <div class="publication-venue">
                 <em>Accepted by ACM Transactions on Design Automation of Electronic Systems, TODAES, 2025 (CCF-B).</em>
             </div>
-            </li>
-            </ul>
-            
-            <!-- 添加页面加载脚本 -->
-            <script>
-                window.addEventListener('load', function () {
-                    // 隐藏加载动画
-                    setTimeout(function () {
-                        document.querySelector('.page-loader').classList.add('loader-hidden');
-                    }, 500);
+        </li>
+        </ul>
+        
+        <!-- 添加页面加载脚本 -->
+        <script>
+            window.addEventListener('load', function () {
+                // 隐藏加载动画
+                setTimeout(function () {
+                    document.querySelector('.page-loader').classList.add('loader-hidden');
+                }, 500);
 
-                    // 为论文项添加鼠标悬停效果
-                    const items = document.querySelectorAll('.publication-item');
-                    items.forEach(item => {
+                // 为论文项添加鼠标悬停效果
+                const items = document.querySelectorAll('.publication-item');
+                items.forEach(item => {
                 item.addEventListener('mouseenter', function () {
                     this.style.borderLeftWidth = '8px';
                 });
@@ -354,8 +368,8 @@ header-img: "img/fengjing.jpg"
                     this.style.borderLeftWidth = '4px';
                 });
             });
-                });
-                </script>
+            });
+            </script>
 </div>
 
 <!-- Handle Language Change -->
@@ -397,50 +411,3 @@ header-img: "img/fengjing.jpg"
     // init
     _render();
 </script>
-
-<!-- Gitalk 评论 start 
-{% if site.gitalk.enable %}
-Gitalk link 
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
-
-<div id="gitalk-container"></div>
-    <script type="text/javascript">
-    var gitalk = new Gitalk({
-    clientID: '{{site.gitalk.clientID}}',
-    clientSecret: '{{site.gitalk.clientSecret}}',
-    repo: '{{site.gitalk.repo}}',
-    owner: '{{site.gitalk.owner}}',
-    admin: ['{{site.gitalk.admin}}'],
-    distractionFreeMode: {{site.gitalk.distractionFreeMode}},
-    id: 'about',
-    });
-    gitalk.render('gitalk-container');
-</script>
-{% endif %}
-Gitalk end
-
- disqus 评论框 start 
-!-- {% if site.disqus.enable %} -->
-
-<!-- <div class="comment">
-    <div id="disqus_thread" class="disqus-thread">
-    </div>
-</div> -->
-<!-- disqus 评论框 end -->
-
-<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
-<!-- <script type="text/javascript"> -->
-<!-- /* * * CONFIGURATION VARIABLES * * */ -->
-<!-- var disqus_shortname = "{{site.disqus.username}}";
-    var disqus_identifier = "{{site.disqus.username}}/{{page.url}}";
-    var disqus_url = "{{site.url}}{{page.url}}";
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })(); -->
-<!-- </script> -->
-<!-- disqus 公共JS代码 end -->
-<!-- {% endif %} -->

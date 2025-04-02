@@ -18,67 +18,92 @@ author_profile: true
     padding: 10px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     line-height: 1.4;
-    font-size: 0.9rem; /* 添加基础字体大小 */
+    font-size: 0.9rem;
   }
 
   .publication-item {
     margin-bottom: 15px;
     padding: 10px;
-    border-left: 4px solid #4285f4;
-    background-color: #f9f9f9;
+    border-left: 4px solid #5c9aff; /* 更亮的蓝色 */
+    background-color: rgba(249, 249, 249, 0.9); /* 添加透明度 */
     border-radius: 0 5px 5px 0;
   }
 
   .publication-title {
-    color: #333;
+    color: #f0f0f0; /* 更亮的文字颜色 */
     font-weight: 600;
     margin-bottom: 5px;
-    font-size: 1rem; /* 从1.1rem减小到1rem */
+    font-size: 1rem;
+  }
+
+  .publication-title:hover {
+    color: #5c9aff; /* 更亮的蓝色 */
   }
 
   .publication-authors {
     margin: 5px 0;
     line-height: 1.3;
-    font-size: 0.85rem; /* 从0.95rem减小到0.85rem */
+    font-size: 0.85rem;
+    color: #e0e0e0; /* 更亮的文字颜色 */
   }
 
   .publication-venue {
     font-style: italic;
-    color: #666;
-    font-size: 0.8rem; /* 从0.9rem减小到0.8rem */
+    color: #c0c0c0; /* 更亮的灰色 */
+    font-size: 0.8rem;
     margin-top: 3px;
   }
 
   .section-title {
-    border-bottom: 2px solid #4285f4;
+    border-bottom: 2px solid #5c9aff; /* 更亮的蓝色 */
     padding-bottom: 5px;
     margin-top: 20px;
     margin-bottom: 6px;
-    color: #333;
-    font-size: 1.3rem; /* 从1.5rem减小到1.3rem */
+    color: #f0f0f0; /* 更亮的文字颜色 */
+    font-size: 1.3rem;
     font-weight: 600;
   }
 
   .year-title {
-    background-color: #eee;
+    background-color: rgba(238, 238, 238, 0.8); /* 添加透明度 */
+    color: #333; /* 保持深色以在浅色背景上可见 */
     padding: 3px 8px;
     border-radius: 4px;
     display: inline-block;
     margin-top: 2px;
     margin-bottom: 8px;
-    font-size: 1rem; /* 从1.2rem减小到1rem */
+    font-size: 1rem;
     font-weight: 500;
   }
   
   .note {
-    font-size: 0.75rem; /* 从0.85rem减小到0.75rem */
-    color: #666;
+    font-size: 0.75rem;
+    color: #c0c0c0; /* 更亮的灰色 */
     margin-bottom: 15px;
   }
   
   ul {
     padding-left: 20px;
     margin-top: 5px;
+  }
+  
+  /* 添加链接颜色 */
+  a {
+    color: #5c9aff; /* 更亮的蓝色 */
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* 强调文本颜色 */
+  strong {
+    color: #f0f0f0; /* 更亮的文字颜色 */
+  }
+  
+  em {
+    color: #c0c0c0; /* 更亮的灰色 */
   }
 </style>
 

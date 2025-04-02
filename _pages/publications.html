@@ -4,33 +4,398 @@ title: "Publications"
 permalink: /publications/
 author_profile: true
 ---
+<!-- Language Selector -->
+<!-- <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
+    <option value="0" selected> 中文 Chinese </option>
+    <option value="1"> 英文 English </option>
+</select> -->
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
+<!-- 添加样式 -->
+<style>
+  .publication-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
 
-{% include base_path %}
+  .publication-item {
+    margin-bottom: 25px;
+    padding: 15px;
+    border-left: 4px solid #4285f4;
+    background-color: #f9f9f9;
+    border-radius: 0 5px 5px 0;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+  }
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
+  .publication-item:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+
+  /* 为每个项目添加延迟动画 */
+  .publication-item:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  .publication-item:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+
+  .publication-item:nth-child(3) {
+    animation-delay: 0.5s;
+  }
+
+  .publication-title {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+  }
+
+  .publication-title:hover {
+    color: #4285f4;
+  }
+
+  .publication-authors {
+    margin: 8px 0;
+    line-height: 1.5;
+  }
+
+  .publication-venue {
+    font-style: italic;
+    color: #666;
+  }
+
+  .section-title {
+    border-bottom: 2px solid #4285f4;
+    padding-bottom: 8px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: #333;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background-color: #4285f4;
+    animation: slideBorder 1.5s ease forwards;
+  }
+
+  .year-title {
+    background-color: #eee;
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+  }
+
+  .year-title:hover {
+    background-color: #4285f4;
+    color: white;
+    transform: scale(1.05);
+  }
+
+  .quote-container {
+    position: relative;
+    margin: 30px 0;
+    padding: 10px 0;
+    animation: fadeIn 1s ease;
+  }
+
+  .fancy-quote {
+    border-left: 5px solid #4285f4;
+    background-color: #f0f7ff;
+    padding: 20px 25px;
+    border-radius: 0 8px 8px 0;
+    position: relative;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+    overflow: hidden;
+  }
+
+  .fancy-quote:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .fancy-quote:before {
+    content: "" ";
+ font-family: Georgia, serif;
+    font-size: 4em;
+    position: absolute;
+    left: 10px;
+    top: -20px;
+    color: #4285f4;
+    opacity: 0.3;
+    transition: all 0.5s ease;
+  }
+
+  .fancy-quote:hover:before {
+    transform: translateY(-5px) scale(1.2);
+    opacity: 0.5;
+  }
+
+  .fancy-quote p {
+    margin: 0;
+    line-height: 1.6;
+    font-weight: 500;
+    color: #333;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* 添加动画关键帧 */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideBorder {
+    from {
+      left: -100%;
+    }
+
+    to {
+      left: 0;
+    }
+  }
+
+  /* 添加页面加载动画 */
+  .page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+  }
+
+  .loader-hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .loader-circle {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #4285f4;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 
 
+  /* 添加打字机效果的样式 */
+  .typing-text {
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-size: 23px;
+    /* 增加字体大小 */
+  }
 
+  .typing-text span {
+    opacity: 0;
+    display: inline-block;
+    animation: fadeInChar 0.5s ease forwards;
+  }
+
+  .typing-text span:nth-child(1) {
+    animation-delay: 1s;
+  }
+
+
+  .typing-text span:nth-child(2) {
+    animation-delay: 2s;
+  }
+
+  .typing-text span:nth-child(3) {
+    animation-delay: 3s;
+  }
+
+  .typing-text span:nth-child(4) {
+    animation-delay: 4s;
+  }
+
+  @keyframes fadeInChar {
+    from {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+</style>
+
+<!-- 添加页面加载动画 -->
+<div class="page-loader">
+  <div class="loader-circle"></div>
+</div>
+
+<!-- Chinese Version -->
+<div class="zh post-container publication-container">
+  <p class="note">注：(#: equal contributions, *: corresponding author)</p>
+  <!--copied from markdown -->
+  <div class="quote-container">
+    <blockquote class="fancy-quote">
+      <p class="typing-text">
+        <span>無</span><span>限</span><span>進</span><span>步</span>
+      </p>
+    </blockquote>
+  </div>
+  <h4 class="section-title">Conference Paper</h4>
+
+  <h5 class="year-title">2024</h5>
+  <ul>
+    <li class="publication-item">
+      <a href="https://ieeexplore.ieee.org/document/10546696" class="publication-title">Dynamic Per-Flow Queues
+        for TSN Switches</a>
+      <div class="publication-authors">
+        <strong>Authors:</strong> <strong>Wenxue Wu</strong>, Zhen Li, Tong Zhang, Xiaoqin Feng, Liwei Zhang,
+        Xuelong Qi, Fenyuan Ren*
+      </div>
+      <div class="publication-venue">
+        <em>Accepted by IEEE Design, Automation and Test in Europe Conference, DATE, 2024 (CCF-B).</em>
+      </div>
+    </li>
+
+    <li class="publication-item">
+      <a href="https://ieeexplore.ieee.org/document/10546689" class="publication-title">Fault-Tolerant Cyclic
+        Queuing and Forwarding in Time-Sensitive Networking</a>
+      <div class="publication-authors">
+        <strong>Authors:</strong> Liwei Zhang, Tong Zhang, <strong>Wenxue Wu</strong>, Xiaoqin Feng, Guoxi Lin,
+        Fenyuan Ren*
+      </div>
+      <div class="publication-venue">
+        <em>Accepted by IEEE Design, Automation and Test in Europe Conference, DATE, 2024 (CCF-B).</em>
+      </div>
+    </li>
+
+  </ul>
+
+  <h4 class="section-title">Journal Paper</h4>
+
+  <h5 class="year-title">2025</h5>
+  <ul>
+    <li class="publication-item">
+      <a href="https://dl.acm.org/doi/10.1145/3718087" class="publication-title">Dynamic Per-Flow Queues in Shared
+        Buffer TSN Switches</a>
+      <div class="publication-authors">
+        <strong>Authors:</strong> <strong>Wenxue Wu</strong>, Tong Zhang, Zhen Li, Xiaoqin Feng, Liwei Zhang,
+        Fenyuan Ren*
+      </div>
+      <div class="publication-venue">
+        <em>Accepted by ACM Transactions on Design Automation of Electronic Systems, TODAES, 2025 (CCF-B).</em>
+      </div>
+    </li>
+  </ul>
+  
+  <!-- 添加页面加载脚本 -->
+  <script>
+    window.addEventListener('load', function () {
+      // 隐藏加载动画
+      setTimeout(function () {
+        document.querySelector('.page-loader').classList.add('loader-hidden');
+      }, 500);
+
+      // 为论文项添加鼠标悬停效果
+      const items = document.querySelectorAll('.publication-item');
+      items.forEach(item => {
+        item.addEventListener('mouseenter', function () {
+          this.style.borderLeftWidth = '8px';
+        });
+        item.addEventListener('mouseleave', function () {
+          this.style.borderLeftWidth = '4px';
+        });
+      });
+    });
+  </script>
+  </div>
+  
+  <!-- Handle Language Change -->
+  <script type="text/javascript">
+    // get nodes
+    var $zh = document.querySelector(".zh");
+    var $en = document.querySelector(".en");
+    var $select = document.querySelector("select");
+
+      // bind hashchange event
+      window.addEventListener('hashchange', _render);
+
+      // handle render
+      function _render() {
+        var _hash = window.location.hash;
+        // en
+        if (_hash == "#en") {
+          $select.selectedIndex = 1;
+          $en.style.display = "block";
+          $zh.style.display = "none";
+          // zh by default
+        } else {
+          // not trigger onChange, otherwise cause a loop call.
+          $select.selectedIndex = 0;
+          $zh.style.display = "block";
+          $en.style.display = "none";
+        }
+      }
+
+      // handle select change
+      function onLanChange(index) {
+        if (index == 0) {
+          window.location.hash = "#zh"
+        } else {
+          window.location.hash = "#en"
+        }
+      }
+
+      // init
+      _render();
+    </script>

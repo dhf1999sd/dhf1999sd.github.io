@@ -130,7 +130,7 @@ author_profile: true
 
   .fancy-quote:before {
     content: "" ";
- font-family: Georgia, serif;
+    font-family: Georgia, serif;
     font-size: 4em;
     position: absolute;
     left: 10px;
@@ -280,92 +280,97 @@ author_profile: true
   <div class="loader-circle"></div>
 </div>
 
-<!-- Chinese Version -->
-<div class="zh post-container publication-container">
-  <p class="note">注：(#: equal contributions, *: corresponding author)</p>
-  <!--copied from markdown -->
-  <div class="quote-container">
-    <blockquote class="fancy-quote">
-      <p class="typing-text">
-        <span>無</span><span>限</span><span>進</span><span>步</span>
-      </p>
-    </blockquote>
+<!-- 主要内容容器 -->
+<div class="publication-container">
+  <!-- Chinese Version -->
+  <div class="zh post-container">
+    <p class="note">注：(#: equal contributions, *: corresponding author)</p>
+    <!--copied from markdown -->
+    <div class="quote-container">
+      <blockquote class="fancy-quote">
+        <p class="typing-text">
+          <span>無</span><span>限</span><span>進</span><span>步</span>
+        </p>
+      </blockquote>
+    </div>
+    <h4 class="section-title">Conference Paper</h4>
+
+    <h5 class="year-title">2024</h5>
+    <ul>
+      <li class="publication-item">
+        <a href="https://ieeexplore.ieee.org/document/10546696" class="publication-title">Dynamic Per-Flow Queues
+          for TSN Switches</a>
+        <div class="publication-authors">
+          <strong>Authors:</strong> <strong>Wenxue Wu</strong>, Zhen Li, Tong Zhang, Xiaoqin Feng, Liwei Zhang,
+          Xuelong Qi, Fenyuan Ren*
+        </div>
+        <div class="publication-venue">
+          <em>Accepted by IEEE Design, Automation and Test in Europe Conference, DATE, 2024 (CCF-B).</em>
+        </div>
+      </li>
+
+      <li class="publication-item">
+        <a href="https://ieeexplore.ieee.org/document/10546689" class="publication-title">Fault-Tolerant Cyclic
+          Queuing and Forwarding in Time-Sensitive Networking</a>
+        <div class="publication-authors">
+          <strong>Authors:</strong> Liwei Zhang, Tong Zhang, <strong>Wenxue Wu</strong>, Xiaoqin Feng, Guoxi Lin,
+          Fenyuan Ren*
+        </div>
+        <div class="publication-venue">
+          <em>Accepted by IEEE Design, Automation and Test in Europe Conference, DATE, 2024 (CCF-B).</em>
+        </div>
+      </li>
+    </ul>
+
+    <h4 class="section-title">Journal Paper</h4>
+
+    <h5 class="year-title">2025</h5>
+    <ul>
+      <li class="publication-item">
+        <a href="https://dl.acm.org/doi/10.1145/3718087" class="publication-title">Dynamic Per-Flow Queues in Shared
+          Buffer TSN Switches</a>
+        <div class="publication-authors">
+          <strong>Authors:</strong> <strong>Wenxue Wu</strong>, Tong Zhang, Zhen Li, Xiaoqin Feng, Liwei Zhang,
+          Fenyuan Ren*
+        </div>
+        <div class="publication-venue">
+          <em>Accepted by ACM Transactions on Design Automation of Electronic Systems, TODAES, 2025 (CCF-B).</em>
+        </div>
+      </li>
+    </ul>
   </div>
-  <h4 class="section-title">Conference Paper</h4>
-
-  <h5 class="year-title">2024</h5>
-  <ul>
-    <li class="publication-item">
-      <a href="https://ieeexplore.ieee.org/document/10546696" class="publication-title">Dynamic Per-Flow Queues
-        for TSN Switches</a>
-      <div class="publication-authors">
-        <strong>Authors:</strong> <strong>Wenxue Wu</strong>, Zhen Li, Tong Zhang, Xiaoqin Feng, Liwei Zhang,
-        Xuelong Qi, Fenyuan Ren*
-      </div>
-      <div class="publication-venue">
-        <em>Accepted by IEEE Design, Automation and Test in Europe Conference, DATE, 2024 (CCF-B).</em>
-      </div>
-    </li>
-
-    <li class="publication-item">
-      <a href="https://ieeexplore.ieee.org/document/10546689" class="publication-title">Fault-Tolerant Cyclic
-        Queuing and Forwarding in Time-Sensitive Networking</a>
-      <div class="publication-authors">
-        <strong>Authors:</strong> Liwei Zhang, Tong Zhang, <strong>Wenxue Wu</strong>, Xiaoqin Feng, Guoxi Lin,
-        Fenyuan Ren*
-      </div>
-      <div class="publication-venue">
-        <em>Accepted by IEEE Design, Automation and Test in Europe Conference, DATE, 2024 (CCF-B).</em>
-      </div>
-    </li>
-
-  </ul>
-
-  <h4 class="section-title">Journal Paper</h4>
-
-  <h5 class="year-title">2025</h5>
-  <ul>
-    <li class="publication-item">
-      <a href="https://dl.acm.org/doi/10.1145/3718087" class="publication-title">Dynamic Per-Flow Queues in Shared
-        Buffer TSN Switches</a>
-      <div class="publication-authors">
-        <strong>Authors:</strong> <strong>Wenxue Wu</strong>, Tong Zhang, Zhen Li, Xiaoqin Feng, Liwei Zhang,
-        Fenyuan Ren*
-      </div>
-      <div class="publication-venue">
-        <em>Accepted by ACM Transactions on Design Automation of Electronic Systems, TODAES, 2025 (CCF-B).</em>
-      </div>
-    </li>
-  </ul>
   
-  <!-- 添加页面加载脚本 -->
-  <script>
-    window.addEventListener('load', function () {
-      // 隐藏加载动画
-      setTimeout(function () {
-        document.querySelector('.page-loader').classList.add('loader-hidden');
-      }, 500);
+  <!-- English Version -->
+  <div class="en post-container" style="display: none;">
+    <!-- 您可以在这里添加英文版内容 -->
+  </div>
+  </div>
+<!-- 添加页面加载脚本 -->
+<script>
+  window.addEventListener('load', function () {
+    // 隐藏加载动画
+    setTimeout(function () {
+      document.querySelector('.page-loader').classList.add('loader-hidden');
+    }, 500);
 
-      // 为论文项添加鼠标悬停效果
-      const items = document.querySelectorAll('.publication-item');
-      items.forEach(item => {
-        item.addEventListener('mouseenter', function () {
-          this.style.borderLeftWidth = '8px';
-        });
-        item.addEventListener('mouseleave', function () {
-          this.style.borderLeftWidth = '4px';
-        });
+    // 为论文项添加鼠标悬停效果
+    const items = document.querySelectorAll('.publication-item');
+    items.forEach(item => {
+      item.addEventListener('mouseenter', function () {
+        this.style.borderLeftWidth = '8px';
+      });
+      item.addEventListener('mouseleave', function () {
+        this.style.borderLeftWidth = '4px';
       });
     });
-  </script>
-  </div>
-  
-  <!-- Handle Language Change -->
-  <script type="text/javascript">
-    // get nodes
-    var $zh = document.querySelector(".zh");
-    var $en = document.querySelector(".en");
-    var $select = document.querySelector("select");
+  });
+    </script>
+<!-- Handle Language Change -->
+<script type="text/javascript">
+  // get nodes
+  var $zh = document.querySelector(".zh");
+  var $en = document.querySelector(".en");
+  var $select = document.querySelector("select");
 
       // bind hashchange event
       window.addEventListener('hashchange', _render);

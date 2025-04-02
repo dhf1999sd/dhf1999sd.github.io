@@ -24,35 +24,18 @@ author_profile: true
     border-left: 4px solid #4285f4;
     background-color: #f9f9f9;
     border-radius: 0 5px 5px 0;
-    transition: all 0.3s ease;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.6s ease forwards;
+    transition: none;
   }
 
   .publication-item:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
-  }
-
-  /* 为每个项目添加延迟动画 */
-  .publication-item:nth-child(1) {
-    animation-delay: 0.1s;
-  }
-
-  .publication-item:nth-child(2) {
-    animation-delay: 0.3s;
-  }
-
-  .publication-item:nth-child(3) {
-    animation-delay: 0.5s;
   }
 
   .publication-title {
     color: #333;
     font-weight: 600;
     margin-bottom: 10px;
-    transition: color 0.3s ease;
+    transition: none;
   }
 
   .publication-title:hover {
@@ -79,37 +62,24 @@ author_profile: true
     overflow: hidden;
   }
 
-  .section-title:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: -100%;
-    width: 100%;
-    height: 2px;
-    background-color: #4285f4;
-    animation: slideBorder 1.5s ease forwards;
-  }
-
   .year-title {
     background-color: #eee;
     padding: 5px 10px;
     border-radius: 4px;
     display: inline-block;
     margin-bottom: 15px;
-    transition: all 0.3s ease;
+    transition: none;
   }
 
   .year-title:hover {
     background-color: #4285f4;
     color: white;
-    transform: scale(1.05);
   }
 
   .quote-container {
     position: relative;
     margin: 30px 0;
     padding: 10px 0;
-    animation: fadeIn 1s ease;
   }
 
   .fancy-quote {
@@ -119,12 +89,11 @@ author_profile: true
     border-radius: 0 8px 8px 0;
     position: relative;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.5s ease;
+    transition: none;
     overflow: hidden;
   }
 
   .fancy-quote:hover {
-    transform: translateY(-5px) scale(1.02);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   }
 
@@ -137,12 +106,7 @@ author_profile: true
     top: -20px;
     color: #4285f4;
     opacity: 0.3;
-    transition: all 0.5s ease;
-  }
-
-  .fancy-quote:hover:before {
-    transform: translateY(-5px) scale(1.2);
-    opacity: 0.5;
+    transition: none;
   }
 
   .fancy-quote p {
@@ -155,80 +119,6 @@ author_profile: true
     z-index: 1;
   }
 
-  /* 添加动画关键帧 */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes slideBorder {
-    from {
-      left: -100%;
-    }
-
-    to {
-      left: 0;
-    }
-  }
-
-  /* 添加页面加载动画 */
-  .page-loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    transition: opacity 0.5s ease;
-  }
-
-  .loader-hidden {
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  .loader-circle {
-    width: 50px;
-    height: 50px;
-    border: 5px solid #f3f3f3;
-    border-top: 5px solid #4285f4;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-  }
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
-
-  /* 添加打字机效果的样式 */
   .typing-text {
     text-align: center;
     position: relative;
@@ -236,49 +126,12 @@ author_profile: true
     letter-spacing: 2px;
     font-weight: 500;
     font-size: 23px;
-    /* 增加字体大小 */
   }
 
   .typing-text span {
-    opacity: 0;
     display: inline-block;
-    animation: fadeInChar 0.5s ease forwards;
-  }
-
-  .typing-text span:nth-child(1) {
-    animation-delay: 1s;
-  }
-
-
-  .typing-text span:nth-child(2) {
-    animation-delay: 2s;
-  }
-
-  .typing-text span:nth-child(3) {
-    animation-delay: 3s;
-  }
-
-  .typing-text span:nth-child(4) {
-    animation-delay: 4s;
-  }
-
-  @keyframes fadeInChar {
-    from {
-      opacity: 0;
-      transform: scale(0.5);
-    }
-
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
   }
 </style>
-
-<!-- 添加页面加载动画 -->
-<div class="page-loader">
-  <div class="loader-circle"></div>
-</div>
 
 <!-- 主要内容容器 -->
 <div class="publication-container">
@@ -344,27 +197,8 @@ author_profile: true
   <div class="en post-container" style="display: none;">
     <!-- 您可以在这里添加英文版内容 -->
   </div>
-  </div>
-<!-- 添加页面加载脚本 -->
-<script>
-  window.addEventListener('load', function () {
-    // 隐藏加载动画
-    setTimeout(function () {
-      document.querySelector('.page-loader').classList.add('loader-hidden');
-    }, 500);
+</div>
 
-    // 为论文项添加鼠标悬停效果
-    const items = document.querySelectorAll('.publication-item');
-    items.forEach(item => {
-      item.addEventListener('mouseenter', function () {
-        this.style.borderLeftWidth = '8px';
-      });
-      item.addEventListener('mouseleave', function () {
-        this.style.borderLeftWidth = '4px';
-      });
-    });
-  });
-    </script>
 <!-- Handle Language Change -->
 <script type="text/javascript">
   // get nodes
@@ -372,35 +206,35 @@ author_profile: true
   var $en = document.querySelector(".en");
   var $select = document.querySelector("select");
 
-      // bind hashchange event
-      window.addEventListener('hashchange', _render);
+  // bind hashchange event
+  window.addEventListener('hashchange', _render);
 
-      // handle render
-      function _render() {
-        var _hash = window.location.hash;
-        // en
-        if (_hash == "#en") {
-          $select.selectedIndex = 1;
-          $en.style.display = "block";
-          $zh.style.display = "none";
-          // zh by default
-        } else {
-          // not trigger onChange, otherwise cause a loop call.
-          $select.selectedIndex = 0;
-          $zh.style.display = "block";
-          $en.style.display = "none";
-        }
-      }
+  // handle render
+  function _render() {
+    var _hash = window.location.hash;
+    // en
+    if (_hash == "#en") {
+      if ($select) $select.selectedIndex = 1;
+      $en.style.display = "block";
+      $zh.style.display = "none";
+      // zh by default
+    } else {
+      // not trigger onChange, otherwise cause a loop call.
+      if ($select) $select.selectedIndex = 0;
+      $zh.style.display = "block";
+      $en.style.display = "none";
+    }
+  }
 
-      // handle select change
-      function onLanChange(index) {
-        if (index == 0) {
-          window.location.hash = "#zh"
-        } else {
-          window.location.hash = "#en"
-        }
-      }
+  // handle select change
+  function onLanChange(index) {
+    if (index == 0) {
+      window.location.hash = "#zh"
+    } else {
+      window.location.hash = "#en"
+    }
+  }
 
-      // init
-      _render();
-    </script>
+  // init
+  _render();
+</script>

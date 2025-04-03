@@ -10,7 +10,7 @@ redirect_from:
 
 I am a first-year PhD student in [Lanzhou University](https://www.lzu.edu.cn/). My research research interests include time sensitive networks, computer networks and FPGA.
 
-I am very fortunate to be advised by [Prof. Fengyuan Ren](https://www.cs.tsinghua.edu.cn/info/1126/3585.htm) from [Department of Computer Science and Technology](https://www.cs.tsinghua.edu.cn/), Tsinghua University. 
+I am truly fortunate to be under the supervision of [Prof. Fengyuan Ren](https://www.cs.tsinghua.edu.cn/info/1126/3585.htm) from the [Department of Computer Science and Technology](https://www.cs.tsinghua.edu.cn/) at Tsinghua University.
 
 <!-- You can find my CV here: [XX's Curriculum Vitae](../assets/Curriculum_Vitae.pdf). -->
 

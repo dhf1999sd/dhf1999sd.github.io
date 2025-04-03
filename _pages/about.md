@@ -7,7 +7,8 @@ redirect_from:
   - /about.html
 ---
 
-I'm a first year undergraduate student from [Lanzhou University](https://www.lzu.edu.cn/). My research interest includes Time Sensitive Networking, Computer Network, FPGA.
+
+I am a first-year PhD student in [Lanzhou University](https://www.lzu.edu.cn/). My research research interests include time sensitive networks, computer networks and FPGA.
 
 I am very fortunate to be advised by [Prof. Fengyuan Ren](https://www.cs.tsinghua.edu.cn/info/1126/3585.htm) from [Department of Computer Science and Technology](https://www.cs.tsinghua.edu.cn/), Tsinghua University. 
 

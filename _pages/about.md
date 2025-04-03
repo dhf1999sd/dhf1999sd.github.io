@@ -11,7 +11,7 @@ I'm a first year undergraduate student from [Lanzhou University](https://www.lzu
 
 I am very fortunate to be advised by [Prof. Fengyuan Ren](https://www.cs.tsinghua.edu.cn/info/1126/3585.htm) from [Department of Computer Science and Technology](https://www.cs.tsinghua.edu.cn/), Tsinghua University. 
 
-You can find my CV here: [XX's Curriculum Vitae](../assets/Curriculum_Vitae.pdf).
+<!-- You can find my CV here: [XX's Curriculum Vitae](../assets/Curriculum_Vitae.pdf). -->
 
 [Email](mailto:wuwx2024@lzu.edu.cn) / [Github](https://github.com/dhf1999sd)
 

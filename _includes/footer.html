@@ -1,10 +1,5 @@
 {% include base_path %}
 
-<!-- ClustrMaps Globe -->
-<div style="text-align:center;margin-top:20px;">
-  <script type="text/javascript" id="clstr_globe"
-    src="//clustrmaps.com/globe.js?d=4LPXbmz02Q5mhoRWCP4kA7falP0Te2TV36TYGHFccYY"></script>
-</div>
 
 {% if site.author.github or site.author.bitbucket or site.atom_feed.hide != true %}
 <div class="page__footer-follow">
@@ -30,3 +25,18 @@
   Site last updated {{ "now" | date: '%Y-%m-%d' %}}
 </div>
 
+<!-- ClustrMaps Globe -->
+<style>
+  #custom-map-container {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+<div id="custom-map-container">
+  <script type="text/javascript" id="clstr_globe"
+    src="//clustrmaps.com/globe.js?d=4LPXbmz02Q5mhoRWCP4kA7falP0Te2TV36TYGHFccYY"></script>
+</div>

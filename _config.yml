@@ -22,7 +22,7 @@ repository               : "academicpages/academicpages.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "myself.png"
+  avatar           : "BB.png"
   name             : "Wenxue Wu (武文学)"
   pronouns         : # example: "she/her"  
   bio              : "Passionate about research and engineering, always striving for excellence!"

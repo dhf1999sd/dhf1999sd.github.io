@@ -1,0 +1,208 @@
+---
+layout: archive
+title: "Projects"
+permalink: /projects/
+author_profile: true
+---
+<!-- Language Selector -->
+<!-- <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
+    <option value="0" selected> 中文 Chinese </option>
+    <option value="1"> 英文 English </option>
+</select> -->
+
+<!-- 添加样式 -->
+<style>
+  .publication-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.4;
+    font-size: 0.9rem;
+  }
+
+  .publication-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-left: 4px solid #4285f4;
+    background-color: rgba(249, 249, 249, 0.9);
+    border-radius: 0 5px 5px 0;
+  }
+
+  .publication-title {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 1rem;
+  }
+
+  .publication-title:hover {
+    color: #428522;
+  }
+
+  .publication-authors {
+    margin: 5px 0;
+    line-height: 1.3;
+    font-size: 0.85rem;
+    color: #444;
+  }
+
+  .publication-venue {
+    font-style: italic;
+    color: #555;
+    font-size: 0.8rem;
+    margin-top: 3px;
+  }
+
+  .section-title {
+    border-bottom: 2px solid #4285f4;
+    padding-bottom: 5px;
+    margin-top: 20px;
+    margin-bottom: 6px;
+    color: #333;
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+
+  .year-title {
+    background-color: rgba(238, 238, 238, 0.8);
+    color: #333;
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 2px;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .note {
+    font-size: 0.75rem;
+    color: #555;
+    margin-bottom: 15px;
+  }
+
+  ul {
+    padding-left: 20px;
+    margin-top: 5px;
+  }
+
+  /* 添加链接颜色 */
+  a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* 强调文本颜色 */
+  strong {
+    color: #333;
+  }
+
+  em {
+    color: #555;
+  }
+</style>
+
+<!-- 主要内容容器 -->
+<div class="publication-container">
+  <!-- Chinese Version -->
+  <div class="zh post-container">
+    <p class="note">注：(#: equal contributions, *: corresponding author)</p>
+    <!--copied from markdown -->
+
+    <h4 class="section-title">Conference Paper</h4>
+
+    <h5 class="year-title">2024</h5>
+    <ul>
+      <li class="publication-item">
+        <a href="https://ieeexplore.ieee.org/document/10546696" class="publication-title">Dynamic Per-Flow Queues
+          for TSN Switches</a>
+        <div class="publication-authors">
+          <strong>Authors:</strong> <strong>Wenxue Wu</strong>, Zhen Li, Tong Zhang, Xiaoqin Feng, Liwei Zhang,
+          Xuelong Qi, Fenyuan Ren*
+        </div>
+        <div class="publication-venue">
+          <em>Accepted by IEEE Design, Automation and Test in Europe Conference, DATE, 2024 (CCF-B).</em>
+        </div>
+      </li>
+
+      <li class="publication-item">
+        <a href="https://ieeexplore.ieee.org/document/10546689" class="publication-title">Fault-Tolerant Cyclic
+          Queuing and Forwarding in Time-Sensitive Networking</a>
+        <div class="publication-authors">
+          <strong>Authors:</strong> Liwei Zhang, Tong Zhang, <strong>Wenxue Wu</strong>, Xiaoqin Feng, Guoxi Lin,
+          Fenyuan Ren*
+        </div>
+        <div class="publication-venue">
+          <em>Accepted by IEEE Design, Automation and Test in Europe Conference, DATE, 2024 (CCF-B).</em>
+        </div>
+      </li>
+    </ul>
+
+    <h4 class="section-title">Journal Paper</h4>
+
+    <h5 class="year-title">2025</h5>
+    <ul>
+      <li class="publication-item">
+        <a href="https://dl.acm.org/doi/10.1145/3718087" class="publication-title">Dynamic Per-Flow Queues in Shared
+          Buffer TSN Switches</a>
+        <div class="publication-authors">
+          <strong>Authors:</strong> <strong>Wenxue Wu</strong>, Tong Zhang, Zhen Li, Xiaoqin Feng, Liwei Zhang,
+          Fenyuan Ren*
+        </div>
+        <div class="publication-venue">
+          <em>Accepted by ACM Transactions on Design Automation of Electronic Systems, TODAES, 2025 (CCF-B).</em>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- English Version -->
+  <div class="en post-container" style="display: none;">
+    <!-- 您可以在这里添加英文版内容 -->
+  </div>
+</div>
+
+<!-- Handle Language Change -->
+<script type="text/javascript">
+  // get nodes
+  var $zh = document.querySelector(".zh");
+  var $en = document.querySelector(".en");
+  var $select = document.querySelector("select");
+
+  // bind hashchange event
+  window.addEventListener('hashchange', _render);
+
+  // handle render
+  function _render() {
+    var _hash = window.location.hash;
+    // en
+    if (_hash == "#en") {
+      if ($select) $select.selectedIndex = 1;
+      $en.style.display = "block";
+      $zh.style.display = "none";
+      // zh by default
+    } else {
+      // not trigger onChange, otherwise cause a loop call.
+      if ($select) $select.selectedIndex = 0;
+      $zh.style.display = "block";
+      $en.style.display = "none";
+    }
+  }
+
+  // handle select change
+  function onLanChange(index) {
+    if (index == 0) {
+      window.location.hash = "#zh"
+    } else {
+      window.location.hash = "#en"
+    }
+  }
+
+  // init
+  _render();
+</script>

@@ -6,10 +6,10 @@ author_profile: true
 ---
 <!-- Language Selector -->
 <div class="language-selector">
-  <select class="sel-lang" onchange="onLanChange(this.options[this.options.selectedIndex].value)">
-    <option value="0" selected>🇨🇳 中文 Chinese</option>
-    <option value="1">🇺🇸 英文 English</option>
-  </select>
+  <div class="language-toggle">
+    <button class="lang-btn active" data-lang="0">🇨🇳 中文</button>
+    <button class="lang-btn" data-lang="1">🇺🇸 English</button>
+  </div>
 </div>
 
 <!-- 学术风格样式 -->
@@ -21,27 +21,43 @@ author_profile: true
     padding: 10px 0;
   }
 
-  .sel-lang {
-    background: linear-gradient(135deg, #2c5282 0%, #3182ce 100%);
-    color: white;
+  .language-toggle {
+    display: inline-flex;
+    background: #ffffff;
+    border-radius: 25px;
+    padding: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #e1e5e9;
+  }
+
+  .lang-btn {
+    background: transparent;
     border: none;
-    padding: 8px 15px;
+    padding: 8px 16px;
     border-radius: 20px;
     font-size: 0.9rem;
     font-weight: 500;
     cursor: pointer;
+    transition: all 0.3s ease;
+    color: #4a5568;
+    white-space: nowrap;
+  }
+
+  .lang-btn:hover {
+    background: rgba(44, 82, 130, 0.1);
+    color: #2c5282;
+  }
+
+  .lang-btn.active {
+    background: linear-gradient(135deg, #2c5282 0%, #3182ce 100%);
+    color: white;
     box-shadow: 0 2px 4px rgba(44, 82, 130, 0.3);
-    transition: all 0.2s ease;
+    transform: scale(1.02);
   }
 
-  .sel-lang:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 3px 6px rgba(44, 82, 130, 0.4);
-  }
-
-  .sel-lang:focus {
+  .lang-btn:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(44, 82, 130, 0.2);
+    box-shadow: 0 0 0 2px rgba(44, 82, 130, 0.2);
   }
 
   .publication-container {
@@ -320,40 +336,78 @@ author_profile: true
 
 <!-- Handle Language Change -->
 <script type="text/javascript">
-  // get nodes
-  var $zh = document.querySelector(".zh");
-  var $en = document.querySelector(".en");
-  var $select = document.querySelector("select");
+  // 等待页面加载完成
+  document.addEventListener('DOMContentLoaded', function() {
+    // get nodes
+    var $zh = document.querySelector(".zh");
+    var $en = document.querySelector(".en");
+    var $langButtons = document.querySelectorAll(".lang-btn");
 
-  // bind hashchange event
-  window.addEventListener('hashchange', _render);
+    console.log('Language switch initialized:', {
+      zh: !!$zh, 
+      en: !!$en, 
+      buttons: $langButtons.length
+    });
 
-  // handle render
-  function _render() {
-    var _hash = window.location.hash;
-    // en
-    if (_hash == "#en") {
-      if ($select) $select.selectedIndex = 1;
-      $en.style.display = "block";
-      $zh.style.display = "none";
-      // zh by default
-    } else {
-      // not trigger onChange, otherwise cause a loop call.
-      if ($select) $select.selectedIndex = 0;
-      $zh.style.display = "block";
-      $en.style.display = "none";
+    // 切换语言函数
+    function switchLanguage(langIndex) {
+      console.log('Switching to language index:', langIndex);
+      
+      if (langIndex == 0) {
+        // 显示中文
+        if ($zh) $zh.style.display = "block";
+        if ($en) $en.style.display = "none";
+        console.log('Switched to Chinese');
+      } else {
+        // 显示英文
+        if ($zh) $zh.style.display = "none";  
+        if ($en) $en.style.display = "block";
+        console.log('Switched to English');
+      }
+
+      // 更新按钮状态
+      $langButtons.forEach(function(btn, index) {
+        if (index == langIndex) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
     }
-  }
 
-  // handle select change
-  function onLanChange(index) {
-    if (index == 0) {
-      window.location.hash = "#zh"
-    } else {
-      window.location.hash = "#en"
+    // 绑定按钮点击事件
+    $langButtons.forEach(function(btn, index) {
+      btn.addEventListener('click', function() {
+        var langIndex = parseInt(this.dataset.lang);
+        switchLanguage(langIndex);
+        
+        // 更新URL hash
+        if (langIndex == 0) {
+          window.location.hash = "#zh";
+        } else {
+          window.location.hash = "#en";
+        }
+      });
+    });
+
+    // 处理URL hash变化
+    function handleHashChange() {
+      var hash = window.location.hash;
+      console.log('Hash changed to:', hash);
+      
+      if (hash == "#en") {
+        switchLanguage(1);
+      } else {
+        switchLanguage(0);
+      }
     }
-  }
 
-  // init
-  _render();
+    // 监听hash变化
+    window.addEventListener('hashchange', handleHashChange);
+
+    // 初始化 - 根据当前hash显示对应语言
+    handleHashChange();
+    
+    console.log('Language switch setup complete');
+  });
 </script>

@@ -4,408 +4,243 @@ title: "Publications"
 permalink: /publications/
 author_profile: true
 ---
-<!-- Language Selector -->
-<div class="language-selector">
-  <div class="language-toggle">
-    <button class="lang-btn active" data-lang="0" onclick="switchLang(0)">🇨🇳 中文</button>
-    <button class="lang-btn" data-lang="1" onclick="switchLang(1)">🇺🇸 English</button>
-  </div>
-</div>
 
-<!-- 学术风格样式 -->
 <style>
-  /* 语言选择器样式 */
-  .language-selector {
-    text-align: right;
-    margin-bottom: 20px;
-    padding: 10px 0;
-  }
+/* 学术风格布局 */
+.publications-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: 'Georgia', 'Times', serif;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #333;
+}
 
-  .language-toggle {
-    display: inline-flex;
-    background: #ffffff;
-    border-radius: 25px;
-    padding: 4px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border: 2px solid #e1e5e9;
-  }
+/* 语言选择器 */
+.lang-switch {
+  text-align: right;
+  margin-bottom: 15px;
+}
 
-  .lang-btn {
-    background: transparent;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    color: #4a5568;
-    white-space: nowrap;
-  }
+.lang-btn {
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  padding: 5px 12px;
+  margin-left: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: 3px;
+  color: #666;
+}
 
-  .lang-btn:hover {
-    background: rgba(44, 82, 130, 0.1);
-    color: #2c5282;
-  }
+.lang-btn.active {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
 
-  .lang-btn.active {
-    background: linear-gradient(135deg, #2c5282 0%, #3182ce 100%);
-    color: white;
-    box-shadow: 0 2px 4px rgba(44, 82, 130, 0.3);
-    transform: scale(1.02);
-  }
+.lang-btn:hover {
+  background: #e9ecef;
+}
 
-  .lang-btn:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(44, 82, 130, 0.2);
-  }
+.lang-btn.active:hover {
+  background: #0056b3;
+}
 
-  .publication-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px 15px;
-    font-family: "Times New Roman", Times, serif;
-    line-height: 1.5;
-    font-size: 0.95rem;
-    color: #333;
-    background: #fafafa;
-  }
+/* 出版物条目 */
+.pub-item {
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
 
-  .publication-item {
-    margin-bottom: 18px;
-    padding: 15px 20px;
-    background: #ffffff;
-    border: 1px solid #e1e5e9;
-    border-left: 3px solid #2c5282;
-    border-radius: 3px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    transition: all 0.2s ease;
-  }
+.pub-item:last-child {
+  border-bottom: none;
+}
 
-  .publication-item:hover {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transform: translateY(-1px);
-  }
+.pub-title {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 15px;
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
 
-  .publication-title {
-    color: #1a202c;
-    font-weight: 600;
-    margin-bottom: 8px;
-    font-size: 1.05rem;
-    line-height: 1.3;
-    display: block;
-    text-decoration: none;
-  }
+.pub-title a {
+  color: inherit;
+  text-decoration: none;
+}
 
-  .publication-title:hover {
-    color: #2c5282;
-    text-decoration: underline;
-  }
+.pub-title a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
 
-  .publication-authors {
-    margin: 6px 0;
-    line-height: 1.4;
-    font-size: 0.9rem;
-    color: #4a5568;
-    font-style: normal;
-  }
+.pub-authors {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 3px;
+}
 
-  .publication-venue {
-    font-style: italic;
-    color: #718096;
-    font-size: 0.88rem;
-    margin-top: 6px;
-    font-weight: 500;
-  }
+.pub-venue {
+  font-size: 12px;
+  color: #777;
+  font-style: italic;
+}
 
-  .publication-venue em {
-    color: #2d3748;
-  }
+/* 分类标题 */
+.section-header {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 20px 0 10px 0;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #007bff;
+}
 
-  .section-title {
-    border-bottom: 2px solid #2c5282;
-    padding-bottom: 8px;
-    margin: 30px 0 15px 0;
-    color: #1a202c;
-    font-size: 1.4rem;
-    font-weight: 700;
-    font-family: "Georgia", serif;
-  }
+.year-header {
+  font-size: 14px;
+  font-weight: 600;
+  color: #495057;
+  margin: 15px 0 8px 0;
+}
 
-  .year-title {
-    background: linear-gradient(135deg, #2c5282 0%, #3182ce 100%);
-    color: white;
-    padding: 6px 12px;
-    border-radius: 20px;
-    display: inline-block;
-    margin: 5px 0 12px 0;
-    font-size: 0.95rem;
-    font-weight: 600;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    box-shadow: 0 1px 3px rgba(44, 82, 130, 0.3);
-  }
+/* 说明文字 */
+.note {
+  font-size: 11px;
+  color: #6c757d;
+  margin-bottom: 15px;
+  font-style: italic;
+}
 
-  .note {
-    font-size: 0.8rem;
-    color: #718096;
-    margin-bottom: 20px;
-    padding: 8px 12px;
-    background: #edf2f7;
-    border-radius: 4px;
-    border-left: 3px solid #90cdf4;
-    font-style: italic;
-  }
+/* 隐藏/显示语言版本 */
+.lang-version {
+  display: block;
+}
 
-  ul {
-    list-style: none;
-    padding-left: 0;
-    margin: 8px 0;
-  }
-
-  /* 学术链接样式 */
-  a {
-    color: #2c5282;
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-
-  a:hover {
-    color: #1a202c;
-    text-decoration: underline;
-  }
-
-  /* 强调文本 */
-  strong {
-    color: #1a202c;
-    font-weight: 600;
-  }
-
-  /* 期刊名称强调 */
-  em {
-    color: #2d3748;
-    font-weight: 500;
-  }
-
-  /* 响应式设计 */
-  @media (max-width: 768px) {
-    .language-selector {
-      text-align: center;
-    }
-    
-    .publication-container {
-      padding: 15px 10px;
-    }
-    
-    .publication-item {
-      padding: 12px 15px;
-      margin-bottom: 15px;
-    }
-    
-    .publication-title {
-      font-size: 1rem;
-    }
-    
-    .section-title {
-      font-size: 1.25rem;
-    }
-  }
-
-  /* 打印样式 */
-  @media print {
-    .language-selector {
-      display: none;
-    }
-    
-    .publication-container {
-      background: white;
-      box-shadow: none;
-    }
-    
-    .publication-item {
-      border: 1px solid #ccc;
-      box-shadow: none;
-      break-inside: avoid;
-    }
-  }
+.lang-version.hidden {
+  display: none;
+}
 </style>
 
-<!-- 主要内容容器 -->
-<div class="publication-container">
-  <!-- Chinese Version -->
-  <div class="zh post-container">
-    <p class="note">📋 说明：(#: 同等贡献, *: 通讯作者)</p>
-
-    <h4 class="section-title">📄 会议论文 Conference Papers</h4>
-
-    <h5 class="year-title">2024</h5>
-    <ul>
-      <li class="publication-item">
-        <a href="https://ieeexplore.ieee.org/document/10546696" class="publication-title">Dynamic Per-Flow Queues
-          for TSN Switches</a>
-        <div class="publication-authors">
-          <strong>Wenxue Wu</strong>, Zhen Li, Tong Zhang, Xiaoqin Feng, Liwei Zhang,
-          Xuelong Qi, Fenyuan Ren*
-        </div>
-        <div class="publication-venue">
-          <em>IEEE Design, Automation and Test in Europe Conference (DATE 2024) - CCF-B</em>
-        </div>
-      </li>
-
-      <li class="publication-item">
-        <a href="https://ieeexplore.ieee.org/document/10546689" class="publication-title">Fault-Tolerant Cyclic
-          Queuing and Forwarding in Time-Sensitive Networking</a>
-        <div class="publication-authors">
-          Liwei Zhang, Tong Zhang, <strong>Wenxue Wu</strong>, Xiaoqin Feng, Guoxi Lin,
-          Fenyuan Ren*
-        </div>
-        <div class="publication-venue">
-          <em>IEEE Design, Automation and Test in Europe Conference (DATE 2024) - CCF-B</em>
-        </div>
-      </li>
-    </ul>
-
-    <h4 class="section-title">📘 期刊论文 Journal Papers</h4>
-
-    <h5 class="year-title">2025</h5>
-    <ul>
-      <li class="publication-item">
-        <a href="https://dl.acm.org/doi/10.1145/3718087" class="publication-title">Dynamic Per-Flow Queues in Shared
-          Buffer TSN Switches</a>
-        <div class="publication-authors">
-          <strong>Wenxue Wu</strong>, Tong Zhang, Zhen Li, Xiaoqin Feng, Liwei Zhang,
-          Fenyuan Ren*
-        </div>
-        <div class="publication-venue">
-          <em>ACM Transactions on Design Automation of Electronic Systems (TODAES 2025) - CCF-B</em>
-        </div>
-      </li>
-    </ul>
+<div class="publications-wrapper">
+  <!-- 语言切换 -->
+  <div class="lang-switch">
+    <button class="lang-btn active" onclick="switchLanguage('zh')">中文</button>
+    <button class="lang-btn" onclick="switchLanguage('en')">English</button>
   </div>
 
-  <!-- English Version -->
-  <div class="en post-container" style="display: none;">
-    <p class="note">📋 Note: (#: equal contributions, *: corresponding author)</p>
+  <!-- 中文版本 -->
+  <div id="zh-content" class="lang-version">
+    <div class="note">说明：*表示通讯作者</div>
+    
+    <div class="section-header">会议论文</div>
+    <div class="year-header">2024</div>
+    
+    <div class="pub-item">
+      <div class="pub-title">
+        <a href="https://ieeexplore.ieee.org/document/10546696">Dynamic Per-Flow Queues for TSN Switches</a>
+      </div>
+      <div class="pub-authors">
+        <strong>Wenxue Wu</strong>, Zhen Li, Tong Zhang, Xiaoqin Feng, Liwei Zhang, Xuelong Qi, Fenyuan Ren*
+      </div>
+      <div class="pub-venue">
+        IEEE Design, Automation and Test in Europe Conference (DATE), 2024 (CCF-B)
+      </div>
+    </div>
 
-    <h4 class="section-title">📄 Conference Papers</h4>
+    <div class="pub-item">
+      <div class="pub-title">
+        <a href="https://ieeexplore.ieee.org/document/10546689">Fault-Tolerant Cyclic Queuing and Forwarding in Time-Sensitive Networking</a>
+      </div>
+      <div class="pub-authors">
+        Liwei Zhang, Tong Zhang, <strong>Wenxue Wu</strong>, Xiaoqin Feng, Guoxi Lin, Fenyuan Ren*
+      </div>
+      <div class="pub-venue">
+        IEEE Design, Automation and Test in Europe Conference (DATE), 2024 (CCF-B)
+      </div>
+    </div>
 
-    <h5 class="year-title">2024</h5>
-    <ul>
-      <li class="publication-item">
-        <a href="https://ieeexplore.ieee.org/document/10546696" class="publication-title">Dynamic Per-Flow Queues
-          for TSN Switches</a>
-        <div class="publication-authors">
-          <strong>Wenxue Wu</strong>, Zhen Li, Tong Zhang, Xiaoqin Feng, Liwei Zhang,
-          Xuelong Qi, Fenyuan Ren*
-        </div>
-        <div class="publication-venue">
-          <em>IEEE Design, Automation and Test in Europe Conference (DATE 2024) - CCF-B</em>
-        </div>
-      </li>
+    <div class="section-header">期刊论文</div>
+    <div class="year-header">2025</div>
+    
+    <div class="pub-item">
+      <div class="pub-title">
+        <a href="https://dl.acm.org/doi/10.1145/3718087">Dynamic Per-Flow Queues in Shared Buffer TSN Switches</a>
+      </div>
+      <div class="pub-authors">
+        <strong>Wenxue Wu</strong>, Tong Zhang, Zhen Li, Xiaoqin Feng, Liwei Zhang, Fenyuan Ren*
+      </div>
+      <div class="pub-venue">
+        ACM Transactions on Design Automation of Electronic Systems (TODAES), 2025 (CCF-B)
+      </div>
+    </div>
+  </div>
 
-      <li class="publication-item">
-        <a href="https://ieeexplore.ieee.org/document/10546689" class="publication-title">Fault-Tolerant Cyclic
-          Queuing and Forwarding in Time-Sensitive Networking</a>
-        <div class="publication-authors">
-          Liwei Zhang, Tong Zhang, <strong>Wenxue Wu</strong>, Xiaoqin Feng, Guoxi Lin,
-          Fenyuan Ren*
-        </div>
-        <div class="publication-venue">
-          <em>IEEE Design, Automation and Test in Europe Conference (DATE 2024) - CCF-B</em>
-        </div>
-      </li>
-    </ul>
+  <!-- 英文版本 -->
+  <div id="en-content" class="lang-version hidden">
+    <div class="note">Note: * indicates corresponding author</div>
+    
+    <div class="section-header">Conference Papers</div>
+    <div class="year-header">2024</div>
+    
+    <div class="pub-item">
+      <div class="pub-title">
+        <a href="https://ieeexplore.ieee.org/document/10546696">Dynamic Per-Flow Queues for TSN Switches</a>
+      </div>
+      <div class="pub-authors">
+        <strong>Wenxue Wu</strong>, Zhen Li, Tong Zhang, Xiaoqin Feng, Liwei Zhang, Xuelong Qi, Fenyuan Ren*
+      </div>
+      <div class="pub-venue">
+        IEEE Design, Automation and Test in Europe Conference (DATE), 2024 (CCF-B)
+      </div>
+    </div>
 
-    <h4 class="section-title">📘 Journal Papers</h4>
+    <div class="pub-item">
+      <div class="pub-title">
+        <a href="https://ieeexplore.ieee.org/document/10546689">Fault-Tolerant Cyclic Queuing and Forwarding in Time-Sensitive Networking</a>
+      </div>
+      <div class="pub-authors">
+        Liwei Zhang, Tong Zhang, <strong>Wenxue Wu</strong>, Xiaoqin Feng, Guoxi Lin, Fenyuan Ren*
+      </div>
+      <div class="pub-venue">
+        IEEE Design, Automation and Test in Europe Conference (DATE), 2024 (CCF-B)
+      </div>
+    </div>
 
-    <h5 class="year-title">2025</h5>
-    <ul>
-      <li class="publication-item">
-        <a href="https://dl.acm.org/doi/10.1145/3718087" class="publication-title">Dynamic Per-Flow Queues in Shared
-          Buffer TSN Switches</a>
-        <div class="publication-authors">
-          <strong>Wenxue Wu</strong>, Tong Zhang, Zhen Li, Xiaoqin Feng, Liwei Zhang,
-          Fenyuan Ren*
-        </div>
-        <div class="publication-venue">
-          <em>ACM Transactions on Design Automation of Electronic Systems (TODAES 2025) - CCF-B</em>
-        </div>
-      </li>
-    </ul>
+    <div class="section-header">Journal Papers</div>
+    <div class="year-header">2025</div>
+    
+    <div class="pub-item">
+      <div class="pub-title">
+        <a href="https://dl.acm.org/doi/10.1145/3718087">Dynamic Per-Flow Queues in Shared Buffer TSN Switches</a>
+      </div>
+      <div class="pub-authors">
+        <strong>Wenxue Wu</strong>, Tong Zhang, Zhen Li, Xiaoqin Feng, Liwei Zhang, Fenyuan Ren*
+      </div>
+      <div class="pub-venue">
+        ACM Transactions on Design Automation of Electronic Systems (TODAES), 2025 (CCF-B)
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- Handle Language Change -->
-<script type="text/javascript">
-  // 全局切换函数
-  function switchLang(langIndex) {
-    console.log('switchLang called with index:', langIndex);
-    
-    var $zh = document.querySelector(".zh");
-    var $en = document.querySelector(".en");
-    var $langButtons = document.querySelectorAll(".lang-btn");
-    
-    if (!$zh || !$en) {
-      console.error('Language containers not found');
-      return;
-    }
-    
-    if (langIndex == 0) {
-      // 显示中文
-      $zh.style.display = "block";
-      $en.style.display = "none";
-      console.log('Switched to Chinese');
-    } else {
-      // 显示英文  
-      $zh.style.display = "none";
-      $en.style.display = "block";
-      console.log('Switched to English');
-    }
-    
-    // 更新按钮状态
-    $langButtons.forEach(function(btn) {
-      var btnLang = parseInt(btn.dataset.lang);
-      if (btnLang == langIndex) {
-        btn.classList.add('active');
-      } else {
-        btn.classList.remove('active');
-      }
-    });
-    
-    // 更新URL
-    if (langIndex == 0) {
-      window.location.hash = "#zh";
-    } else {
-      window.location.hash = "#en";
-    }
+<script>
+function switchLanguage(lang) {
+  const zhContent = document.getElementById('zh-content');
+  const enContent = document.getElementById('en-content');
+  const buttons = document.querySelectorAll('.lang-btn');
+  
+  buttons.forEach(btn => btn.classList.remove('active'));
+  
+  if (lang === 'zh') {
+    zhContent.classList.remove('hidden');
+    enContent.classList.add('hidden');
+    document.querySelector('.lang-btn[onclick*="zh"]').classList.add('active');
+  } else {
+    zhContent.classList.add('hidden');
+    enContent.classList.remove('hidden');
+    document.querySelector('.lang-btn[onclick*="en"]').classList.add('active');
   }
-
-  // 等待页面加载完成
-  document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM loaded');
-    
-    // 处理URL hash变化
-    function handleHashChange() {
-      var hash = window.location.hash;
-      console.log('Hash changed to:', hash);
-      
-      if (hash == "#en") {
-        switchLang(1);
-      } else {
-        switchLang(0);
-      }
-    }
-
-    // 监听hash变化
-    window.addEventListener('hashchange', handleHashChange);
-
-    // 初始化显示
-    var initialHash = window.location.hash;
-    if (initialHash == "#en") {
-      switchLang(1);
-    } else {
-      switchLang(0);
-    }
-    
-    console.log('Language switch setup complete');
-  });
+}
 </script>

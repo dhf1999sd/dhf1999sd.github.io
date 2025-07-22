@@ -90,22 +90,26 @@ redirect_from:
 <span class="research-tag">Network Optimization</span>
 </div>
 
-## ? Academic Background
+<h2 style="color: #2c5282; border-bottom: 2px solid #2c5282; padding-bottom: 5px;">? Academic Background</h2>
 
-I am passionate about advancing the state-of-the-art in **time-sensitive networking** technologies, with a particular focus on developing efficient algorithms and hardware implementations for real-time communication systems. My work aims to bridge the gap between theoretical network models and practical FPGA-based solutions.
+<p>I am passionate about advancing the state-of-the-art in <strong>time-sensitive networking</strong> technologies, with a particular focus on developing efficient algorithms and hardware implementations for real-time communication systems. My work aims to bridge the gap between theoretical network models and practical FPGA-based solutions.</p>
 
-## ? Current Research
+<h2 style="color: #2c5282; border-bottom: 2px solid #2c5282; padding-bottom: 5px;">? Current Research</h2>
 
-My current research focuses on:
-- **Dynamic queue management** in TSN switches
-- **Fault-tolerant mechanisms** for time-critical network applications  
-- **Hardware acceleration** of network protocols using FPGA platforms
+<p>My current research focuses on:</p>
+<ul style="line-height: 1.8;">
+<li><strong>Dynamic queue management</strong> in TSN switches</li>
+<li><strong>Fault-tolerant mechanisms</strong> for time-critical network applications</li>
+<li><strong>Hardware acceleration</strong> of network protocols using FPGA platforms</li>
+</ul>
 
-## ? Recent Achievements
+<h2 style="color: #2c5282; border-bottom: 2px solid #2c5282; padding-bottom: 5px;">? Recent Achievements</h2>
 
-- **3 publications** in prestigious conferences and journals (CCF-B ranked)
-- Active collaboration with **Tsinghua University** research group
-- Expertise in both **theoretical analysis** and **practical implementation**
+<ul style="line-height: 1.8;">
+<li><strong>3 publications</strong> in prestigious conferences and journals (CCF-B ranked)</li>
+<li>Active collaboration with <strong>Tsinghua University</strong> research group</li>
+<li>Expertise in both <strong>theoretical analysis</strong> and <strong>practical implementation</strong></li>
+</ul>
 
 <div class="contact-info">
 <strong>? Contact:</strong> 

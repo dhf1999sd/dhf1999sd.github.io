@@ -7,8 +7,8 @@ author_profile: true
 <!-- Language Selector -->
 <div class="language-selector">
   <div class="language-toggle">
-    <button class="lang-btn active" data-lang="0">🇨🇳 中文</button>
-    <button class="lang-btn" data-lang="1">🇺🇸 English</button>
+    <button class="lang-btn active" data-lang="0" onclick="switchLang(0)">🇨🇳 中文</button>
+    <button class="lang-btn" data-lang="1" onclick="switchLang(1)">🇺🇸 English</button>
   </div>
 </div>
 
@@ -336,77 +336,75 @@ author_profile: true
 
 <!-- Handle Language Change -->
 <script type="text/javascript">
-  // 等待页面加载完成
-  document.addEventListener('DOMContentLoaded', function() {
-    // get nodes
+  // 全局切换函数
+  function switchLang(langIndex) {
+    console.log('switchLang called with index:', langIndex);
+    
     var $zh = document.querySelector(".zh");
     var $en = document.querySelector(".en");
     var $langButtons = document.querySelectorAll(".lang-btn");
-
-    console.log('Language switch initialized:', {
-      zh: !!$zh, 
-      en: !!$en, 
-      buttons: $langButtons.length
-    });
-
-    // 切换语言函数
-    function switchLanguage(langIndex) {
-      console.log('Switching to language index:', langIndex);
-      
-      if (langIndex == 0) {
-        // 显示中文
-        if ($zh) $zh.style.display = "block";
-        if ($en) $en.style.display = "none";
-        console.log('Switched to Chinese');
-      } else {
-        // 显示英文
-        if ($zh) $zh.style.display = "none";  
-        if ($en) $en.style.display = "block";
-        console.log('Switched to English');
-      }
-
-      // 更新按钮状态
-      $langButtons.forEach(function(btn, index) {
-        if (index == langIndex) {
-          btn.classList.add('active');
-        } else {
-          btn.classList.remove('active');
-        }
-      });
+    
+    if (!$zh || !$en) {
+      console.error('Language containers not found');
+      return;
     }
-
-    // 绑定按钮点击事件
-    $langButtons.forEach(function(btn, index) {
-      btn.addEventListener('click', function() {
-        var langIndex = parseInt(this.dataset.lang);
-        switchLanguage(langIndex);
-        
-        // 更新URL hash
-        if (langIndex == 0) {
-          window.location.hash = "#zh";
-        } else {
-          window.location.hash = "#en";
-        }
-      });
+    
+    if (langIndex == 0) {
+      // 显示中文
+      $zh.style.display = "block";
+      $en.style.display = "none";
+      console.log('Switched to Chinese');
+    } else {
+      // 显示英文  
+      $zh.style.display = "none";
+      $en.style.display = "block";
+      console.log('Switched to English');
+    }
+    
+    // 更新按钮状态
+    $langButtons.forEach(function(btn) {
+      var btnLang = parseInt(btn.dataset.lang);
+      if (btnLang == langIndex) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
     });
+    
+    // 更新URL
+    if (langIndex == 0) {
+      window.location.hash = "#zh";
+    } else {
+      window.location.hash = "#en";
+    }
+  }
 
+  // 等待页面加载完成
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded');
+    
     // 处理URL hash变化
     function handleHashChange() {
       var hash = window.location.hash;
       console.log('Hash changed to:', hash);
       
       if (hash == "#en") {
-        switchLanguage(1);
+        switchLang(1);
       } else {
-        switchLanguage(0);
+        switchLang(0);
       }
     }
 
     // 监听hash变化
     window.addEventListener('hashchange', handleHashChange);
 
-    // 初始化 - 根据当前hash显示对应语言
-    handleHashChange();
+    // 初始化显示
+    var initialHash = window.location.hash;
+    if (initialHash == "#en") {
+      switchLang(1);
+    } else {
+      switchLang(0);
+    }
     
     console.log('Language switch setup complete');
   });

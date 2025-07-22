@@ -8,114 +8,79 @@ redirect_from:
 ---
 
 <style>
-.about-container {
-  max-width: 800px;
+.about-content {
+  max-width: 700px;
   margin: 0 auto;
-  font-family: "Times New Roman", Times, serif;
-  line-height: 1.6;
-  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #444;
 }
 
-.intro-section {
-  background: #f8f9fa;
-  padding: 20px;
-  border-radius: 8px;
-  border-left: 4px solid #2c5282;
-  margin-bottom: 25px;
+.intro-text {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 25px;
+  border-radius: 10px;
+  border-left: 4px solid #007bff;
+  margin: 20px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .research-interests {
-  background: linear-gradient(135deg, #edf2f7 0%, #e2e8f0 100%);
-  padding: 15px 20px;
-  border-radius: 6px;
-  margin: 20px 0;
-}
-
-.research-interests h4 {
-  color: #2c5282;
-  margin: 0 0 10px 0;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.research-tag {
-  display: inline-block;
-  background: #2c5282;
-  color: white;
-  padding: 4px 10px;
-  margin: 3px 5px 3px 0;
-  border-radius: 15px;
-  font-size: 0.85rem;
+  font-style: italic;
+  color: #0056b3;
   font-weight: 500;
 }
 
-.contact-info {
-  background: #ffffff;
-  border: 2px solid #e1e5e9;
-  padding: 15px;
-  border-radius: 8px;
-  margin-top: 20px;
+.contact-links {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
   text-align: center;
+  border: 2px solid #e9ecef;
+  margin-top: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-.contact-info a {
-  color: #2c5282;
+.contact-links a {
+  color: #007bff;
   text-decoration: none;
-  margin: 0 10px;
-  font-weight: 500;
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
-  color: #1a202c;
-}
-
-.highlight {
   font-weight: 600;
-  color: #2c5282;
+  margin: 0 15px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.contact-links a:hover {
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.supervisor-info {
+  margin: 25px 0;
+  padding: 20px;
+  background: rgba(0, 123, 255, 0.05);
+  border-radius: 8px;
+  border-left: 3px solid #007bff;
 }
 </style>
 
-<div class="about-container">
+<div class="about-content">
 
-<div class="intro-section">
-<p>I am a <span class="highlight">first-year PhD student</span> at <a href="https://www.lzu.edu.cn/" class="highlight">Lanzhou University</a>, working under the supervision of <a href="https://www.cs.tsinghua.edu.cn/info/1126/3585.htm" class="highlight">Prof. Fengyuan Ren</a> from the Department of Computer Science and Technology at Tsinghua University.</p>
+<div class="intro-text">
+I am a <strong>first-year PhD student</strong> at <a href="https://www.lzu.edu.cn/">Lanzhou University</a>. My research interests include <span class="research-interests">time sensitive networks, computer networks and FPGA</span>.
 </div>
 
-<div class="research-interests">
-<h4>? Research Interests</h4>
-<span class="research-tag">Time-Sensitive Networking (TSN)</span>
-<span class="research-tag">Computer Networks</span>
-<span class="research-tag">FPGA Systems</span>
-<span class="research-tag">Network Optimization</span>
+<div class="supervisor-info">
+I am truly fortunate to be under the supervision of <a href="https://www.cs.tsinghua.edu.cn/info/1126/3585.htm"><strong>Prof. Fengyuan Ren</strong></a> from the Department of Computer Science and Technology at <strong>Tsinghua University</strong>.
 </div>
 
-<h2 style="color: #2c5282; border-bottom: 2px solid #2c5282; padding-bottom: 5px;">? Academic Background</h2>
-
-<p>I am passionate about advancing the state-of-the-art in <strong>time-sensitive networking</strong> technologies, with a particular focus on developing efficient algorithms and hardware implementations for real-time communication systems. My work aims to bridge the gap between theoretical network models and practical FPGA-based solutions.</p>
-
-<h2 style="color: #2c5282; border-bottom: 2px solid #2c5282; padding-bottom: 5px;">? Current Research</h2>
-
-<p>My current research focuses on:</p>
-<ul style="line-height: 1.8;">
-<li><strong>Dynamic queue management</strong> in TSN switches</li>
-<li><strong>Fault-tolerant mechanisms</strong> for time-critical network applications</li>
-<li><strong>Hardware acceleration</strong> of network protocols using FPGA platforms</li>
-</ul>
-
-<h2 style="color: #2c5282; border-bottom: 2px solid #2c5282; padding-bottom: 5px;">? Recent Achievements</h2>
-
-<ul style="line-height: 1.8;">
-<li><strong>3 publications</strong> in prestigious conferences and journals (CCF-B ranked)</li>
-<li>Active collaboration with <strong>Tsinghua University</strong> research group</li>
-<li>Expertise in both <strong>theoretical analysis</strong> and <strong>practical implementation</strong></li>
-</ul>
-
-<div class="contact-info">
-<strong>? Contact:</strong> 
-<a href="mailto:wuwx2024@lzu.edu.cn">Email</a> | 
-<a href="https://github.com/dhf1999sd">GitHub</a> |
-<a href="/publications/">Publications</a>
+<div class="contact-links">
+<a href="mailto:wuwx2024@lzu.edu.cn">? Email</a>
+<a href="https://github.com/dhf1999sd">? Github</a>
 </div>
 
 </div>

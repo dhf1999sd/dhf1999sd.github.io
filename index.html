@@ -278,7 +278,7 @@ $(document).ready(function() {
 // 自动更新最后更新时间
 function updateLastUpdateTime() {
     const now = new Date();
-    const options = { year: 'numeric', month: 'long' };
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
     const formattedDate = now.toLocaleDateString('en-US', options);
     document.getElementById('lastUpdate').textContent = formattedDate;
 }

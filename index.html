@@ -1,0 +1,398 @@
+<html><head>
+<title>Wufan Wang's Homepage</title>
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+
+<style type="text/css">
+ @import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
+
+
+	body
+	{
+	font-family:"Roboto",Helvetica,Arial,sans-serif;font-size:16px;line-height:1.5;font-weight:300;
+    	background-color : #CDCDCD;
+	}
+    	.content
+	{
+    		width : 900px;
+    		padding : 25px 30px;
+    		margin : 25px auto;
+    		background-color : #fff;
+    		box-shadow: 0px 0px 10px #999;
+    		border-radius: 15px; 
+	}	
+	table
+	{
+		padding: 5px;
+	}
+	
+	table.pub_table,td.pub_td1,td.pub_td2
+	{
+		padding: 8px;
+		width: 850px;
+        border-collapse: separate;
+        border-spacing: 15px;
+        margin-top: -5px;
+	}
+
+	td.pub_td1
+	{
+		width:50px;
+	}
+    td.pub_td1 img
+    {
+        height:120px;
+        width: 160px;
+    }
+	
+	div#container
+	{
+		margin-left: auto;
+		margin-right: auto;
+		width: 810px;
+		text-align: left;
+		position: relative;
+		background-color: #FFF;
+	}
+	div#DocInfo
+	{
+		color: #1367a7;
+		height: 158px;
+		margin-left: 20px;
+	}
+	h4,h3,h2,h1
+	{
+		color: #3B3B3B;
+	}
+	h2
+	{
+		font-size:130%;
+	}
+	p
+	{
+		color: #5B5B5B;
+		margin-bottom: 50px;
+	}
+	p.caption
+	{
+		color: #9B9B9B;
+		text-align: left;
+		width: 600px;
+	}
+	p.caption2
+	{
+		color: #9B9B9B;
+		text-align: left;
+		width: 800px;
+	}
+	#header_img
+	{
+		position: absolute;
+		top: 0px; right: 0px;
+    }
+	a:link,a:visited
+	{
+		color: #1367a7;
+		text-decoration: none;
+	}
+
+    #mit_logo {
+        position: absolute;
+        left: 646px;
+        top: 14px;
+        width: 200px;
+        height: 20px;
+    }
+   
+    table.pub_table tr {
+        outline: thin dotted #666666;
+    }
+    .papericon {
+        border-radius: 8px; 
+        -moz-box-shadow: 3px 3px 6px #888;
+        -webkit-box-shadow: 3px 3px 6px #888;
+        box-shadow: 3px 3px 6px #888;
+        width: 180px;
+	margin-top:5px;
+	margin-left:5px;
+	margin-bottom:5px;
+    }
+
+     .papericon_blank {
+
+        width: 160px;
+	margin-top:5px;
+	margin-left:5px;
+	margin-bottom:5px;
+    }
+
+    .media {
+	outline: thin dotted #666666;
+ 	margin-bottom: 15px;	
+	margin-left:10px;
+    }
+    .media-body {
+	margin-top:5px;
+	padding-left:20px;
+    }
+    .instructorphoto img {
+	  width: 170px;
+	  border-radius: 170px;
+	  margin-bottom: 10px;
+	}
+
+
+.papers-selected h5, .papers-selected h4 { display : none; }
+.papers-selected .publication { display : none; }
+.paperhi-only { display : none; }
+.papers-selected .paperhi { display : flex; }
+.papers-selected .paperlo { display : none; }
+
+.hidden>div {
+	display:none;
+}
+
+.visible>div {
+	display:block;
+}
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23931362-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23931362-2');
+</script>
+
+<script type="text/javascript">
+    var myPix = new Array("bio1.png")
+    function choosePic() {
+        var randomNum = Math.floor(Math.random() * myPix.length);
+        document.getElementById("myPicture").src = myPix[randomNum];
+    };
+</script>
+
+<script>
+$(document).ready(function() {
+  $('.paperlo button').click(function() {
+     $('.papers-container').addClass('papers-selected');
+  });
+  $('.paperhi button').click(function() {
+     $('.papers-container').removeClass('papers-selected');
+  });
+
+
+	$('.text_container').addClass("hidden");
+
+	$('.text_container').click(function() {
+		var $this = $(this);
+
+		if ($this.hasClass("hidden")) {
+			$(this).removeClass("hidden").addClass("visible");
+			$(this).removeClass("papericon");
+		} else {
+			$(this).removeClass("visible").addClass("hidden");
+		}
+	});
+
+
+});
+</script>
+
+</head>
+
+<body>
+<div class="content">
+	<div id="container">
+
+	<table>
+	<tbody><tr>
+	<td><div class="instructorphoto"><img id="myPicture" src="profile.jpg" style="float:left;"></div></td>
+	<script>choosePic();</script>
+	<td>
+	<div id="DocInfo">
+		<br>
+		<br>
+		<br>
+		<h1>Wufan Wang (王吴凡)</h1><br>
+        
+      
+		
+
+	</div><br>
+    <!--
+    <div id="mit_logo">
+        <a href="http://www.mit.edu"><img src="image/mit.gif" height="170px" class="papericon" /></a>
+    </div>
+    -->
+	</td>
+	</tr>
+	</tbody></table>
+	<br>
+	
+
+<h2>Short Bio</h2>
+<ul>
+<li>
+	I am currently an associate research professor at <i>Beijing University of Posts and Telecommunications</i>. From Jul. 2023 to Aug. 2023, I was lucky to visit Prof. <b><a href="https://www.cs.sfu.ca/~jcliu/">Jiangchuan Liu</a></b>'s group at <i>Simon Fraser University</i> as a visiting scholar. From Jan. 2020 to Jun. 2023, I was a postdoc at <i>Beijing Institute of Technology</i> working with Prof. <b><a href="https://vmcl.bnu.edu.cn/group/teacher/teacher01.html">Hua Huang</a></b>.  In Jan. 2020, I received my Ph.D. in computer science and technology from <i>Tsinghua University</i> under the supervision of Prof. <b><a href="http://faculty.dpi.tsinghua.edu.cn/jhzhu.html">Jihong Zhu</a></b>. Before that, I received my B.S. from <i>Northwestern Polytechnical University</i> in 2014. 
+</li>
+<li>
+	My research interests include <i>computer vision</i>, <i>machine learning</i>, <i>edge computing</i> and <i>robotics</i>.
+</li>
+</ul> 
+
+
+
+<h2>Selected Publications</h2> 
+
+&nbsp&nbsp&nbsp&nbsp <b><i><font color="#848484"><font size=3px>(# Corresponding Author)</font></font></i></b>
+<ul> 
+<li>
+		<b>Enhancing Low Latency Adaptive Live Streaming Through Precise Bandwidth Prediction</b><br> 
+		Bo Wang, Muhan Su, <b>Wufan Wang#</b>, Kefan Chen, et. al<br>
+		<b><i><font color="#800000">IEEE/ACM ToN 2024. </font></i></b>
+		<br>
+    </li>
+
+	<li>
+		<b>Revisiting the Generalization Ability of Deep Local Descriptors</b><br> 
+		<b>Wufan Wang</b>, Bo Zhang, Hui Gao, et. al<br>
+		<b><i><font color="#800000">IEEE TIV 2024. </font></i></b>
+		<br>
+    </li>
+	
+	<li>
+		<b>Revisiting Unsupervised Local Descriptor Learning</b><br> 
+		<b>Wufan Wang</b>, Lei Zhang, Hua Huang<br>
+		<b><i><font color="#800000">AAAI 2023. (Oral)</font></i></b>
+		<br>
+    </li>
+	
+	<li>
+		<b>DeeProphet: Improving HTTP Adaptive Streaming for Low Latency Live Video by Meticulous Bandwidth Prediction</b><br>
+		Kefan Chen, Bo Wang, <b>Wufan Wang#</b>, Xiaoyu Li, Fengyuan Ren<br>
+		<b><i><font color="#800000">WWW 2023.</font></i></b>
+		<br>
+    </li>
+
+    <li>
+		<b>SCP-SLAM: Accelerating DynaSLAM with Static Confidence Propagation</b><br>
+		Mingfei Yu, Lei Zhang, <b>Wufan Wang</b>, Jiahui Wang<br>
+		<b><i><font color="#800000">IEEE VR 2023.</font></i></b>
+		<br>
+    </li>
+
+    <li>
+		<b>Sensitivity-Aware Spatial Quality Adaptation for Live Video Analytics</b><br>
+		<b>Wufan Wang</b>, Bo Wang, Lei Zhang, Hua Huang<br>
+		<b><i><font color="#800000">IEEE JSAC 2022.</font></i></b>
+		<br>
+	</li>
+
+    <li>
+		<b>Progressive Unsupervised Learning of Local Descriptors</b><br>
+		<b>Wufan Wang</b>, Lei Zhang, Hua Huang<br>
+		<b><i><font color="#800000">ACM MM 2022.</font></i></b>
+		<br>
+    </li>
+	
+	<li>
+		<b>Loop Closure Detection by Using Global and Local Features with Photometric and Viewpoint Invariance</b><br>
+		Mingfei Yu, Lei Zhang, <b>Wufan Wang</b>, Hua Huang<br>
+		<b><i><font color="#800000">IEEE TIP 2021.</font></i></b>
+		<br>
+    </li>
+
+    <li>
+		<b>VALID: A Comprehensive Virtual Aerial Image Dataset</b><br>
+		 Lvjie Chen, Feng Liu, Yan Zhao, <b>Wufan Wang</b>, Xiaming Yuan, Jihong Zhu<br>
+		 <b><i><font color="#800000">IEEE ICRA 2020.</font></i></b> <b>[<a href="https://sites.google.com/view/valid-dataset/">Project</a>]</b>
+		 <br>
+    </li>
+
+    <li>
+		<b>Hindsight Planner</b><br>
+		 Yaqing Lai, <b>Wufan Wang</b>, Yunjie Yang, Jihong Zhu, Minchi Kuang<br>
+		 <b><i><font color="#800000">AAMAS 2020.</font></i></b>
+		 <br>
+    </li>
+
+    <li>
+		<b>Design and Hovering Control of a Twin Rotor Tail-sitter UAV</b><br>
+		<b>Wufan Wang</b>, Jihong Zhu, Minchi Kuang<br>
+		<b><i><font color="#800000">SCIS 2019.</font></i></b> <b>[<a href="https://www.bilibili.com/video/BV1ad4y1u7up/">Video</a>]</b>
+		<br>
+	</li>
+
+    <li>
+		<b>Adaptive Attitude Control for a Tail-sitter UAV with Single Thrust-vectored Propeller</b><br>
+		<b>Wufan Wang</b>, Jihong Zhu, Minchi Kuang<br>
+		<b><i><font color="#800000">IEEE ICRA 2018.</font></i></b> <b>[<a href="https://www.bilibili.com/video/BV1Ht4y1j7Ft/">Video</a>]</b>
+		<br>
+	</li>
+
+	<li>
+		<b>Learning Transferable UAV for Forest Visual Perception</b><br>
+		Lvjie Chen, <b>Wufan Wang</b>, Jihong Zhu<br>
+		<b><i><font color="#800000">IJCAI 2018.</font></i></b> <b>[<a href="https://sites.google.com/view/forest-trail-dataset">Project</a>]</b>
+		<br>
+	</li>
+
+    <li>
+		<b>Design, Modelling and Hovering Control of a Tail-sitter with Single Thrust-Vectored Propeller</b><br>
+		<b>Wufan Wang</b>, Jihong Zhu, Minchi Kuang<br>
+		<b><i><font color="#800000">IEEE/RSJ IROS 2017.</font></i></b> <b>[<a href="https://www.bilibili.com/video/BV1d14y1a7QY/">Video</a>]</b>
+		<br>
+	</li>
+
+	<li>
+		<b>Flight Controller Design and Demonstration of a Thrust-Vectored Tail-sitter</b><br>
+		Minchi Kuang, Jihong Zhu, <b>Wufan Wang</b><br>
+		<b><i><font color="#800000">IEEE ICRA 2017.</font></i></b>
+		<br>
+	</li>    
+	
+</ul>
+
+		
+<h2>Funds</h2>
+<ul> 
+    <li>
+    Robust Visual-Inertial SLAM Based on Spatio-Temporal Consistency <i>(NSFC, 2021.01-2023.12)</i>
+    </li>
+</ul> 	
+		
+<h2>Honors & Awards</h2>
+<ul> 
+    <li>
+    RoboWork Winner Award 2016 <b><i><font color="#800000">(1/1261)</font></i></b>
+    </li>
+    <li>
+    Baogang Scholarship, 2013
+    </li>
+    <li>
+    National Scholarship, 2011/2012
+    </li>
+</ul>
+	
+
+
+ <h2>Academic Service</h2>
+<ul>    
+    <li>
+    Conference Reviewer: ACM MM, IROS, etc.
+    </li>
+    <li>
+    Journal Reviewer: IEEE TIE/TSMC/TITS/TIV, etc.
+    </li>
+</ul> 
+
+
+<p></p>
+<p align="left"><i>Last update: May, 2023</i> </p>
+
+</body></html>

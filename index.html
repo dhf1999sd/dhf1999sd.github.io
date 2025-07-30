@@ -296,9 +296,10 @@ $(document).ready(function() {
 <script>
 // 自动更新最后更新时间
 function updateLastUpdateTime() {
-    const now = new Date();
+    // 设置实际的最后更新日期
+    const lastUpdateDate = new Date('2025-07-30'); // 替换为实际更新日期
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    const formattedDate = now.toLocaleDateString('en-US', options);
+    const formattedDate = lastUpdateDate.toLocaleDateString('en-US', options);
     document.getElementById('lastUpdate').textContent = formattedDate;
 }
 

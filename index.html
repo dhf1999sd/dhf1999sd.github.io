@@ -381,17 +381,17 @@
             <p align="left"><i>Last update: <span id="lastUpdate"></span></i> </p>
 
             <script>
-                // 自动更新最后更新时间
+                // 设置固定的最后更新时间
                 function updateLastUpdateTime() {
-                    const now = new Date();
+                    // 手动设置最后更新日期 - 只有当您真正更新网站时才修改这个日期
+                    const lastUpdateDate = new Date('2025-08-03'); // 将此日期改为您实际更新网站的日期
                     const options = { year: 'numeric', month: 'long', day: 'numeric' };
-                    const formattedDate = now.toLocaleDateString('en-US', options);
+                    const formattedDate = lastUpdateDate.toLocaleDateString('en-US', options);
                     document.getElementById('lastUpdate').textContent = formattedDate;
                 }
 
-                // 页面加载时更新时间
+                // 页面加载时显示固定的更新时间
                 updateLastUpdateTime();
-
             </script>
             <div style="height: 120px;width: 120px; margin: 0 auto;">
                 <script type="text/javascript" id="clstr_globe"

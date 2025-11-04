@@ -1,400 +1,366 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-    <title>Wenxue Wu's Homepage</title>
-
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
- 
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
-        integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
-        crossorigin="anonymous"></script>
-
-    <style type="text/css">
-        @import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wenxue Wu - Homepage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
-            font-family: "Roboto", Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            line-height: 1.5;
-            font-weight: 300;
-            background-color: #F5F7FA; /* 更淡雅的浅蓝灰色背景 */
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.4;
+            color: #333;
+            background: #f5f5f5;
+            min-height: 100vh;
+            padding: 0.5rem;
+        }
+
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 1.2rem 0.8rem;
+            text-align: center;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .profile-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            object-fit: cover;
+        }
+
+        .name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.1rem;
+        }
+
+        .title {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 0.6rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            transition: background 0.2s ease;
+        }
+
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .social-link img {
+            width: 14px;
+            height: 14px;
+            filter: brightness(0) invert(1);
         }
 
         .content {
-            width: 900px;
-            padding: 25px 30px;
-            margin: 25px auto;
-            background-color: #FEFEFE; /* 纯白偏暖色调 */
-            box-shadow: 0px 0px 15px rgba(0,0,0,0.08); /* 更柔和的阴影 */
-            border-radius: 15px;
+            padding: 1.2rem 0.8rem;
         }
 
-        table {
-            padding: 5px;
+        .section {
+            margin-bottom: 1.2rem;
         }
 
-        table.pub_table,
-        td.pub_td1,
-        td.pub_td2 {
-            padding: 8px;
-            width: 850px;
-            border-collapse: separate;
-            border-spacing: 15px;
-            margin-top: -5px;
-        }
-
-        td.pub_td1 {
-            width: 50px;
-        }
-
-        td.pub_td1 img {
-            height: 120px;
-            width: 160px;
-        }
-
-        div#container {
-            margin-left: auto;
-            margin-right: auto;
-            width: 810px;
-            text-align: left;
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.6rem;
             position: relative;
-            background-color: #FEFEFE;
+            padding-bottom: 0.2rem;
         }
 
-        div#DocInfo {
-            color: #5B7FA6; /* 更柔和的蓝色 */
-            height: 158px;
-            margin-left: 20px;
-        }
-
-        h4,
-        h3,
-        h2,
-        h1 {
-            color: #4A5568; /* 柔和的深灰色 */
-        }
-
-        h2 {
-            font-size: 130%;
-        }
-
-        p {
-            color: #6B7280; /* 柔和的灰色 */
-            margin-bottom: 50px;
-        }
-
-        p.caption {
-            color: #9CA3AF; /* 更淡的灰色 */
-            text-align: left;
-            width: 600px;
-        }
-
-        p.caption2 {
-            color: #9CA3AF;
-            text-align: left;
-            width: 800px;
-        }
-
-        #header_img {
+        .section-title::after {
+            content: '';
             position: absolute;
-            top: 0px;
-            right: 0px;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: #3498db;
         }
 
-        a:link,
-        a:visited {
-            color: #5B7FA6; /* 柔和的蓝色链接 */
-            text-decoration: none;
+        .bio-list {
+            list-style: none;
         }
 
-        #mit_logo {
+        .bio-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 0.8rem;
+            position: relative;
+            color: #555;
+            line-height: 1.4;
+            font-size: 0.9rem;
+        }
+
+        .bio-list li::before {
+            content: '•';
             position: absolute;
-            left: 646px;
-            top: 14px;
-            width: 200px;
-            height: 20px;
+            left: 0;
+            color: #3498db;
         }
 
-        table.pub_table tr {
-            outline: thin dotted #D1D5DB; /* 更淡的边框 */
+        .publications {
+            list-style: none;
         }
 
-        .papericon {
-            border-radius: 8px;
-            -moz-box-shadow: 3px 3px 6px rgba(0,0,0,0.1); /* 更柔和的阴影 */
-            -webkit-box-shadow: 3px 3px 6px rgba(0,0,0,0.1);
-            box-shadow: 3px 3px 6px rgba(0,0,0,0.1);
-            width: 180px;
-            margin-top: 5px;
-            margin-left: 5px;
-            margin-bottom: 5px;
+        .publication {
+            background: #f8f9fa;
+            border-radius: 1px;
+            padding: 0.08rem;
+            margin-bottom: 0.04rem;
+            border-left: 1px solid #3498db;
         }
 
-        .papericon_blank {
-            width: 160px;
-            margin-top: 5px;
-            margin-left: 5px;
-            margin-bottom: 5px;
+        .paper-title {
+            font-size: 0.58rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0rem;
+            line-height: 1.05;
         }
 
-        .media {
-            outline: thin dotted #D1D5DB;
-            margin-bottom: 15px;
-            margin-left: 10px;
+        .authors {
+            color: #555;
+            margin-bottom: 0rem;
+            font-size: 0.5rem;
+            line-height: 1.05;
         }
 
-        .media-body {
-            margin-top: 5px;
-            padding-left: 20px;
+        .author-name {
+            font-weight: 600;
+            color: #3498db;
         }
 
-        .instructorphoto img {
-            width: 170px;
-            border-radius: 170px;
-            margin-bottom: 10px;
+        .venue {
+            font-style: italic;
+            color: #777;
+            margin-bottom: 0.02rem;
+            font-size: 0.5rem;
+            line-height: 1.05;
         }
 
-        .papers-selected h5,
-        .papers-selected h4 {
-            display: none;
-        }
-
-        .papers-selected .publication {
-            display: none;
-        }
-
-        .paperhi-only {
-            display: none;
-        }
-
-        .papers-selected .paperhi {
+        .paper-links {
             display: flex;
+            gap: 0.01rem;
+            flex-wrap: wrap;
         }
 
-        .papers-selected .paperlo {
-            display: none;
-        }
-
-        .hidden>div {
-            display: none;
-        }
-
-        .visible>div {
-            display: block;
-        }
-
-        /* 更淡雅的按钮样式 */
-        .btn-link {
-            display: inline-block;
-            padding: 4px 8px;
-            margin: 2px;
-            border: 1px solid #A3B8CC; /* 更柔和的蓝灰色边框 */
-            border-radius: 4px;
-            color: #5B7FA6; /* 柔和的蓝色 */
+        .paper-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0rem;
+            padding: 0.01rem 0.02rem;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 1px;
             text-decoration: none;
-            font-size: 12px;
-            font-weight: normal;
-            background-color: #F8FAFC; /* 淡雅的背景色 */
+            color: #555;
+            font-size: 0.46rem;
             transition: all 0.2s ease;
         }
 
-        .btn-link:hover {
-            background-color: #A3B8CC; /* 悬停时的柔和蓝灰色 */
+        .paper-link:hover {
+            background: #3498db;
             color: white;
+            border-color: #3498db;
             text-decoration: none;
-            border-color: #8FA5B8;
+        }
+
+        .paper-link.pdf {
+            border-color: #e74c3c;
+            color: #e74c3c;
+        }
+
+        .paper-link.pdf:hover {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .paper-link.code {
+            border-color: #27ae60;
+            color: #27ae60;
+        }
+
+        .paper-link.code:hover {
+            background: #27ae60;
+            color: white;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 0.8rem;
+            background: #f8f9fa;
+            color: #777;
+            font-size: 0.8rem;
+        }
+
+        .tech-accent {
+            color: #3498db;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .name {
+                font-size: 1.3rem;
+            }
+            
+            .content {
+                padding: 1rem 0.6rem;
+            }
+            
+            .paper-links {
+                justify-content: center;
+            }
         }
     </style>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23931362-2"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="profile-section">
+                <img src="profile.jpg" alt="Wenxue Wu" class="profile-img" id="myPicture">
+                <div>
+                    <h1 class="name">Wenxue Wu</h1>
+                    <p class="title">Ph.D. Candidate at Lanzhou University</p>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="https://scholar.google.com/citations?user=2XCLe8IAAAAJ&hl=zh-CN" target="_blank" class="social-link" title="Google Scholar">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg" alt="Google Scholar">
+                </a>
+                <a href="https://orcid.org/my-orcid?orcid=0009-0009-3551-606X" target="_blank" class="social-link" title="ORCID">
+                    <img src="https://orcid.org/assets/vectors/orcid.logo.icon.svg" alt="ORCID">
+                </a>
+                <a href="https://github.com/dhf1999sd" target="_blank" class="social-link" title="GitHub">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+                </a>
+                <a href="https://www.researchgate.net/profile/Wenxue-Wu-8?ev=hdr_xprf" target="_blank" class="social-link" title="ResearchGate">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/ResearchGate_icon_SVG.svg" alt="ResearchGate">
+                </a>
+                <a href="mailto:wuwx2024@lzu.edu.cn" class="social-link" title="Email">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg" alt="Email">
+                </a>
+            </div>
+        </header>
+
+        <main class="content">
+            <section class="section">
+                <h2 class="section-title">Biography</h2>
+                <ul class="bio-list">
+                    <li>I am currently pursuing my Ph.D. degree at <strong class="tech-accent">Lanzhou University</strong>, under the supervision of <strong><a href="https://www.cs.tsinghua.edu.cn/info/1126/3585.htm" target="_blank">Prof. Fengyuan Ren</a></strong>.</li>
+                    <li>From Sep. 2021 to Jun. 2024, I received my Master's degree from <strong class="tech-accent">Lanzhou University</strong>.</li>
+                    <li>From Sep. 2017 to Jun. 2021, I received my Bachelor's degree from <strong class="tech-accent">Northwestern Polytechnical University</strong>.</li>
+                    <li>My research interests include <strong class="tech-accent">Time-Sensitive Network</strong>, <strong class="tech-accent">Network Hardware</strong>, and <strong class="tech-accent">Real-time Systems</strong>.</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Publications</h2>
+                <p style="color: #777; font-style: italic; margin-bottom: 0.6rem; font-size: 0.8rem;">(# Corresponding Author)</p>
+                <ul class="publications">
+                    <li class="publication">
+                        <div class="paper-title">Dynamic Per-Flow Queues in Shared Buffer TSN Switches</div>
+                        <div class="authors">
+                            <span class="author-name">Wenxue Wu</span>, Tong Zhang, Zhen Li, Xiaoqin Feng, Liwei Zhang, Fengyuan Ren#
+                        </div>
+                        <div class="venue">ACM TODAES 2025 (CCF B)</div>
+                        <div class="paper-links">
+                            <a href="https://dl.acm.org/doi/epdf/10.1145/3718087" target="_blank" class="paper-link pdf">📄 PDF</a>
+                            <a href="https://github.com/dhf1999sd/DFQ" target="_blank" class="paper-link code">💻 Code</a>
+                        </div>
+                    </li>
+
+                    <li class="publication">
+                        <div class="paper-title">Dynamic Per-Flow Queues for TSN Switches</div>
+                        <div class="authors">
+                            <span class="author-name">Wenxue Wu</span>, Tong Zhang, Zhen Li, Xiaoqin Feng, Liwei Zhang, Fengyuan Ren#
+                        </div>
+                        <div class="venue">IEEE DATE 2024 (CCF B)</div>
+                        <div class="paper-links">
+                            <a href="https://ieeexplore.ieee.org/document/10546696/" target="_blank" class="paper-link pdf">📄 PDF</a>
+                        </div>
+                    </li>
+
+                    <li class="publication">
+                        <div class="paper-title">Fault-Tolerant Cyclic Queuing and Forwarding in Time-Sensitive Networking</div>
+                        <div class="authors">
+                            Liwei Zhang, Tong Zhang, <span class="author-name">Wenxue Wu</span>, Xiaoqin Feng, Guoxi Lin, Fengyuan Ren#
+                        </div>
+                        <div class="venue">IEEE DATE 2024 (CCF B)</div>
+                        <div class="paper-links">
+                            <a href="https://ieeexplore.ieee.org/document/10546689" target="_blank" class="paper-link pdf">📄 PDF</a>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Last update: <span id="lastUpdate"></span></p>
+        </footer>
+    </div>
+
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-23931362-2');
-    </script>
-
-    <script type="text/javascript">
-        var myPix = new Array("BB.jpg")
+        // Profile image rotation
+        var myPix = new Array("profile.jpg");
         function choosePic() {
             var randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("myPicture").src = myPix[randomNum];
-        };
+        }
+        choosePic();
+
+        // Update last modified date
+        function updateLastUpdateTime() {
+            const lastUpdateDate = new Date('2025-09-02');
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            const formattedDate = lastUpdateDate.toLocaleDateString('en-US', options);
+            document.getElementById('lastUpdate').textContent = formattedDate;
+        }
+        updateLastUpdateTime();
     </script>
-    
-    <script>
-        $(document).ready(function () {
-            $('.paperlo button').click(function () {
-                $('.papers-container').addClass('papers-selected');
-            });
-            $('.paperhi button').click(function () {
-                $('.papers-container').removeClass('papers-selected');
-            });
-
-            $('.text_container').addClass("hidden");
-
-            $('.text_container').click(function () {
-                var $this = $(this);
-
-                if ($this.hasClass("hidden")) {
-                    $(this).removeClass("hidden").addClass("visible");
-                    $(this).removeClass("papericon");
-                } else {
-                    $(this).removeClass("visible").addClass("hidden");
-                }
-            });
-        });
-    </script>
-
-</head>
-
-<body>
-    <div class="content">
-        <div id="container">
-
-            <table>
-                <tbody>
-                    <tr>
-                        <td>
-                            <div class="instructorphoto"><img id="myPicture" src="profile.jpg" style="float:left;">
-                            </div>
-                        </td>
-                        <script>choosePic();</script>
-                        <td>
-                            <div id="DocInfo">
-                                <br>
-                                <br>
-                                <br>
-                                <h1>Wenxue Wu</h1><br>
-
-                                <!-- 社交媒体和学术平台图标 -->
-                                <div style="margin-top: 15px;">
-                                    <a href="https://scholar.google.com/citations?user=2XCLe8IAAAAJ&hl=zh-CN"
-                                        target="_blank" style="margin-right: 15px;">
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg"
-                                            alt="Google Scholar"
-                                            style="width: 24px; height: 24px; vertical-align: middle;">
-                                    </a>
-                                    <a  href="https://orcid.org/my-orcid?orcid=0009-0009-3551-606X" target="_blank"
-                                        style="margin-right: 15px;">
-                                        <img src="https://orcid.org/assets/vectors/orcid.logo.icon.svg" alt="ORCID"
-                                            style="width: 24px; height: 24px; vertical-align: middle;">
-                                    </a>
-                                    <a href="https://github.com/dhf1999sd" target="_blank" style="margin-right: 15px;">
-                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-                                            alt="GitHub" style="width: 24px; height: 24px; vertical-align: middle;">
-                                    </a>
-                                    <a href="https://www.researchgate.net/profile/Wenxue-Wu-8?ev=hdr_xprf"
-                                        target="_blank" style="margin-right: 15px;">
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/ResearchGate_icon_SVG.svg"
-                                            alt="ResearchGate"
-                                            style="width: 24px; height: 24px; vertical-align: middle;">
-                                    </a>
-                                    <a href="mailto:wuwx2024@lzu.edu.cn" style="margin-right: 15px;">
-                                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg"
-                                            alt="Email"
-                                            style="width: 24px; height: 24px; vertical-align: middle; filter: invert(0.3);">
-                                    </a>
-                                </div>
-
-                            </div><br>
-
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <br>
-
-
-            <h2>Biography</h2>
-            <ul>
-                <li>
-                    I am currently pursuing my Ph.D. degree at <i>Lanzhou University</i>, under the supervision of <b><a
-                            href="https://www.cs.tsinghua.edu.cn/info/1126/3585.htm">Prof. Fengyuan Ren</a></b>. From
-                    Sep. 2021 to Jun. 2024, I received my Master's degree from <i>Lanzhou University</i>. From Sep. 2017
-                    to Jun. 2021, I received my Bachelor's degree from <i>Northwestern Polytechnical University</i>.
-                </li>
-                <li>
-                    My research interests include Time-Sensitive Network, Network Hardware, and Real-time Systems.
-                </li>
-            </ul>
-
-
-
-            <h2>Publications</h2>
-
-            &nbsp&nbsp&nbsp&nbsp <b><i>
-                    <font color="#9CA3AF">
-                        <font size=3px>(# Corresponding Author)</font>
-                    </font>
-                </i></b>
-            <ul>
-                <li>
-                    <b>Dynamic Per-Flow Queues in Shared Buffer TSN Switches</b><br>
-                    <strong style="font-weight: bold;">Wenxue Wu</strong>, Tong Zhang, Zhen Li, Xiaoqin Feng, Liwei
-                    Zhang, Fengyuan Ren#<br>
-                    <b><i>
-                            <font color="#7B8794">ACM TODAES 2025 (CCF B).</font>
-                        </i></b>
-                    <a href="https://dl.acm.org/doi/epdf/10.1145/3718087" target="_blank" class="btn-link" style="border-color:#e74c3c;background:#fff5f5;color:#e74c3c;">📝 <strong>PDF</strong></a>
-                    <!-- <a href="YOUR_SLIDES_URL" target="_blank" class="btn-link" style="border-color:#3498db;background:#f0f8ff;color:#3498db;">🎬 <strong>演示视频</strong></a> -->
-                    <a href="https://github.com/dhf1999sd/DFQ" target="_blank" class="btn-link" style="border-color:#27ae60;background:#f5fff5;color:#27ae60;">💻 <strong>Code</strong></a>
-                    <br>
-                </li>
-
-                <li>
-                    <b>Dynamic Per-Flow Queues for TSN Switches</b><br>
-                    <strong style="font-weight: bold;">Wenxue Wu</strong>, Tong Zhang, Zhen Li, Xiaoqin Feng, Liwei
-                    Zhang, Fengyuan Ren#<br>
-                    <b><i>
-                            <font color="#7B8794">IEEE DATE 2024 (CCF B).</font>
-                        </i></b>
-                    <a href="https://ieeexplore.ieee.org/document/10546696/" target="_blank" class="btn-link" style="border-color:#e74c3c;background:#fff5f5;color:#e74c3c;">📝 <strong>PDF</strong></a>
-                    <!-- <a href="YOUR_SLIDES_URL_2" target="_blank" class="btn-link" style="border-color:#3498db;background:#f0f8ff;color:#3498db;">🎬 <strong>演示视频</strong></a> -->
-                    <!-- <a href="https://github.com/dhf1999sd/DFQ" target="_blank" class="btn-link" style="border-color:#27ae60;background:#f5fff5;color:#27ae60;">🧑‍💻 <strong>Code</strong></a> -->
-                    <br>
-                </li>
-
-                <li>
-                    <b>Fault- Tolerant Cyclic Queuing and Forwarding in Time-Sensitive Networking</b><br>
-                    Liwei Zhang, Tong Zhang, <strong style="font-weight: bold;">Wenxue Wu</strong>, Xiaoqin Feng, Guoxi
-                    Lin, Fengyuan Ren#<br>
-                    <b><i>
-                            <font color="#7B8794">IEEE DATE 2024 (CCF B).</font>
-                        </i></b>
-                        <a href="https://ieeexplore.ieee.org/document/10546689" target="_blank" class="btn-link" style="border-color:#e74c3c;background:#fff5f5;color:#e74c3c;">📝 <strong>PDF</strong></a>
-                    <br>
-                </li>
-            </ul>
-
-
-
-            <p></p>
-            <p align="left"><i>Last update: <span id="lastUpdate"></span></i> </p>
-
-            <script>
-                // 设置固定的最后更新时间
-                function updateLastUpdateTime() {
-                    // 手动设置最后更新日期 - 只有当您真正更新网站时才修改这个日期
-                    const lastUpdateDate = new Date('2025-09-02'); // 将此日期改为您实际更新网站的日期
-                    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-                    const formattedDate = lastUpdateDate.toLocaleDateString('en-US', options);
-                    document.getElementById('lastUpdate').textContent = formattedDate;
-                }
-
-                // 页面加载时显示固定的更新时间
-                updateLastUpdateTime();
-            </script>
-            <div style="height: 120px;width: 120px; margin: 0 auto;">
-                <script type="text/javascript" id="clstr_globe"
-                    src="//clustrmaps.com/globe.js?d=4LPXbmz02Q5mhoRWCP4kA7falP0Te2TV36TYGHFccYY"></script>
-            </div>
-
-        </div>
-    </div>
 </body>
-
 </html>

@@ -94,7 +94,8 @@
         }
 
         .cta {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
             font-size: 16px;
             color: #0066cc;
             text-decoration: none;
@@ -103,6 +104,20 @@
 
         .cta::after {
             content: " \203A";
+        }
+
+        .cta .icon {
+            width: 18px;
+            height: 18px;
+            margin-right: 6px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.5;
+            transition: transform 0.15s ease;
+        }
+
+        .cta:hover .icon {
+            transform: translateX(1px);
         }
 
         .last-update {
@@ -181,20 +196,45 @@
                     <b>Dynamic Per-Flow Queues in Shared Buffer TSN Switches</b><br>
                     <strong>Wenxue Wu</strong>, Tong Zhang, Zhen Li, Xiaoqin Feng, Liwei Zhang, Fengyuan Ren#<br>
                     <span class="meta">ACM TODAES 2025 (CCF B).</span><br>
-                    <a href="https://dl.acm.org/doi/epdf/10.1145/3718087" target="_blank" class="cta">PDF</a>
-                    <a href="https://github.com/dhf1999sd/DFQ" target="_blank" class="cta">Code</a>
+                    <a href="https://dl.acm.org/doi/epdf/10.1145/3718087" target="_blank" class="cta" aria-label="PDF">
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M7 3h9l5 5v13H7z" stroke-linejoin="round"/>
+                            <path d="M16 3v5h5" stroke-linejoin="round"/>
+                        </svg>
+                        <span>PDF</span>
+                    </a>
+                    <a href="https://github.com/dhf1999sd/DFQ" target="_blank" class="cta" aria-label="Code">
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M8 9l-4 3 4 3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 9l4 3-4 3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 8l-2 8" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Code</span>
+                    </a>
                 </li>
                 <li>
                     <b>Dynamic Per-Flow Queues for TSN Switches</b><br>
                     <strong>Wenxue Wu</strong>, Tong Zhang, Zhen Li, Xiaoqin Feng, Liwei Zhang, Fengyuan Ren#<br>
                     <span class="meta">IEEE DATE 2024 (CCF B).</span><br>
-                    <a href="https://ieeexplore.ieee.org/document/10546696/" target="_blank" class="cta">PDF</a>
+                    <a href="https://ieeexplore.ieee.org/document/10546696/" target="_blank" class="cta" aria-label="PDF">
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M7 3h9l5 5v13H7z" stroke-linejoin="round"/>
+                            <path d="M16 3v5h5" stroke-linejoin="round"/>
+                        </svg>
+                        <span>PDF</span>
+                    </a>
                 </li>
                 <li>
                     <b>Fault- Tolerant Cyclic Queuing and Forwarding in Time-Sensitive Networking</b><br>
                     Liwei Zhang, Tong Zhang, <strong>Wenxue Wu</strong>, Xiaoqin Feng, Guoxi Lin, Fengyuan Ren#<br>
                     <span class="meta">IEEE DATE 2024 (CCF B).</span><br>
-                    <a href="https://ieeexplore.ieee.org/document/10546689" target="_blank" class="cta">PDF</a>
+                    <a href="https://ieeexplore.ieee.org/document/10546689" target="_blank" class="cta" aria-label="PDF">
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M7 3h9l5 5v13H7z" stroke-linejoin="round"/>
+                            <path d="M16 3v5h5" stroke-linejoin="round"/>
+                        </svg>
+                        <span>PDF</span>
+                    </a>
                 </li>
             </ul>
         </section>

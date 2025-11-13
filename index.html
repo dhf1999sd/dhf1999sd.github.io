@@ -100,24 +100,38 @@
             color: #0066cc;
             text-decoration: none;
             margin-right: 12px;
+            gap: 6px;
         }
 
         .cta::after {
             content: " \203A";
         }
 
-        .cta .icon {
-            width: 18px;
-            height: 18px;
-            margin-right: 6px;
-            stroke: currentColor;
-            fill: none;
-            stroke-width: 1.5;
-            transition: transform 0.15s ease;
+        .icon-chip {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            background: #f5f5f7;
+            margin-right: 2px;
+            transition: background 0.2s ease, transform 0.15s ease;
         }
 
-        .cta:hover .icon {
+        .cta:hover .icon-chip {
+            background: #e8e8ed;
             transform: translateX(1px);
+        }
+
+        .cta .icon {
+            width: 20px;
+            height: 20px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.75;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         .last-update {
@@ -197,18 +211,24 @@
                     <strong>Wenxue Wu</strong>, Tong Zhang, Zhen Li, Xiaoqin Feng, Liwei Zhang, Fengyuan Ren#<br>
                     <span class="meta">ACM TODAES 2025 (CCF B).</span><br>
                     <a href="https://dl.acm.org/doi/epdf/10.1145/3718087" target="_blank" class="cta" aria-label="PDF">
-                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M7 3h9l5 5v13H7z" stroke-linejoin="round"/>
-                            <path d="M16 3v5h5" stroke-linejoin="round"/>
-                        </svg>
+                        <span class="icon-chip">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M7 3h9l5 5v13H7z"/>
+                                <path d="M16 3v5h5"/>
+                                <path d="M12 10v6"/>
+                                <path d="M9 13l3 3 3-3"/>
+                            </svg>
+                        </span>
                         <span>PDF</span>
                     </a>
                     <a href="https://github.com/dhf1999sd/DFQ" target="_blank" class="cta" aria-label="Code">
-                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M8 9l-4 3 4 3" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M16 9l4 3-4 3" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M12 8l-2 8" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                        <span class="icon-chip">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M9 8l-4 4 4 4"/>
+                                <path d="M15 8l4 4-4 4"/>
+                                <path d="M13 8l-2 8"/>
+                            </svg>
+                        </span>
                         <span>Code</span>
                     </a>
                 </li>
@@ -217,10 +237,14 @@
                     <strong>Wenxue Wu</strong>, Tong Zhang, Zhen Li, Xiaoqin Feng, Liwei Zhang, Fengyuan Ren#<br>
                     <span class="meta">IEEE DATE 2024 (CCF B).</span><br>
                     <a href="https://ieeexplore.ieee.org/document/10546696/" target="_blank" class="cta" aria-label="PDF">
-                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M7 3h9l5 5v13H7z" stroke-linejoin="round"/>
-                            <path d="M16 3v5h5" stroke-linejoin="round"/>
-                        </svg>
+                        <span class="icon-chip">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M7 3h9l5 5v13H7z"/>
+                                <path d="M16 3v5h5"/>
+                                <path d="M12 10v6"/>
+                                <path d="M9 13l3 3 3-3"/>
+                            </svg>
+                        </span>
                         <span>PDF</span>
                     </a>
                 </li>
@@ -229,10 +253,14 @@
                     Liwei Zhang, Tong Zhang, <strong>Wenxue Wu</strong>, Xiaoqin Feng, Guoxi Lin, Fengyuan Ren#<br>
                     <span class="meta">IEEE DATE 2024 (CCF B).</span><br>
                     <a href="https://ieeexplore.ieee.org/document/10546689" target="_blank" class="cta" aria-label="PDF">
-                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M7 3h9l5 5v13H7z" stroke-linejoin="round"/>
-                            <path d="M16 3v5h5" stroke-linejoin="round"/>
-                        </svg>
+                        <span class="icon-chip">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M7 3h9l5 5v13H7z"/>
+                                <path d="M16 3v5h5"/>
+                                <path d="M12 10v6"/>
+                                <path d="M9 13l3 3 3-3"/>
+                            </svg>
+                        </span>
                         <span>PDF</span>
                     </a>
                 </li>

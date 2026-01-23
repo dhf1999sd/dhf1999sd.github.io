@@ -169,10 +169,10 @@
     <script type="text/javascript">
         function choosePic() {
             var el = document.getElementById("myPicture");
-            var arr = ["BB.jpg", "profile.jpg"];
+            var arr = ["BB.png", "BB2.jpg"];
             var idx = Math.floor(Math.random() * arr.length);
             el.src = arr[idx];
-            el.onerror = function(){ el.src = "profile.jpg"; };
+            el.onerror = function(){ el.src = "BB2.jpg"; };
         }
     </script>
 
@@ -181,7 +181,7 @@
 <body>
     <div class="container-max">
         <section class="hero">
-            <img id="myPicture" class="avatar" src="profile.jpg" alt="Wenxue Wu">
+            <img id="myPicture" class="avatar" src="BB2.jpg" alt="Wenxue Wu">
             <script>choosePic();</script>
             <h1>Wenxue Wu</h1>
             <div class="links">

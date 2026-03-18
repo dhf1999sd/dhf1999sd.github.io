@@ -154,6 +154,50 @@
             color: #6e6e73;
         }
 
+        .wind-layer {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 9999;
+        }
+
+        .wind-particle {
+            position: fixed;
+            width: var(--size);
+            height: var(--size);
+            left: var(--x);
+            top: var(--y);
+            border-radius: 999px;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9), rgba(180, 223, 255, 0.35) 60%, rgba(180, 223, 255, 0));
+            opacity: 0.9;
+            transform: translate(-50%, -50%);
+            animation: windFloat var(--duration) ease-out forwards;
+            filter: blur(0.3px);
+        }
+
+        @keyframes windFloat {
+            0% {
+                transform: translate(-50%, -50%) scale(0.8);
+                opacity: 0.92;
+            }
+
+            55% {
+                opacity: 0.65;
+            }
+
+            100% {
+                transform: translate(calc(-50% + var(--driftX)), calc(-50% + var(--driftY))) scale(0.2);
+                opacity: 0;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .wind-layer {
+                display: none;
+            }
+        }
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 32px;
@@ -191,6 +235,7 @@
 </head>
 
 <body>
+    <div id="windLayer" class="wind-layer" aria-hidden="true"></div>
     <div class="container-max">
         <section class="hero">
             <img id="myPicture" class="avatar" src="monkey.png" alt="Wenxue Wu">
@@ -339,6 +384,39 @@
                 src="https://clustrmaps.com/globe.js?d=4LPXbmz02Q5mhoRWCP4kA7falP0Te2TV36TYGHFccYY"></script>
         </div>
     </div>
+    <script>
+        (function () {
+            var layer = document.getElementById('windLayer');
+            if (!layer || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                return;
+            }
+            var active = false;
+            var lastEmit = 0;
+            function emitParticle(x, y) {
+                var now = Date.now();
+                if (now - lastEmit < 26) return;
+                lastEmit = now;
+                var particle = document.createElement('span');
+                particle.className = 'wind-particle';
+                particle.style.setProperty('--x', x + 'px');
+                particle.style.setProperty('--y', y + 'px');
+                particle.style.setProperty('--size', (Math.random() * 8 + 6).toFixed(1) + 'px');
+                particle.style.setProperty('--duration', (Math.random() * 0.8 + 0.9).toFixed(2) + 's');
+                particle.style.setProperty('--driftX', (Math.random() * 100 + 45).toFixed(1) + 'px');
+                particle.style.setProperty('--driftY', ((Math.random() - 0.5) * 90 - 12).toFixed(1) + 'px');
+                particle.addEventListener('animationend', function () {
+                    particle.remove();
+                });
+                layer.appendChild(particle);
+            }
+            document.addEventListener('mouseenter', function () { active = true; }, true);
+            document.addEventListener('mouseleave', function () { active = false; }, true);
+            document.addEventListener('mousemove', function (event) {
+                if (!active) return;
+                emitParticle(event.clientX, event.clientY);
+            });
+        })();
+    </script>
 </body>
 
 </html>

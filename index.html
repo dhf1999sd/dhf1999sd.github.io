@@ -12,15 +12,42 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <style type="text/css">
+        :root {
+            --bg: #ffffff;
+            --text: #1d1d1f;
+            --muted: #6e6e73;
+            --link: #0066cc;
+            --chip-bg: #f5f5f7;
+            --chip-hover: #e8e8ed;
+            --toggle-bg: rgba(255, 255, 255, 0.86);
+            --toggle-border: rgba(0, 0, 0, 0.14);
+            --toggle-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+            --mail-filter: invert(0.3);
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
             font-size: 16px;
             line-height: 1.5;
             font-weight: 400;
-            color: #1d1d1f;
-            background-color: #ffffff;
+            color: var(--text);
+            background-color: var(--bg);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            transition: background-color 0.35s ease, color 0.35s ease;
+        }
+
+        body.dark-mode {
+            --bg: #0d1117;
+            --text: #edf3ff;
+            --muted: #9aa7ba;
+            --link: #85b8ff;
+            --chip-bg: #1d2633;
+            --chip-hover: #2b3646;
+            --toggle-bg: rgba(13, 17, 23, 0.84);
+            --toggle-border: rgba(255, 255, 255, 0.18);
+            --toggle-shadow: 0 10px 20px rgba(0, 0, 0, 0.36);
+            --mail-filter: invert(0.8);
         }
 
         .container-max {
@@ -57,7 +84,7 @@
 
         p,
         li {
-            color: #6e6e73;
+            color: var(--muted);
         }
 
         .links {
@@ -95,12 +122,12 @@
         }
 
         .meta {
-            color: #6e6e73;
+            color: var(--muted);
             font-style: italic;
         }
 
         a {
-            color: #0066cc;
+            color: var(--link);
             text-decoration: none;
         }
 
@@ -112,7 +139,7 @@
             display: inline-flex;
             align-items: center;
             font-size: 16px;
-            color: #0066cc;
+            color: var(--link);
             text-decoration: none;
             margin-right: 12px;
             gap: 6px;
@@ -129,13 +156,13 @@
             width: 28px;
             height: 28px;
             border-radius: 8px;
-            background: #f5f5f7;
+            background: var(--chip-bg);
             margin-right: 2px;
             transition: background 0.2s ease, transform 0.15s ease;
         }
 
         .cta:hover .icon-chip {
-            background: #e8e8ed;
+            background: var(--chip-hover);
             transform: translateX(1px);
         }
 
@@ -151,7 +178,90 @@
 
         .last-update {
             margin-top: 12px;
-            color: #6e6e73;
+            color: var(--muted);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            z-index: 10001;
+            border: 1px solid var(--toggle-border);
+            background: var(--toggle-bg);
+            color: var(--text);
+            border-radius: 999px;
+            width: 42px;
+            height: 42px;
+            padding: 0 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: flex-start;
+            overflow: hidden;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.08px;
+            backdrop-filter: blur(12px);
+            box-shadow: var(--toggle-shadow);
+            cursor: pointer;
+            transition: width 0.24s ease, transform 0.18s ease, background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+        }
+
+        .theme-toggle:hover,
+        .theme-toggle:focus-visible {
+            width: 102px;
+            transform: translateY(-1px);
+        }
+
+        .theme-toggle:focus-visible {
+            outline: none;
+        }
+
+        .toggle-icon-wrap {
+            position: relative;
+            width: 18px;
+            height: 18px;
+            flex: 0 0 18px;
+        }
+
+        .toggle-icon {
+            position: absolute;
+            inset: 0;
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            opacity: 0;
+            transform: scale(0.9) rotate(-8deg);
+            transition: opacity 0.22s ease, transform 0.22s ease;
+        }
+
+        .theme-toggle.is-light .icon-sun,
+        .theme-toggle.is-dark .icon-moon {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+        }
+
+        .theme-toggle-label {
+            margin-left: 0;
+            max-width: 0;
+            opacity: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            transition: margin-left 0.24s ease, max-width 0.24s ease, opacity 0.2s ease;
+        }
+
+        .theme-toggle:hover .theme-toggle-label,
+        .theme-toggle:focus-visible .theme-toggle-label {
+            margin-left: 8px;
+            max-width: 52px;
+            opacity: 0.95;
+        }
+
+        .links a[href^="mailto:"] img {
+            filter: var(--mail-filter);
         }
 
         .wind-layer {
@@ -236,6 +346,18 @@
 
 <body>
     <div id="windLayer" class="wind-layer" aria-hidden="true"></div>
+    <button id="themeToggle" class="theme-toggle is-light" type="button">
+        <span class="toggle-icon-wrap" aria-hidden="true">
+            <svg class="toggle-icon icon-sun" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="4.2"></circle>
+                <path d="M12 2.8v2.1M12 19.1v2.1M4.8 4.8l1.5 1.5M17.7 17.7l1.5 1.5M2.8 12h2.1M19.1 12h2.1M4.8 19.2l1.5-1.5M17.7 6.3l1.5-1.5"></path>
+            </svg>
+            <svg class="toggle-icon icon-moon" viewBox="0 0 24 24">
+                <path d="M20 14.2A8 8 0 1 1 9.8 4a6.2 6.2 0 1 0 10.2 10.2z"></path>
+            </svg>
+        </span>
+        <span class="theme-toggle-label">浅色</span>
+    </button>
     <div class="container-max">
         <section class="hero">
             <img id="myPicture" class="avatar" src="monkey.png" alt="Wenxue Wu">
@@ -260,7 +382,7 @@
                 </a>
                 <a href="mailto:wuwx2024@lzu.edu.cn">
                     <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg" alt="Email"
-                        style="width:24px;height:24px;vertical-align:middle;filter:invert(0.3);">
+                        style="width:24px;height:24px;vertical-align:middle;">
                 </a>
             </div>
         </section>
@@ -384,6 +506,122 @@
                 src="https://clustrmaps.com/globe.js?d=4LPXbmz02Q5mhoRWCP4kA7falP0Te2TV36TYGHFccYY"></script>
         </div>
     </div>
+    <script>
+        (function () {
+            var modes = ['auto', 'light', 'dark'];
+            var labels = {
+                light: '浅色',
+                dark: '深色'
+            };
+            var storageKey = 'theme-mode';
+            var toggle = document.getElementById('themeToggle');
+            if (!toggle) return;
+            function getStoredMode() {
+                try {
+                    var mode = localStorage.getItem(storageKey);
+                    return modes.indexOf(mode) > -1 ? mode : 'auto';
+                } catch (error) {
+                    return 'auto';
+                }
+            }
+            function setStoredMode(mode) {
+                try {
+                    localStorage.setItem(storageKey, mode);
+                } catch (error) {
+                }
+            }
+            function getBeijingParts() {
+                var parts = new Intl.DateTimeFormat('en-US', {
+                    timeZone: 'Asia/Shanghai',
+                    year: 'numeric',
+                    month: '2-digit',
+                    day: '2-digit',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit',
+                    hour12: false
+                }).formatToParts(new Date());
+                var map = {};
+                for (var i = 0; i < parts.length; i++) {
+                    if (parts[i].type !== 'literal') {
+                        map[parts[i].type] = parseInt(parts[i].value, 10);
+                    }
+                }
+                return {
+                    year: map.year,
+                    month: map.month,
+                    day: map.day,
+                    hour: map.hour,
+                    minute: map.minute,
+                    second: map.second
+                };
+            }
+            function dayOfYear(year, month, day) {
+                var start = Date.UTC(year, 0, 1);
+                var target = Date.UTC(year, month - 1, day);
+                return Math.floor((target - start) / 86400000) + 1;
+            }
+            function getBeijingSunTimes(parts) {
+                var latitude = 39.9042;
+                var longitude = 116.4074;
+                var timezoneOffset = 8;
+                var n = dayOfYear(parts.year, parts.month, parts.day);
+                var gamma = (2 * Math.PI / 365) * (n - 1);
+                var eqtime = 229.18 * (0.000075 + 0.001868 * Math.cos(gamma) - 0.032077 * Math.sin(gamma) - 0.014615 * Math.cos(2 * gamma) - 0.040849 * Math.sin(2 * gamma));
+                var decl = 0.006918 - 0.399912 * Math.cos(gamma) + 0.070257 * Math.sin(gamma) - 0.006758 * Math.cos(2 * gamma) + 0.000907 * Math.sin(2 * gamma) - 0.002697 * Math.cos(3 * gamma) + 0.00148 * Math.sin(3 * gamma);
+                var latRad = latitude * Math.PI / 180;
+                var cosH = (Math.cos(90.833 * Math.PI / 180) / (Math.cos(latRad) * Math.cos(decl))) - Math.tan(latRad) * Math.tan(decl);
+                var boundedCosH = Math.max(-1, Math.min(1, cosH));
+                var hourAngle = Math.acos(boundedCosH) * 180 / Math.PI;
+                var sunrise = 720 - 4 * (longitude + hourAngle) - eqtime + timezoneOffset * 60;
+                var sunset = 720 - 4 * (longitude - hourAngle) - eqtime + timezoneOffset * 60;
+                return { sunrise: sunrise, sunset: sunset };
+            }
+            function normalizeMinutes(minutes) {
+                return ((minutes % 1440) + 1440) % 1440;
+            }
+            function resolveAutoTheme() {
+                var now = getBeijingParts();
+                var currentMinutes = now.hour * 60 + now.minute + now.second / 60;
+                var times = getBeijingSunTimes(now);
+                var sunrise = normalizeMinutes(times.sunrise);
+                var sunset = normalizeMinutes(times.sunset);
+                var isDark = sunrise < sunset ? (currentMinutes < sunrise || currentMinutes >= sunset) : !(currentMinutes >= sunset && currentMinutes < sunrise);
+                return isDark ? 'dark' : 'light';
+            }
+            var mode = getStoredMode();
+            function applyTheme() {
+                var resolvedMode = mode === 'auto' ? resolveAutoTheme() : mode;
+                document.body.classList.toggle('dark-mode', resolvedMode === 'dark');
+                toggle.classList.toggle('is-dark', resolvedMode === 'dark');
+                toggle.classList.toggle('is-light', resolvedMode !== 'dark');
+                var labelEl = toggle.querySelector('.theme-toggle-label');
+                if (labelEl) {
+                    labelEl.textContent = labels[resolvedMode];
+                }
+                var modeHint = mode === 'auto' ? '自动' : labels[mode];
+                toggle.setAttribute('aria-label', '当前' + labels[resolvedMode] + '主题，模式' + modeHint);
+                toggle.setAttribute('title', '点击切换模式：自动 / 浅色 / 深色');
+            }
+            toggle.addEventListener('click', function () {
+                var next = (modes.indexOf(mode) + 1) % modes.length;
+                mode = modes[next];
+                setStoredMode(mode);
+                applyTheme();
+            });
+            document.addEventListener('visibilitychange', function () {
+                if (!document.hidden && mode === 'auto') {
+                    applyTheme();
+                }
+            });
+            setInterval(function () {
+                if (mode === 'auto') {
+                    applyTheme();
+                }
+            }, 60000);
+            applyTheme();
+        })();
+    </script>
     <script>
         (function () {
             var layer = document.getElementById('windLayer');

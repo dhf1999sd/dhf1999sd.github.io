@@ -614,9 +614,12 @@
                 var isDark = sunrise < sunset ? (currentMinutes < sunrise || currentMinutes >= sunset) : !(currentMinutes >= sunset && currentMinutes < sunrise);
                 return isDark ? 'dark' : 'light';
             }
+            function resolveCurrentMode() {
+                return mode === 'auto' ? resolveAutoTheme() : mode;
+            }
             var mode = getStoredMode();
             function applyTheme() {
-                var resolvedMode = mode === 'auto' ? resolveAutoTheme() : mode;
+                var resolvedMode = resolveCurrentMode();
                 document.body.classList.toggle('dark-mode', resolvedMode === 'dark');
                 toggle.classList.toggle('is-dark', resolvedMode === 'dark');
                 toggle.classList.toggle('is-light', resolvedMode !== 'dark');
@@ -626,11 +629,22 @@
                 }
                 var modeHint = mode === 'auto' ? 'Auto' : labels[mode];
                 toggle.setAttribute('aria-label', 'Theme ' + labels[resolvedMode] + ', mode ' + modeHint);
-                toggle.setAttribute('title', 'Switch mode: Auto / Light / Dark');
+                toggle.setAttribute('title', 'Click: Light/Dark · Double-click: Auto');
             }
             toggle.addEventListener('click', function () {
-                var next = (modes.indexOf(mode) + 1) % modes.length;
-                mode = modes[next];
+                var currentMode = resolveCurrentMode();
+                mode = currentMode === 'dark' ? 'light' : 'dark';
+                setStoredMode(mode);
+                applyTheme();
+            });
+            toggle.addEventListener('dblclick', function () {
+                mode = 'auto';
+                setStoredMode(mode);
+                applyTheme();
+            });
+            toggle.addEventListener('contextmenu', function (event) {
+                event.preventDefault();
+                mode = 'auto';
                 setStoredMode(mode);
                 applyTheme();
             });

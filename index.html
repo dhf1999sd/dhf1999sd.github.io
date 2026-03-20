@@ -182,11 +182,13 @@
         .cta {
             display: inline-flex;
             align-items: center;
-            font-size: 16px;
+            font-size: 15px;
             color: var(--link);
             text-decoration: none;
             margin-right: 12px;
             gap: 6px;
+            padding: 2px 0;
+            transition: transform 0.2s ease;
         }
 
         .cta::after {
@@ -197,27 +199,57 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 28px;
-            height: 28px;
-            border-radius: 8px;
-            background: var(--chip-bg);
+            width: 30px;
+            height: 30px;
+            border-radius: 10px;
+            background: linear-gradient(160deg, rgba(255, 255, 255, 0.95), rgba(236, 244, 255, 0.86));
+            border: 1px solid rgba(126, 166, 206, 0.25);
+            box-shadow: 0 4px 12px rgba(43, 90, 138, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.85);
             margin-right: 2px;
-            transition: background 0.2s ease, transform 0.15s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
         }
 
         .cta:hover .icon-chip {
-            background: var(--chip-hover);
-            transform: translateX(1px);
+            transform: translateY(-1px) scale(1.03);
+            box-shadow: 0 6px 14px rgba(43, 90, 138, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.92);
         }
 
         .cta .icon {
-            width: 20px;
-            height: 20px;
-            stroke: currentColor;
+            width: 18px;
+            height: 18px;
+            stroke: #2f5f8a;
             fill: none;
-            stroke-width: 1.75;
+            stroke-width: 1.9;
             stroke-linecap: round;
             stroke-linejoin: round;
+        }
+
+        .cta[data-kind="code"] .icon-chip {
+            background: linear-gradient(160deg, rgba(245, 241, 255, 0.96), rgba(230, 236, 255, 0.88));
+            border-color: rgba(132, 118, 220, 0.28);
+            box-shadow: 0 4px 12px rgba(94, 82, 179, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.85);
+        }
+
+        .cta[data-kind="code"] .icon {
+            stroke: #4c3da3;
+        }
+
+        .cta[data-kind="code"]:hover .icon-chip {
+            box-shadow: 0 6px 14px rgba(94, 82, 179, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        }
+
+        .cta-text {
+            font-family: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-size: 13px;
+            font-weight: 650;
+            letter-spacing: 0.15px;
+            line-height: 1;
+            color: #295577;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.82);
+        }
+
+        .cta[data-kind="code"] .cta-text {
+            color: #473893;
         }
 
         .last-update {
@@ -481,19 +513,20 @@
                     <b>Designing Multiple Queues to Support  Asynchronous Traffic Shaping in TSN Switches</b><br>
                     <strong>Wenxue Wu</strong>, Tong Zhang#, Zhen Li , Liwei Zhang , Hao Yang and Fengyuan Ren#<br>
                     <span class="meta">IEEE TCAD 2026 (CCF A).</span><br>
-                   <a href="https://ieeexplore.ieee.org/document/10546696/" target="_blank" class="cta"
+                   <a href="https://ieeexplore.ieee.org/document/10546696/" data-link-key="tcad2026_pdf" data-kind="pdf" target="_blank" class="cta"
                         aria-label="PDF">
                         <span class="icon-chip">
                             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
                                 <path d="M7 3h9l5 5v13H7z" />
                                 <path d="M16 3v5h5" />
-                                <path d="M12 10v6" />
-                                <path d="M9 13l3 3 3-3" />
+                                <path d="M10 16h4" />
+                                <path d="M10 12h3" />
+                                <path d="M10 8h4" />
                             </svg>
                         </span> 
-                   <span>PDF</span> 
+                   <span class="cta-text">PDF</span> 
                     </a>
-                      <a href="https://github.com/dhf1999sd/DFQ" target="_blank" class="cta" aria-label="Code">
+                      <a href="https://github.com/dhf1999sd/MQ" data-link-key="tcad2026_code" data-kind="code" target="_blank" class="cta" aria-label="Code">
                         <span class="icon-chip">
                             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
                                 <path d="M9 8l-4 4 4 4" />
@@ -501,7 +534,7 @@
                                 <path d="M13 8l-2 8" />
                             </svg>
                         </span>
-                        <span>Code</span>
+                        <span class="cta-text">Code</span>
                     </a>
                 </li>
 
@@ -532,18 +565,19 @@
                     <b>Dynamic Per-Flow Queues in Shared Buffer TSN Switches</b><br>
                     <strong>Wenxue Wu</strong>, Tong Zhang, Zhen Li, Xiaoqin Feng, Liwei Zhang, Fengyuan Ren#<br>
                     <span class="meta">ACM TODAES 2025 (CCF B).</span><br>
-                    <a href="https://dl.acm.org/doi/epdf/10.1145/3718087" target="_blank" class="cta" aria-label="PDF">
+                    <a href="https://dl.acm.org/doi/epdf/10.1145/3718087" data-link-key="todaes2025_pdf" data-kind="pdf" target="_blank" class="cta" aria-label="PDF">
                         <span class="icon-chip">
                             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
                                 <path d="M7 3h9l5 5v13H7z" />
                                 <path d="M16 3v5h5" />
-                                <path d="M12 10v6" />
-                                <path d="M9 13l3 3 3-3" />
+                                <path d="M10 16h4" />
+                                <path d="M10 12h3" />
+                                <path d="M10 8h4" />
                             </svg>
                         </span>
-                        <span>PDF</span>
+                        <span class="cta-text">PDF</span>
                     </a>
-                    <a href="https://github.com/dhf1999sd/DFQ" target="_blank" class="cta" aria-label="Code">
+                    <a href="https://github.com/dhf1999sd/DFQ" data-link-key="todaes2025_code" data-kind="code" target="_blank" class="cta" aria-label="Code">
                         <span class="icon-chip">
                             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
                                 <path d="M9 8l-4 4 4 4" />
@@ -551,41 +585,43 @@
                                 <path d="M13 8l-2 8" />
                             </svg>
                         </span>
-                        <span>Code</span>
+                        <span class="cta-text">Code</span>
                     </a>
                 </li>
                 <li>
                     <b>Dynamic Per-Flow Queues for TSN Switches</b><br>
                     <strong>Wenxue Wu</strong>, Tong Zhang, Zhen Li, Xiaoqin Feng, Liwei Zhang, Fengyuan Ren#<br>
                     <span class="meta">IEEE DATE 2024 (CCF B).</span><br>
-                    <a href="https://ieeexplore.ieee.org/document/10546696/" target="_blank" class="cta"
+                    <a href="https://ieeexplore.ieee.org/document/10546696/" data-link-key="date2024_dfq_pdf" data-kind="pdf" target="_blank" class="cta"
                         aria-label="PDF">
                         <span class="icon-chip">
                             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
                                 <path d="M7 3h9l5 5v13H7z" />
                                 <path d="M16 3v5h5" />
-                                <path d="M12 10v6" />
-                                <path d="M9 13l3 3 3-3" />
+                                <path d="M10 16h4" />
+                                <path d="M10 12h3" />
+                                <path d="M10 8h4" />
                             </svg>
                         </span>
-                        <span>PDF</span>
+                        <span class="cta-text">PDF</span>
                     </a>
                 </li>
                 <li>
                     <b>Fault-Tolerant Cyclic Queuing and Forwarding in Time-Sensitive Networking</b><br>
                     Liwei Zhang, Tong Zhang, <strong>Wenxue Wu</strong>, Xiaoqin Feng, Guoxi Lin, Fengyuan Ren#<br>
                     <span class="meta">IEEE DATE 2024 (CCF B).</span><br>
-                    <a href="https://ieeexplore.ieee.org/document/10546689" target="_blank" class="cta"
+                    <a href="https://ieeexplore.ieee.org/document/10546689" data-link-key="date2024_ftcqf_pdf" data-kind="pdf" target="_blank" class="cta"
                         aria-label="PDF">
                         <span class="icon-chip">
                             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
                                 <path d="M7 3h9l5 5v13H7z" />
                                 <path d="M16 3v5h5" />
-                                <path d="M12 10v6" />
-                                <path d="M9 13l3 3 3-3" />
+                                <path d="M10 16h4" />
+                                <path d="M10 12h3" />
+                                <path d="M10 8h4" />
                             </svg>
                         </span>
-                        <span>PDF</span>
+                        <span class="cta-text">PDF</span>
                     </a>
                 </li>
             </ul>
@@ -607,6 +643,25 @@
                 src="https://clustrmaps.com/globe.js?d=4LPXbmz02Q5mhoRWCP4kA7falP0Te2TV36TYGHFccYY"></script>
         </div>
     </div>
+    <script>
+        (function () {
+            var publicationLinks = {
+                tcad2026_pdf: 'https://ieeexplore.ieee.org/document/10546696/',
+                tcad2026_code: 'https://github.com/dhf1999sd/DFQ',
+                todaes2025_pdf: 'https://dl.acm.org/doi/epdf/10.1145/3718087',
+                todaes2025_code: 'https://github.com/dhf1999sd/DFQ',
+                date2024_dfq_pdf: 'https://ieeexplore.ieee.org/document/10546696/',
+                date2024_ftcqf_pdf: 'https://ieeexplore.ieee.org/document/10546689'
+            };
+            var nodes = document.querySelectorAll('[data-link-key]');
+            for (var i = 0; i < nodes.length; i++) {
+                var key = nodes[i].getAttribute('data-link-key');
+                if (publicationLinks[key]) {
+                    nodes[i].setAttribute('href', publicationLinks[key]);
+                }
+            }
+        })();
+    </script>
     <script>
         (function () {
             var storageKey = 'theme-mode';

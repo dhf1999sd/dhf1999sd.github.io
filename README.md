@@ -1,3 +1,3 @@
 # dhf1999sd.github.io
-WWX's Personal Blog
+Wenxue Wu's Personal Blog
 Hosted on GitHub. Documenting my growth and journey.

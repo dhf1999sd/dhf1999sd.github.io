@@ -1,1017 +1,931 @@
 <html>
-  <head>
-    <title>Wenxue Wu's Homepage</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Wenxue Wu personal homepage: time-sensitive networking, programmable network hardware, real-time embedded systems."
-    />
 
-    <link rel="icon" href="monkey.png" type="image/jpeg" />
-    <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-      crossorigin="anonymous"
-    />
+<head>
+  <title>Wenxue Wu's Homepage</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Wenxue Wu personal homepage: time-sensitive networking, programmable network hardware, real-time embedded systems." />
 
-    <style type="text/css">
-      :root {
-        --bg: #ffffff;
-        --text: #1d1d1f;
-        --muted: #6e6e73;
-        --link: #0066cc;
-        --chip-bg: #f5f5f7;
-        --chip-hover: #e8e8ed;
-        --toggle-bg: rgba(235, 235, 240, 0.72);
-        --toggle-indicator: #ffffff;
-        --toggle-border: rgba(0, 0, 0, 0.04);
-        --toggle-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-        --toggle-text: #1d1d1f;
-        --toggle-text-muted: #86868b;
-        --mail-filter: invert(0.3);
-        --wind-core: rgba(255, 255, 255, 0.98);
-        --wind-mid: rgba(129, 212, 255, 0.62);
-        --wind-edge: rgba(129, 212, 255, 0);
-        --wind-shadow: 0 0 8px rgba(129, 212, 255, 0.32);
-        --wind-opacity: 0.98;
-        --wind-blur: 0.2px;
+  <link rel="icon" href="monkey.png" type="image/jpeg" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+
+  <style type="text/css">
+    :root {
+      --bg: #ffffff;
+      --text: #1d1d1f;
+      --muted: #6e6e73;
+      --link: #0066cc;
+      --chip-bg: #f5f5f7;
+      --chip-hover: #e8e8ed;
+      --toggle-bg: rgba(235, 235, 240, 0.72);
+      --toggle-indicator: #ffffff;
+      --toggle-border: rgba(0, 0, 0, 0.04);
+      --toggle-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --toggle-text: #1d1d1f;
+      --toggle-text-muted: #86868b;
+      --mail-filter: invert(0.3);
+      --wind-core: rgba(255, 255, 255, 0.98);
+      --wind-mid: rgba(129, 212, 255, 0.62);
+      --wind-edge: rgba(129, 212, 255, 0);
+      --wind-shadow: 0 0 8px rgba(129, 212, 255, 0.32);
+      --wind-opacity: 0.98;
+      --wind-blur: 0.2px;
+    }
+
+    body {
+      font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      font-weight: 400;
+      color: var(--text);
+      background-color: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transition:
+        background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    body.dark-mode {
+      --bg: #0d1117;
+      --text: #edf3ff;
+      --muted: #9aa7ba;
+      --link: #85b8ff;
+      --chip-bg: #1d2633;
+      --chip-hover: #2b3646;
+      --toggle-bg: rgba(28, 28, 30, 0.72);
+      --toggle-indicator: #3a3a3c;
+      --toggle-border: rgba(255, 255, 255, 0.04);
+      --toggle-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      --toggle-text: #ffffff;
+      --toggle-text-muted: #98989d;
+      --wind-core: rgba(220, 242, 255, 0.9);
+      --wind-mid: rgba(110, 183, 246, 0.34);
+      --wind-edge: rgba(110, 183, 246, 0);
+      --wind-shadow: 0 0 6px rgba(110, 183, 246, 0.16);
+      --wind-opacity: 0.82;
+      --wind-blur: 0.35px;
+    }
+
+    .container-max {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .hero {
+      padding: 60px 0 30px 0;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto 24px;
+    }
+
+    h1 {
+      font-size: 44px;
+      font-weight: 600;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: 600;
+      margin: 24px 0 12px 0;
+    }
+
+    p,
+    li {
+      color: var(--muted);
+    }
+
+    .links {
+      margin-top: 24px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--chip-bg);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 0.5px solid var(--toggle-border);
+    }
+
+    .links a:hover {
+      background: var(--chip-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-decoration: none;
+    }
+
+    .links a img {
+      width: 22px;
+      height: 22px;
+      transition: transform 0.3s ease;
+    }
+
+    .links a:hover img {
+      transform: scale(1.1);
+    }
+
+    .section {
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+
+    .section h2+ul {
+      list-style: none;
+      padding-left: 24px;
+      margin-left: 0;
+    }
+
+    .publication-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .publication-list li {
+      margin-bottom: 18px;
+    }
+
+    .section h2+.meta,
+    .section h2+.meta+.publication-list {
+      padding-left: 24px;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      font-size: 15px;
+      color: var(--link);
+      text-decoration: none;
+      margin-right: 12px;
+      gap: 6px;
+      padding: 2px 0;
+      transition: transform 0.2s ease;
+    }
+
+    .cta::after {
+      content: " \203A";
+    }
+
+    .icon-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+      background: linear-gradient(160deg,
+          rgba(255, 255, 255, 0.95),
+          rgba(236, 244, 255, 0.86));
+      border: 1px solid rgba(126, 166, 206, 0.25);
+      box-shadow:
+        0 4px 12px rgba(43, 90, 138, 0.14),
+        inset 0 1px 0 rgba(255, 255, 255, 0.85);
+      margin-right: 2px;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .cta:hover .icon-chip {
+      transform: translateY(-1px) scale(1.03);
+      box-shadow:
+        0 6px 14px rgba(43, 90, 138, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.92);
+    }
+
+    .cta .icon {
+      width: 18px;
+      height: 18px;
+      stroke: #2f5f8a;
+      fill: none;
+      stroke-width: 1.9;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .cta[data-kind="code"] .icon-chip {
+      background: linear-gradient(160deg,
+          rgba(245, 241, 255, 0.96),
+          rgba(230, 236, 255, 0.88));
+      border-color: rgba(132, 118, 220, 0.28);
+      box-shadow:
+        0 4px 12px rgba(94, 82, 179, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.85);
+    }
+
+    .cta[data-kind="code"] .icon {
+      stroke: #4c3da3;
+    }
+
+    .cta[data-kind="code"]:hover .icon-chip {
+      box-shadow:
+        0 6px 14px rgba(94, 82, 179, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    }
+
+    .cta-text {
+      font-family:
+        "SF Pro Text",
+        "SF Pro Display",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+      font-size: 13px;
+      font-weight: 650;
+      letter-spacing: 0.15px;
+      line-height: 1;
+      color: #295577;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.82);
+    }
+
+    .cta[data-kind="code"] .cta-text {
+      color: #473893;
+    }
+
+    .last-update {
+      margin-top: 12px;
+      color: var(--muted);
+    }
+
+    .theme-toggle-group {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      z-index: 10001;
+      background: var(--toggle-bg);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      padding: 2px;
+      border-radius: 10px;
+      display: flex;
+      gap: 1px;
+      box-shadow: var(--toggle-shadow);
+      border: 0.5px solid var(--toggle-border);
+      user-select: none;
+    }
+
+    .theme-option {
+      position: relative;
+      z-index: 1;
+      min-width: 30px;
+      height: 26px;
+      padding: 0 8px;
+      border-radius: 7px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      color: var(--toggle-text-muted);
+      cursor: pointer;
+      transition: color 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .theme-option.active {
+      color: var(--toggle-text);
+    }
+
+    .theme-selection-indicator {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      height: calc(100% - 4px);
+      background: var(--toggle-indicator);
+      border-radius: 7px;
+      box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.08),
+        0 1px 1px rgba(0, 0, 0, 0.02);
+      transition:
+        transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+        width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .theme-option svg {
+      width: 12px;
+      height: 12px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .theme-option-label {
+      font-size: 11px;
+      line-height: 1;
+    }
+
+    .links a[href^="mailto:"] img {
+      filter: var(--mail-filter);
+    }
+
+    .wind-layer {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 9999;
+    }
+
+    .wind-particle {
+      position: fixed;
+      width: var(--size);
+      height: var(--size);
+      left: var(--x);
+      top: var(--y);
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%,
+          var(--wind-core),
+          var(--wind-mid) 60%,
+          var(--wind-edge));
+      box-shadow: var(--wind-shadow);
+      opacity: var(--wind-opacity);
+      transform: translate(-50%, -50%);
+      animation: windFloat var(--duration) ease-out forwards;
+      filter: blur(var(--wind-blur));
+    }
+
+    @keyframes windFloat {
+      0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0.92;
       }
 
-      body {
-        font-family:
-          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
-        font-size: 16px;
-        line-height: 1.5;
-        font-weight: 400;
-        color: var(--text);
-        background-color: var(--bg);
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        transition:
-          background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-          color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      55% {
+        opacity: 0.65;
       }
 
-      body.dark-mode {
-        --bg: #0d1117;
-        --text: #edf3ff;
-        --muted: #9aa7ba;
-        --link: #85b8ff;
-        --chip-bg: #1d2633;
-        --chip-hover: #2b3646;
-        --toggle-bg: rgba(28, 28, 30, 0.72);
-        --toggle-indicator: #3a3a3c;
-        --toggle-border: rgba(255, 255, 255, 0.04);
-        --toggle-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        --toggle-text: #ffffff;
-        --toggle-text-muted: #98989d;
-        --wind-core: rgba(220, 242, 255, 0.9);
-        --wind-mid: rgba(110, 183, 246, 0.34);
-        --wind-edge: rgba(110, 183, 246, 0);
-        --wind-shadow: 0 0 6px rgba(110, 183, 246, 0.16);
-        --wind-opacity: 0.82;
-        --wind-blur: 0.35px;
+      100% {
+        transform: translate(calc(-50% + var(--driftX)),
+            calc(-50% + var(--driftY))) scale(0.2);
+        opacity: 0;
       }
+    }
 
-      .container-max {
-        max-width: 980px;
-        margin: 0 auto;
-        padding: 0 20px;
+    @media (prefers-reduced-motion: reduce) {
+      .wind-layer {
+        display: none;
       }
+    }
 
-      .hero {
-        padding: 60px 0 30px 0;
-        text-align: center;
-      }
-
-      .avatar {
-        width: 160px;
-        height: 160px;
-        border-radius: 50%;
-        display: block;
-        margin: 0 auto 24px;
-      }
-
+    @media (max-width: 768px) {
       h1 {
-        font-size: 44px;
-        font-weight: 600;
-        line-height: 1.1;
-        margin-bottom: 12px;
+        font-size: 32px;
       }
 
       h2 {
-        font-size: 24px;
-        font-weight: 600;
-        margin: 24px 0 12px 0;
+        font-size: 20px;
       }
 
-      p,
-      li {
-        color: var(--muted);
-      }
-
-      .links {
-        margin-top: 24px;
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-      }
-
-      .links a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 44px;
-        height: 44px;
-        border-radius: 12px;
-        background: var(--chip-bg);
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        border: 0.5px solid var(--toggle-border);
-      }
-
-      .links a:hover {
-        background: var(--chip-hover);
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        text-decoration: none;
-      }
-
-      .links a img {
-        width: 22px;
-        height: 22px;
-        transition: transform 0.3s ease;
-      }
-
-      .links a:hover img {
-        transform: scale(1.1);
-      }
-
-      .section {
-        margin-top: 24px;
-        margin-bottom: 12px;
-      }
-
-      .section h2 + ul {
-        list-style: none;
-        padding-left: 24px;
-        margin-left: 0;
-      }
-
-      .publication-list {
-        list-style: none;
-        padding-left: 0;
-      }
-
-      .publication-list li {
-        margin-bottom: 18px;
-      }
-
-      .section h2 + .meta,
-      .section h2 + .meta + .publication-list {
-        padding-left: 24px;
-      }
-
-      .meta {
-        color: var(--muted);
-        font-style: italic;
-      }
-
-      a {
-        color: var(--link);
-        text-decoration: none;
-      }
-
-      a:hover {
-        text-decoration: underline;
-      }
-
-      .cta {
-        display: inline-flex;
-        align-items: center;
-        font-size: 15px;
-        color: var(--link);
-        text-decoration: none;
-        margin-right: 12px;
-        gap: 6px;
-        padding: 2px 0;
-        transition: transform 0.2s ease;
-      }
-
-      .cta::after {
-        content: " \203A";
-      }
-
-      .icon-chip {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 30px;
-        height: 30px;
-        border-radius: 10px;
-        background: linear-gradient(
-          160deg,
-          rgba(255, 255, 255, 0.95),
-          rgba(236, 244, 255, 0.86)
-        );
-        border: 1px solid rgba(126, 166, 206, 0.25);
-        box-shadow:
-          0 4px 12px rgba(43, 90, 138, 0.14),
-          inset 0 1px 0 rgba(255, 255, 255, 0.85);
-        margin-right: 2px;
-        transition:
-          transform 0.2s ease,
-          box-shadow 0.2s ease,
-          border-color 0.2s ease;
-      }
-
-      .cta:hover .icon-chip {
-        transform: translateY(-1px) scale(1.03);
-        box-shadow:
-          0 6px 14px rgba(43, 90, 138, 0.2),
-          inset 0 1px 0 rgba(255, 255, 255, 0.92);
-      }
-
-      .cta .icon {
-        width: 18px;
-        height: 18px;
-        stroke: #2f5f8a;
-        fill: none;
-        stroke-width: 1.9;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-      }
-
-      .cta[data-kind="code"] .icon-chip {
-        background: linear-gradient(
-          160deg,
-          rgba(245, 241, 255, 0.96),
-          rgba(230, 236, 255, 0.88)
-        );
-        border-color: rgba(132, 118, 220, 0.28);
-        box-shadow:
-          0 4px 12px rgba(94, 82, 179, 0.16),
-          inset 0 1px 0 rgba(255, 255, 255, 0.85);
-      }
-
-      .cta[data-kind="code"] .icon {
-        stroke: #4c3da3;
-      }
-
-      .cta[data-kind="code"]:hover .icon-chip {
-        box-shadow:
-          0 6px 14px rgba(94, 82, 179, 0.22),
-          inset 0 1px 0 rgba(255, 255, 255, 0.9);
-      }
-
-      .cta-text {
-        font-family:
-          "SF Pro Text",
-          "SF Pro Display",
-          -apple-system,
-          BlinkMacSystemFont,
-          "Segoe UI",
-          Roboto,
-          "Helvetica Neue",
-          Arial,
-          sans-serif;
-        font-size: 13px;
-        font-weight: 650;
-        letter-spacing: 0.15px;
-        line-height: 1;
-        color: #295577;
-        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.82);
-      }
-
-      .cta[data-kind="code"] .cta-text {
-        color: #473893;
-      }
-
-      .last-update {
-        margin-top: 12px;
-        color: var(--muted);
+      .avatar {
+        width: 120px;
+        height: 120px;
       }
 
       .theme-toggle-group {
-        position: fixed;
-        top: 16px;
-        right: 16px;
-        z-index: 10001;
-        background: var(--toggle-bg);
-        backdrop-filter: blur(20px) saturate(180%);
-        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        top: calc(env(safe-area-inset-top, 0px) + 10px);
+        right: 10px;
         padding: 2px;
-        border-radius: 10px;
-        display: flex;
-        gap: 1px;
-        box-shadow: var(--toggle-shadow);
-        border: 0.5px solid var(--toggle-border);
-        user-select: none;
+        border-radius: 9px;
       }
 
       .theme-option {
-        position: relative;
-        z-index: 1;
-        min-width: 30px;
-        height: 26px;
-        padding: 0 8px;
-        border-radius: 7px;
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 0.2px;
-        color: var(--toggle-text-muted);
-        cursor: pointer;
-        transition: color 0.2s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 6px;
-      }
-
-      .theme-option.active {
-        color: var(--toggle-text);
-      }
-
-      .theme-selection-indicator {
-        position: absolute;
-        top: 2px;
-        left: 2px;
-        height: calc(100% - 4px);
-        background: var(--toggle-indicator);
-        border-radius: 7px;
-        box-shadow:
-          0 1px 3px rgba(0, 0, 0, 0.08),
-          0 1px 1px rgba(0, 0, 0, 0.02);
-        transition:
-          transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-          width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 0;
-        pointer-events: none;
+        min-width: 28px;
+        height: 24px;
+        padding: 0 6px;
+        border-radius: 6px;
+        font-size: 10px;
+        gap: 4px;
       }
 
       .theme-option svg {
-        width: 12px;
-        height: 12px;
-        stroke: currentColor;
-        fill: none;
-        stroke-width: 2.2;
-        stroke-linecap: round;
-        stroke-linejoin: round;
+        width: 11px;
+        height: 11px;
       }
 
       .theme-option-label {
-        font-size: 11px;
-        line-height: 1;
+        font-size: 10px;
       }
 
-      .links a[href^="mailto:"] img {
-        filter: var(--mail-filter);
+      .theme-selection-indicator {
+        border-radius: 6px;
       }
+    }
 
-      .wind-layer {
-        position: fixed;
-        inset: 0;
-        pointer-events: none;
-        overflow: hidden;
-        z-index: 9999;
+    @media (max-width: 420px) {
+      .theme-toggle-group {
+        top: calc(env(safe-area-inset-top, 0px) + 8px);
+        right: 8px;
       }
+    }
 
-      .wind-particle {
-        position: fixed;
-        width: var(--size);
-        height: var(--size);
-        left: var(--x);
-        top: var(--y);
-        border-radius: 999px;
-        background: radial-gradient(
-          circle at 30% 30%,
-          var(--wind-core),
-          var(--wind-mid) 60%,
-          var(--wind-edge)
-        );
-        box-shadow: var(--wind-shadow);
-        opacity: var(--wind-opacity);
-        transform: translate(-50%, -50%);
-        animation: windFloat var(--duration) ease-out forwards;
-        filter: blur(var(--wind-blur));
-      }
+    .cv-link {
+      color: #dc2626;
+      font-weight: 700;
+      text-decoration: none;
+    }
 
-      @keyframes windFloat {
-        0% {
-          transform: translate(-50%, -50%) scale(0.8);
-          opacity: 0.92;
-        }
+    .cv-link:hover {
+      text-decoration: underline;
+    }
+  </style>
 
-        55% {
-          opacity: 0.65;
-        }
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23931362-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "UA-23931362-2");
+  </script>
 
-        100% {
-          transform: translate(
-              calc(-50% + var(--driftX)),
-              calc(-50% + var(--driftY))
-            )
-            scale(0.2);
-          opacity: 0;
-        }
-      }
+  <script type="text/javascript">
+    function choosePic() {
+      var el = document.getElementById("myPicture");
+      var arr = ["monkey.png", "monkey.png"];
+      var idx = Math.floor(Math.random() * arr.length);
+      el.src = arr[idx];
+      el.onerror = function () {
+        el.src = "monkey.png";
+      };
+    }
+  </script>
+</head>
 
-      @media (prefers-reduced-motion: reduce) {
-        .wind-layer {
-          display: none;
-        }
-      }
-
-      @media (max-width: 768px) {
-        h1 {
-          font-size: 32px;
-        }
-
-        h2 {
-          font-size: 20px;
-        }
-
-        .avatar {
-          width: 120px;
-          height: 120px;
-        }
-
-        .theme-toggle-group {
-          top: calc(env(safe-area-inset-top, 0px) + 10px);
-          right: 10px;
-          padding: 2px;
-          border-radius: 9px;
-        }
-
-        .theme-option {
-          min-width: 28px;
-          height: 24px;
-          padding: 0 6px;
-          border-radius: 6px;
-          font-size: 10px;
-          gap: 4px;
-        }
-
-        .theme-option svg {
-          width: 11px;
-          height: 11px;
-        }
-
-        .theme-option-label {
-          font-size: 10px;
-        }
-
-        .theme-selection-indicator {
-          border-radius: 6px;
-        }
-      }
-
-      @media (max-width: 420px) {
-        .theme-toggle-group {
-          top: calc(env(safe-area-inset-top, 0px) + 8px);
-          right: 8px;
-        }
-      }
-      .cv-link {
-        color: #dc2626;
-        font-weight: 700;
-        text-decoration: none;
-      }
-
-      .cv-link:hover {
-        text-decoration: underline;
-      }
-    </style>
-
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-23931362-2"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "UA-23931362-2");
-    </script>
-
-    <script type="text/javascript">
-      function choosePic() {
-        var el = document.getElementById("myPicture");
-        var arr = ["monkey.png", "monkey.png"];
-        var idx = Math.floor(Math.random() * arr.length);
-        el.src = arr[idx];
-        el.onerror = function () {
-          el.src = "monkey.png";
-        };
-      }
-    </script>
-  </head>
-
-  <body>
-    <div id="windLayer" class="wind-layer" aria-hidden="true"></div>
-    <div class="theme-toggle-group" id="themeToggleGroup">
-      <div class="theme-selection-indicator" id="themeIndicator"></div>
-      <div class="theme-option" data-mode="light" title="Light">
-        <svg viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="4.5"></circle>
-          <path
-            d="M12 1.5v2.5M12 20v2.5M4.58 4.58l1.77 1.77M17.65 17.65l1.77 1.77M1.5 12h2.5M20 12h2.5M4.58 19.42l1.77-1.77M17.65 6.35l1.77-1.77"
-          ></path>
-        </svg>
-      </div>
-      <div class="theme-option" data-mode="dark" title="Dark">
-        <svg viewBox="0 0 24 24">
-          <path
-            d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.38 5.38 0 0 1-4.4 2.26 5.4 5.4 0 0 1-4.14-8.9c.24-.27.5-.5.78-.72A9 9 0 0 0 12 3z"
-          ></path>
-        </svg>
-      </div>
-      <div class="theme-option" data-mode="auto" title="Auto">
-        <span class="theme-option-label">A</span>
-      </div>
+<body>
+  <div id="windLayer" class="wind-layer" aria-hidden="true"></div>
+  <div class="theme-toggle-group" id="themeToggleGroup">
+    <div class="theme-selection-indicator" id="themeIndicator"></div>
+    <div class="theme-option" data-mode="light" title="Light">
+      <svg viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="4.5"></circle>
+        <path
+          d="M12 1.5v2.5M12 20v2.5M4.58 4.58l1.77 1.77M17.65 17.65l1.77 1.77M1.5 12h2.5M20 12h2.5M4.58 19.42l1.77-1.77M17.65 6.35l1.77-1.77">
+        </path>
+      </svg>
     </div>
-    <div class="container-max">
-      <section class="hero">
-        <img id="myPicture" class="avatar" src="monkey.png" alt="Wenxue Wu" />
-        <script>
-          choosePic();
-        </script>
-        <h1>Wenxue Wu</h1>
-        <div class="links">
-          <a
-            href="https://scholar.google.com/citations?user=2XCLe8IAAAAJ&hl=zh-CN"
-            target="_blank"
-            title="Google Scholar"
-          >
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg"
-              alt="Google Scholar"
-            />
-          </a>
-          <a
-            href="https://orcid.org/my-orcid?orcid=0009-0009-3551-606X"
-            target="_blank"
-            title="ORCID"
-          >
-            <img
-              src="https://orcid.org/assets/vectors/orcid.logo.icon.svg"
-              alt="ORCID"
-            />
-          </a>
-          <a href="https://github.com/dhf1999sd" target="_blank" title="GitHub">
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-              alt="GitHub"
-            />
-          </a>
-          <a
-            href="https://www.researchgate.net/profile/Wenxue-Wu-8?ev=hdr_xprf"
-            target="_blank"
-            title="ResearchGate"
-          >
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/5/5e/ResearchGate_icon_SVG.svg"
-              alt="ResearchGate"
-            />
-          </a>
-          <a href="mailto:wuwx2024@lzu.edu.cn" title="Email">
-            <img
-              src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg"
-              alt="Email"
-            />
-          </a>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2>Biography</h2>
-        <ul>
-          <!-- <li> -->
-          I am currently pursuing my Ph.D. degree at
-          <i>Lanzhou University</i
-          >, under the supervision of
-          <b
-            ><a href="https://www.cs.tsinghua.edu.cn/info/1126/3585.htm"
-              >Prof. Fengyuan Ren</a
-            ></b
-          >. From Sep. 2021 to Jun. 2024, I received my Master's degree from
-          <i>Lanzhou University</i
-          >. From Sep. 2017 to Jun. 2021, I received my Bachelor's degree from
-          <i>Northwestern Polytechnical University</i
-          >. My work explores the intersection of time-sensitive networking,
-          programmable network hardware, and real-time embedded systems. Here is
-          my
-          <a href="CV.pdf" target="_blank" class="cv-link">CV</a
-          >.
-
-          <!-- </li> -->
-        </ul>
-      </section>
-
-      <section class="section">
-        <h2>Publications</h2>
-        <div class="meta">(# Corresponding Author)</div>
-        <ul class="publication-list">
-          <li>
-            <b
-              >Designing Multiple Queues to Support Asynchronous Traffic Shaping
-              in TSN Switches</b
-            ><br />
-            <strong>Wenxue Wu</strong>, Tong Zhang#, Zhen Li, Liwei Zhang, Hao
-            Yang and Fengyuan Ren#<br />
-            <span class="meta">IEEE TCAD 2026 (CCF-A).</span><br />
-            <a
-              href="https://ieeexplore.ieee.org/document/11455258"
-              data-link-key="tcad2026_pdf"
-              data-kind="pdf"
-              target="_blank"
-              class="cta"
-              aria-label="PDF"
-            >
-              <span class="icon-chip">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M7 3h9l5 5v13H7z" />
-                  <path d="M16 3v5h5" />
-                  <path d="M10 16h4" />
-                  <path d="M10 12h3" />
-                  <path d="M10 8h4" />
-                </svg>
-              </span>
-              <span class="cta-text">PDF</span>
-            </a>
-            <a
-              href="https://github.com/dhf1999sd/MQ"
-              data-link-key="tcad2026_code"
-              data-kind="code"
-              target="_blank"
-              class="cta"
-              aria-label="Code"
-            >
-              <span class="icon-chip">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M9 8l-4 4 4 4" />
-                  <path d="M15 8l4 4-4 4" />
-                  <path d="M13 8l-2 8" />
-                </svg>
-              </span>
-              <span class="cta-text">Code</span>
-            </a>
-          </li>
-
-          <li>
-            <b
-              >Per Flow Asynchronous Traffic Shaping in Time Sensitive
-              Networking</b
-            ><br />
-            <strong>Wenxue Wu</strong>, Tong Zhang#, Wanchun Jiang, Wufan Wang,
-            Zhen Li and Fengyuan Ren#<br />
-            <span class="meta">ACM/IEEE DAC 2026 (CCF-A).</span><br />
-            <a
-              href="https://doi.org/10.1145/3770743.3803920"
-              data-kind="pdf"
-              target="_blank"
-              class="cta"
-              aria-label="PDF"
-            >
-              <span class="icon-chip">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M7 3h9l5 5v13H7z" />
-                  <path d="M16 3v5h5" />
-                  <path d="M10 16h4" />
-                  <path d="M10 12h3" />
-                  <path d="M10 8h4" />
-                </svg>
-              </span>
-              <span class="cta-text">PDF</span>
-            </a>
-          </li>
-
-          <li>
-            <b
-              >Enhancing CQF Robustness to Time Synchronization Errors Using
-              Shadow Queues in Time-Sensitive Network</b
-            ><br />
-            Hao Yang, Tong Zhang, XiaoQin Feng, Yanying Ma, Liwei Zhang, Ping
-            Liu, <strong>Wenxue Wu</strong>, Feng Jing, Fengyuan Ren<br />
-            <span class="meta">IEEE IOTJ 2026 (CCF-C).</span><br />
-          </li>
-
-          <li>
-            <b>Dynamic Per-Flow Queues in Shared Buffer TSN Switches</b><br />
-            <strong>Wenxue Wu</strong>, Tong Zhang, Zhen Li, Xiaoqin Feng, Liwei
-            Zhang, Fengyuan Ren#<br />
-            <span class="meta">ACM TODAES 2025 (CCF-B).</span><br />
-            <a
-              href="https://dl.acm.org/doi/epdf/10.1145/3718087"
-              data-link-key="todaes2025_pdf"
-              data-kind="pdf"
-              target="_blank"
-              class="cta"
-              aria-label="PDF"
-            >
-              <span class="icon-chip">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M7 3h9l5 5v13H7z" />
-                  <path d="M16 3v5h5" />
-                  <path d="M10 16h4" />
-                  <path d="M10 12h3" />
-                  <path d="M10 8h4" />
-                </svg>
-              </span>
-              <span class="cta-text">PDF</span>
-            </a>
-            <a
-              href="https://github.com/dhf1999sd/DFQ"
-              data-link-key="todaes2025_code"
-              data-kind="code"
-              target="_blank"
-              class="cta"
-              aria-label="Code"
-            >
-              <span class="icon-chip">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M9 8l-4 4 4 4" />
-                  <path d="M15 8l4 4-4 4" />
-                  <path d="M13 8l-2 8" />
-                </svg>
-              </span>
-              <span class="cta-text">Code</span>
-            </a>
-          </li>
-          <li>
-            <b>Dynamic Per-Flow Queues for TSN Switches</b><br />
-            <strong>Wenxue Wu</strong>, Tong Zhang, Zhen Li, Xiaoqin Feng, Liwei
-            Zhang, Fengyuan Ren#<br />
-            <span class="meta">IEEE DATE 2024 (CCF-B).</span><br />
-            <a
-              href="https://ieeexplore.ieee.org/document/10546696/"
-              data-link-key="date2024_dfq_pdf"
-              data-kind="pdf"
-              target="_blank"
-              class="cta"
-              aria-label="PDF"
-            >
-              <span class="icon-chip">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M7 3h9l5 5v13H7z" />
-                  <path d="M16 3v5h5" />
-                  <path d="M10 16h4" />
-                  <path d="M10 12h3" />
-                  <path d="M10 8h4" />
-                </svg>
-              </span>
-              <span class="cta-text">PDF</span>
-            </a>
-          </li>
-          <li>
-            <b
-              >Fault-Tolerant Cyclic Queuing and Forwarding in Time-Sensitive
-              Networking</b
-            ><br />
-            Liwei Zhang, Tong Zhang, <strong>Wenxue Wu</strong>, Xiaoqin Feng,
-            Guoxi Lin, Fengyuan Ren#<br />
-            <span class="meta">IEEE DATE 2024 (CCF-B).</span><br />
-            <a
-              href="https://ieeexplore.ieee.org/document/10546689"
-              data-link-key="date2024_ftcqf_pdf"
-              data-kind="pdf"
-              target="_blank"
-              class="cta"
-              aria-label="PDF"
-            >
-              <span class="icon-chip">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M7 3h9l5 5v13H7z" />
-                  <path d="M16 3v5h5" />
-                  <path d="M10 16h4" />
-                  <path d="M10 12h3" />
-                  <path d="M10 8h4" />
-                </svg>
-              </span>
-              <span class="cta-text">PDF</span>
-            </a>
-          </li>
-        </ul>
-      </section>
-
-<section class="section">
-  <h2>Academic Service</h2>
-  <ul>
-    <li>Journal Reviewer: IEEE IOT</li>
-  </ul>
-</section>
-
-
-
-      <p class="last-update">
-        <i>Last update: <span id="lastUpdate"></span></i>
-      </p>
+    <div class="theme-option" data-mode="dark" title="Dark">
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.38 5.38 0 0 1-4.4 2.26 5.4 5.4 0 0 1-4.14-8.9c.24-.27.5-.5.78-.72A9 9 0 0 0 12 3z">
+        </path>
+      </svg>
+    </div>
+    <div class="theme-option" data-mode="auto" title="Auto">
+      <span class="theme-option-label">A</span>
+    </div>
+  </div>
+  <div class="container-max">
+    <section class="hero">
+      <img id="myPicture" class="avatar" src="monkey.png" alt="Wenxue Wu" />
       <script>
-        function updateLastUpdateTime() {
-          var lastUpdateDate = new Date("2026-04-14");
-          var options = { year: "numeric", month: "long", day: "numeric" };
-          var formattedDate = lastUpdateDate.toLocaleDateString(
-            "en-US",
-            options,
-          );
-          document.getElementById("lastUpdate").textContent = formattedDate;
-        }
-        updateLastUpdateTime();
+        choosePic();
       </script>
-
-      <div style="height: 120px; width: 120px; margin: 0 auto">
-        <script
-          type="text/javascript"
-          id="clstr_globe"
-          src="https://clustrmaps.com/globe.js?d=4LPXbmz02Q5mhoRWCP4kA7falP0Te2TV36TYGHFccYY"
-        ></script>
+      <h1>Wenxue Wu</h1>
+      <div class="links">
+        <a href="https://scholar.google.com/citations?user=2XCLe8IAAAAJ&hl=zh-CN" target="_blank"
+          title="Google Scholar">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg" alt="Google Scholar" />
+        </a>
+        <a href="https://orcid.org/my-orcid?orcid=0009-0009-3551-606X" target="_blank" title="ORCID">
+          <img src="https://orcid.org/assets/vectors/orcid.logo.icon.svg" alt="ORCID" />
+        </a>
+        <a href="https://github.com/dhf1999sd" target="_blank" title="GitHub">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+        </a>
+        <a href="https://www.researchgate.net/profile/Wenxue-Wu-8?ev=hdr_xprf" target="_blank" title="ResearchGate">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/ResearchGate_icon_SVG.svg" alt="ResearchGate" />
+        </a>
+        <a href="mailto:wuwx2024@lzu.edu.cn" title="Email">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg" alt="Email" />
+        </a>
       </div>
-    </div>
+    </section>
+
+    <section class="section">
+      <h2>Biography</h2>
+      <ul>
+        <!-- <li> -->
+        I am currently pursuing my Ph.D. degree at
+        <i>Lanzhou University</i>, under the supervision of
+        <b><a href="https://www.cs.tsinghua.edu.cn/info/1126/3585.htm">Prof. Fengyuan Ren</a></b>. From Sep. 2021 to
+        Jun. 2024, I received my Master's degree from
+        <i>Lanzhou University</i>. From Sep. 2017 to Jun. 2021, I received my Bachelor's degree from
+        <i>Northwestern Polytechnical University</i>. My work explores the intersection of time-sensitive networking,
+        programmable network hardware, and real-time embedded systems. Here is
+        my
+        <a href="CV.pdf" target="_blank" class="cv-link">CV</a>.
+
+        <!-- </li> -->
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Publications</h2>
+      <div class="meta">(# Corresponding Author)</div>
+      <ul class="publication-list">
+        <li>
+          <b>Designing Multiple Queues to Support Asynchronous Traffic Shaping
+            in TSN Switches</b><br />
+          <strong>Wenxue Wu</strong>, Tong Zhang#, Zhen Li, Liwei Zhang, Hao
+          Yang and Fengyuan Ren#<br />
+          <span class="meta">IEEE TCAD 2026 (CCF-A).</span><br />
+          <a href="https://ieeexplore.ieee.org/document/11455258" data-link-key="tcad2026_pdf" data-kind="pdf"
+            target="_blank" class="cta" aria-label="PDF">
+            <span class="icon-chip">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 3h9l5 5v13H7z" />
+                <path d="M16 3v5h5" />
+                <path d="M10 16h4" />
+                <path d="M10 12h3" />
+                <path d="M10 8h4" />
+              </svg>
+            </span>
+            <span class="cta-text">PDF</span>
+          </a>
+          <a href="https://github.com/dhf1999sd/MQ" data-link-key="tcad2026_code" data-kind="code" target="_blank"
+            class="cta" aria-label="Code">
+            <span class="icon-chip">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9 8l-4 4 4 4" />
+                <path d="M15 8l4 4-4 4" />
+                <path d="M13 8l-2 8" />
+              </svg>
+            </span>
+            <span class="cta-text">Code</span>
+          </a>
+        </li>
+
+        <li>
+          <b>Per Flow Asynchronous Traffic Shaping in Time Sensitive
+            Networking</b><br />
+          <strong>Wenxue Wu</strong>, Tong Zhang#, Wanchun Jiang, Wufan Wang,
+          Zhen Li and Fengyuan Ren#<br />
+          <span class="meta">ACM/IEEE DAC 2026 (CCF-A).</span><br />
+          <a href="https://doi.org/10.1145/3770743.3803920" data-kind="pdf" target="_blank" class="cta"
+            aria-label="PDF">
+            <span class="icon-chip">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 3h9l5 5v13H7z" />
+                <path d="M16 3v5h5" />
+                <path d="M10 16h4" />
+                <path d="M10 12h3" />
+                <path d="M10 8h4" />
+              </svg>
+            </span>
+            <span class="cta-text">PDF</span>
+          </a>
+        </li>
+
+        <li>
+          <b>Enhancing CQF Robustness to Time Synchronization Errors Using
+            Shadow Queues in Time-Sensitive Network</b><br />
+          Hao Yang, Tong Zhang, XiaoQin Feng, Yanying Ma, Liwei Zhang, Ping
+          Liu, <strong>Wenxue Wu</strong>, Feng Jing, Fengyuan Ren<br />
+          <span class="meta">IEEE IOTJ 2026 (CCF-C).</span><br />
+          
+          <a href="https://doi.org/10.1145/3770743.3803920" data-kind="pdf" target="_blank" class="cta"
+            aria-label="PDF">
+            <span class="icon-chip">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 3h9l5 5v13H7z" />
+                <path d="M16 3v5h5" />
+                <path d="M10 16h4" />
+                <path d="M10 12h3" />
+                <path d="M10 8h4" />
+              </svg>
+            </span>
+            <span class="cta-text">PDF</span>
+          </a>
+        </li>
+
+        <li>
+          <b>Dynamic Per-Flow Queues in Shared Buffer TSN Switches</b><br />
+          <strong>Wenxue Wu</strong>, Tong Zhang, Zhen Li, Xiaoqin Feng, Liwei
+          Zhang, Fengyuan Ren#<br />
+          <span class="meta">ACM TODAES 2025 (CCF-B).</span><br />
+          <a href="https://dl.acm.org/doi/epdf/10.1145/3718087" data-link-key="todaes2025_pdf" data-kind="pdf"
+            target="_blank" class="cta" aria-label="PDF">
+            <span class="icon-chip">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 3h9l5 5v13H7z" />
+                <path d="M16 3v5h5" />
+                <path d="M10 16h4" />
+                <path d="M10 12h3" />
+                <path d="M10 8h4" />
+              </svg>
+            </span>
+            <span class="cta-text">PDF</span>
+          </a>
+          <a href="https://github.com/dhf1999sd/DFQ" data-link-key="todaes2025_code" data-kind="code" target="_blank"
+            class="cta" aria-label="Code">
+            <span class="icon-chip">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9 8l-4 4 4 4" />
+                <path d="M15 8l4 4-4 4" />
+                <path d="M13 8l-2 8" />
+              </svg>
+            </span>
+            <span class="cta-text">Code</span>
+          </a>
+        </li>
+        <li>
+          <b>Dynamic Per-Flow Queues for TSN Switches</b><br />
+          <strong>Wenxue Wu</strong>, Tong Zhang, Zhen Li, Xiaoqin Feng, Liwei
+          Zhang, Fengyuan Ren#<br />
+          <span class="meta">IEEE DATE 2024 (CCF-B).</span><br />
+          <a href="https://ieeexplore.ieee.org/document/10546696/" data-link-key="date2024_dfq_pdf" data-kind="pdf"
+            target="_blank" class="cta" aria-label="PDF">
+            <span class="icon-chip">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 3h9l5 5v13H7z" />
+                <path d="M16 3v5h5" />
+                <path d="M10 16h4" />
+                <path d="M10 12h3" />
+                <path d="M10 8h4" />
+              </svg>
+            </span>
+            <span class="cta-text">PDF</span>
+          </a>
+        </li>
+        <li>
+          <b>Fault-Tolerant Cyclic Queuing and Forwarding in Time-Sensitive
+            Networking</b><br />
+          Liwei Zhang, Tong Zhang, <strong>Wenxue Wu</strong>, Xiaoqin Feng,
+          Guoxi Lin, Fengyuan Ren#<br />
+          <span class="meta">IEEE DATE 2024 (CCF-B).</span><br />
+          <a href="https://ieeexplore.ieee.org/document/10546689" data-link-key="date2024_ftcqf_pdf" data-kind="pdf"
+            target="_blank" class="cta" aria-label="PDF">
+            <span class="icon-chip">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 3h9l5 5v13H7z" />
+                <path d="M16 3v5h5" />
+                <path d="M10 16h4" />
+                <path d="M10 12h3" />
+                <path d="M10 8h4" />
+              </svg>
+            </span>
+            <span class="cta-text">PDF</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Academic Service</h2>
+      <ul>
+        <li>Journal Reviewer: IEEE IOT</li>
+      </ul>
+    </section>
+
+
+
+    <p class="last-update">
+      <i>Last update: <span id="lastUpdate"></span></i>
+    </p>
     <script>
-      (function () {
-        var publicationLinks = {
-          tcad2026_pdf: "https://ieeexplore.ieee.org/document/11455258",
-          tcad2026_code: "https://github.com/dhf1999sd/MQ",
-          todaes2025_pdf: "https://dl.acm.org/doi/epdf/10.1145/3718087",
-          todaes2025_code: "https://github.com/dhf1999sd/DFQ",
-          date2024_dfq_pdf: "https://ieeexplore.ieee.org/document/10546696/",
-          date2024_ftcqf_pdf: "https://ieeexplore.ieee.org/document/10546689",
-        };
-        var nodes = document.querySelectorAll("[data-link-key]");
-        for (var i = 0; i < nodes.length; i++) {
-          var key = nodes[i].getAttribute("data-link-key");
-          if (publicationLinks[key]) {
-            nodes[i].setAttribute("href", publicationLinks[key]);
-          }
-        }
-      })();
+      function updateLastUpdateTime() {
+        var lastUpdateDate = new Date("2026-04-14");
+        var options = { year: "numeric", month: "long", day: "numeric" };
+        var formattedDate = lastUpdateDate.toLocaleDateString(
+          "en-US",
+          options,
+        );
+        document.getElementById("lastUpdate").textContent = formattedDate;
+      }
+      updateLastUpdateTime();
     </script>
-    <script>
-      (function () {
-        var storageKey = "theme-mode";
-        var group = document.getElementById("themeToggleGroup");
-        var indicator = document.getElementById("themeIndicator");
-        var options = group.querySelectorAll(".theme-option");
 
-        function getStoredMode() {
-          try {
-            var mode = localStorage.getItem(storageKey);
-            return ["auto", "light", "dark"].indexOf(mode) > -1 ? mode : "auto";
-          } catch (e) {
-            return "auto";
-          }
+    <div style="height: 120px; width: 120px; margin: 0 auto">
+      <script type="text/javascript" id="clstr_globe"
+        src="https://clustrmaps.com/globe.js?d=4LPXbmz02Q5mhoRWCP4kA7falP0Te2TV36TYGHFccYY"></script>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var publicationLinks = {
+        tcad2026_pdf: "https://ieeexplore.ieee.org/document/11455258",
+        tcad2026_code: "https://github.com/dhf1999sd/MQ",
+        todaes2025_pdf: "https://dl.acm.org/doi/epdf/10.1145/3718087",
+        todaes2025_code: "https://github.com/dhf1999sd/DFQ",
+        date2024_dfq_pdf: "https://ieeexplore.ieee.org/document/10546696/",
+        date2024_ftcqf_pdf: "https://ieeexplore.ieee.org/document/10546689",
+      };
+      var nodes = document.querySelectorAll("[data-link-key]");
+      for (var i = 0; i < nodes.length; i++) {
+        var key = nodes[i].getAttribute("data-link-key");
+        if (publicationLinks[key]) {
+          nodes[i].setAttribute("href", publicationLinks[key]);
         }
+      }
+    })();
+  </script>
+  <script>
+    (function () {
+      var storageKey = "theme-mode";
+      var group = document.getElementById("themeToggleGroup");
+      var indicator = document.getElementById("themeIndicator");
+      var options = group.querySelectorAll(".theme-option");
 
-        function setStoredMode(mode) {
-          try {
-            localStorage.setItem(storageKey, mode);
-          } catch (e) {}
+      function getStoredMode() {
+        try {
+          var mode = localStorage.getItem(storageKey);
+          return ["auto", "light", "dark"].indexOf(mode) > -1 ? mode : "auto";
+        } catch (e) {
+          return "auto";
         }
+      }
 
-        function getBeijingParts() {
-          var parts = new Intl.DateTimeFormat("en-US", {
-            timeZone: "Asia/Shanghai",
-            hour: "2-digit",
-            minute: "2-digit",
-            second: "2-digit",
-            hour12: false,
-          }).formatToParts(new Date());
-          var map = {};
-          parts.forEach((p) => {
-            if (p.type !== "literal") map[p.type] = parseInt(p.value, 10);
-          });
-          return map;
-        }
+      function setStoredMode(mode) {
+        try {
+          localStorage.setItem(storageKey, mode);
+        } catch (e) { }
+      }
 
-        function getBeijingSunTimes() {
-          var now = new Date();
-          var n = Math.floor(
-            (now - new Date(now.getFullYear(), 0, 0)) / 86400000,
-          );
-          var gamma = ((2 * Math.PI) / 365) * (n - 1);
-          var eqtime =
-            229.18 *
-            (0.000075 +
-              0.001868 * Math.cos(gamma) -
-              0.032077 * Math.sin(gamma));
-          var decl =
-            0.006918 - 0.399912 * Math.cos(gamma) + 0.070257 * Math.sin(gamma);
-          var latRad = (39.9042 * Math.PI) / 180;
-          var cosH =
-            Math.cos((90.833 * Math.PI) / 180) /
-              (Math.cos(latRad) * Math.cos(decl)) -
-            Math.tan(latRad) * Math.tan(decl);
-          var hourAngle =
-            (Math.acos(Math.max(-1, Math.min(1, cosH))) * 180) / Math.PI;
-          return {
-            sunrise: 720 - 4 * (116.4074 + hourAngle) - eqtime + 480,
-            sunset: 720 - 4 * (116.4074 - hourAngle) - eqtime + 480,
-          };
-        }
+      function getBeijingParts() {
+        var parts = new Intl.DateTimeFormat("en-US", {
+          timeZone: "Asia/Shanghai",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          hour12: false,
+        }).formatToParts(new Date());
+        var map = {};
+        parts.forEach((p) => {
+          if (p.type !== "literal") map[p.type] = parseInt(p.value, 10);
+        });
+        return map;
+      }
 
-        function resolveAutoTheme() {
-          var now = getBeijingParts();
-          var currentMinutes = now.hour * 60 + now.minute;
-          var times = getBeijingSunTimes();
-          return currentMinutes < times.sunrise ||
-            currentMinutes >= times.sunset
-            ? "dark"
-            : "light";
-        }
+      function getBeijingSunTimes() {
+        var now = new Date();
+        var n = Math.floor(
+          (now - new Date(now.getFullYear(), 0, 0)) / 86400000,
+        );
+        var gamma = ((2 * Math.PI) / 365) * (n - 1);
+        var eqtime =
+          229.18 *
+          (0.000075 +
+            0.001868 * Math.cos(gamma) -
+            0.032077 * Math.sin(gamma));
+        var decl =
+          0.006918 - 0.399912 * Math.cos(gamma) + 0.070257 * Math.sin(gamma);
+        var latRad = (39.9042 * Math.PI) / 180;
+        var cosH =
+          Math.cos((90.833 * Math.PI) / 180) /
+          (Math.cos(latRad) * Math.cos(decl)) -
+          Math.tan(latRad) * Math.tan(decl);
+        var hourAngle =
+          (Math.acos(Math.max(-1, Math.min(1, cosH))) * 180) / Math.PI;
+        return {
+          sunrise: 720 - 4 * (116.4074 + hourAngle) - eqtime + 480,
+          sunset: 720 - 4 * (116.4074 - hourAngle) - eqtime + 480,
+        };
+      }
 
-        function applyTheme() {
-          var mode = getStoredMode();
-          var resolved = mode === "auto" ? resolveAutoTheme() : mode;
-          document.body.classList.toggle("dark-mode", resolved === "dark");
+      function resolveAutoTheme() {
+        var now = getBeijingParts();
+        var currentMinutes = now.hour * 60 + now.minute;
+        var times = getBeijingSunTimes();
+        return currentMinutes < times.sunrise ||
+          currentMinutes >= times.sunset
+          ? "dark"
+          : "light";
+      }
 
-          options.forEach((opt) => {
-            var isActive = opt.getAttribute("data-mode") === mode;
-            opt.classList.toggle("active", isActive);
-            if (isActive) {
-              indicator.style.width = opt.offsetWidth + "px";
-              indicator.style.transform = `translateX(${opt.offsetLeft - 2}px)`;
-            }
-          });
-        }
+      function applyTheme() {
+        var mode = getStoredMode();
+        var resolved = mode === "auto" ? resolveAutoTheme() : mode;
+        document.body.classList.toggle("dark-mode", resolved === "dark");
 
         options.forEach((opt) => {
-          opt.addEventListener("click", () => {
-            setStoredMode(opt.getAttribute("data-mode"));
-            applyTheme();
-          });
+          var isActive = opt.getAttribute("data-mode") === mode;
+          opt.classList.toggle("active", isActive);
+          if (isActive) {
+            indicator.style.width = opt.offsetWidth + "px";
+            indicator.style.transform = `translateX(${opt.offsetLeft - 2}px)`;
+          }
         });
+      }
 
-        window.addEventListener("resize", applyTheme);
-        setInterval(() => {
-          if (getStoredMode() === "auto") applyTheme();
-        }, 60000);
-        applyTheme();
-        setTimeout(applyTheme, 100); // Ensure layout is ready
-      })();
-    </script>
-    <script>
-      (function () {
-        var layer = document.getElementById("windLayer");
-        if (
-          !layer ||
-          window.matchMedia("(prefers-reduced-motion: reduce)").matches
-        ) {
-          return;
-        }
-        var active = false;
-        var lastEmit = 0;
-        function emitParticle(x, y) {
-          var now = Date.now();
-          if (now - lastEmit < 26) return;
-          lastEmit = now;
-          var particle = document.createElement("span");
-          particle.className = "wind-particle";
-          particle.style.setProperty("--x", x + "px");
-          particle.style.setProperty("--y", y + "px");
-          particle.style.setProperty(
-            "--size",
-            (Math.random() * 8 + 6).toFixed(1) + "px",
-          );
-          particle.style.setProperty(
-            "--duration",
-            (Math.random() * 0.8 + 0.9).toFixed(2) + "s",
-          );
-          particle.style.setProperty(
-            "--driftX",
-            (Math.random() * 100 + 45).toFixed(1) + "px",
-          );
-          particle.style.setProperty(
-            "--driftY",
-            ((Math.random() - 0.5) * 90 - 12).toFixed(1) + "px",
-          );
-          particle.addEventListener("animationend", function () {
-            particle.remove();
-          });
-          layer.appendChild(particle);
-        }
-        document.addEventListener(
-          "mouseenter",
-          function () {
-            active = true;
-          },
-          true,
-        );
-        document.addEventListener(
-          "mouseleave",
-          function () {
-            active = false;
-          },
-          true,
-        );
-        document.addEventListener("mousemove", function (event) {
-          if (!active) return;
-          emitParticle(event.clientX, event.clientY);
+      options.forEach((opt) => {
+        opt.addEventListener("click", () => {
+          setStoredMode(opt.getAttribute("data-mode"));
+          applyTheme();
         });
-      })();
-    </script>
-  </body>
+      });
+
+      window.addEventListener("resize", applyTheme);
+      setInterval(() => {
+        if (getStoredMode() === "auto") applyTheme();
+      }, 60000);
+      applyTheme();
+      setTimeout(applyTheme, 100); // Ensure layout is ready
+    })();
+  </script>
+  <script>
+    (function () {
+      var layer = document.getElementById("windLayer");
+      if (
+        !layer ||
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ) {
+        return;
+      }
+      var active = false;
+      var lastEmit = 0;
+      function emitParticle(x, y) {
+        var now = Date.now();
+        if (now - lastEmit < 26) return;
+        lastEmit = now;
+        var particle = document.createElement("span");
+        particle.className = "wind-particle";
+        particle.style.setProperty("--x", x + "px");
+        particle.style.setProperty("--y", y + "px");
+        particle.style.setProperty(
+          "--size",
+          (Math.random() * 8 + 6).toFixed(1) + "px",
+        );
+        particle.style.setProperty(
+          "--duration",
+          (Math.random() * 0.8 + 0.9).toFixed(2) + "s",
+        );
+        particle.style.setProperty(
+          "--driftX",
+          (Math.random() * 100 + 45).toFixed(1) + "px",
+        );
+        particle.style.setProperty(
+          "--driftY",
+          ((Math.random() - 0.5) * 90 - 12).toFixed(1) + "px",
+        );
+        particle.addEventListener("animationend", function () {
+          particle.remove();
+        });
+        layer.appendChild(particle);
+      }
+      document.addEventListener(
+        "mouseenter",
+        function () {
+          active = true;
+        },
+        true,
+      );
+      document.addEventListener(
+        "mouseleave",
+        function () {
+          active = false;
+        },
+        true,
+      );
+      document.addEventListener("mousemove", function (event) {
+        if (!active) return;
+        emitParticle(event.clientX, event.clientY);
+      });
+    })();
+  </script>
+</body>
+
 </html>

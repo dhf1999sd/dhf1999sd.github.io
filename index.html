@@ -88,6 +88,12 @@
       border-radius: 50%;
       display: block;
       margin: 0 auto 24px;
+      animation: rotate-avatar 8s linear infinite;
+    }
+
+    @keyframes rotate-avatar {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
 
     h1 {

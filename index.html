@@ -479,11 +479,146 @@
     }
 
     .cv-link:hover {
-      text-decoration: underline;
-    }
-  </style>
+            text-decoration: underline;
+        }
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23931362-2"></script>
+        /* Publications Section Styles */
+        .publications {
+            margin-top: 20px;
+        }
+
+        .publications h2.bibliography {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            margin: 30px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .publications .bibliography {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .publications .bib-row {
+            display: flex;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .publications .bib-row:last-child {
+            border-bottom: none;
+        }
+
+        .publications .abbr {
+            flex-shrink: 0;
+            margin-right: 15px;
+        }
+
+        .publications .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            text-align: center;
+            color: #fff;
+            min-width: 55px;
+        }
+
+        .publications .badge.ccf-a {
+            background: linear-gradient(135deg, #ff7875, #f5222d);
+        }
+
+        .publications .badge.ccf-b {
+            background: linear-gradient(135deg, #ffa39e, #fa541c);
+        }
+
+        .publications .badge.ccf-c {
+            background: linear-gradient(135deg, #ffd591, #fa8c16);
+        }
+
+        .publications .badge.ei {
+            background: linear-gradient(135deg, #d9d9d9, #8c8c8c);
+        }
+
+        .publications .title {
+            font-size: 15px;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+
+        .publications .author {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 6px;
+        }
+
+        .publications .author em {
+            font-style: normal;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .publications .periodical {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .publications .links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .publications .links .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 12px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #1890ff;
+            background: rgba(24, 144, 255, 0.1);
+            border: 1px solid rgba(24, 144, 255, 0.3);
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .publications .links .btn:hover {
+            background: rgba(24, 144, 255, 0.2);
+            border-color: #1890ff;
+            text-decoration: none;
+        }
+
+        .publications .links .btn .icon {
+            width: 14px;
+            height: 14px;
+        }
+
+        .publications .links .btn svg {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+        }
+
+        @media (max-width: 576px) {
+            .publications .bib-row {
+                flex-direction: column;
+            }
+            .publications .abbr {
+                margin-bottom: 10px;
+                margin-right: 0;
+            }
+        }
+    </style>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23931362-2"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() {
@@ -578,145 +713,150 @@
       <h2>Publications</h2>
       <div class="meta">(# Corresponding Author)</div>
 
+      <div class="publications">
+        <h2 class="bibliography">2026</h2>
+        <ol class="bibliography">
+          <li>
+            <div class="row bib-row">
+              <div class="col col-sm-2 abbr" style="width: 15%">
+                <abbr class="badge rounded w-100 ccf-a">CCF A</abbr>
+              </div>
+              <div class="col-sm-10">
+                <div class="title"><strong>Designing Multiple Queues to Support Asynchronous Traffic Shaping in TSN Switches</strong></div>
+                <div class="author">
+                  <em><strong>Wenxue Wu</strong></em>, Tong Zhang, Zhen Li, Liwei Zhang, Hao Yang, Fengyuan Ren.
+                </div>
+                <div class="periodical"><em>IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD)</em>, 2026</div>
+                <div class="links">
+                  <a href="https://ieeexplore.ieee.org/document/11455258" class="btn" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M7 3h9l5 5v13H7z"/><path d="M16 3v5h5"/><path d="M10 16h4"/><path d="M10 12h3"/><path d="M10 8h4"/></svg>
+                    Paper
+                  </a>
+                  <a href="https://github.com/dhf1999sd/MQ" class="btn" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M9 8l-4 4 4 4"/><path d="M15 8l4 4-4 4"/><path d="M13 8l-2 8"/></svg>
+                    Code
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
 
-      <ul class="publication-list">
-        <li>
-          [IEEE TCAD 2026, CCF A] <strong>Wenxue Wu</strong>, Tong Zhang, Zhen Li, Liwei Zhang, Hao Yang, Fengyuan
-          Ren. <i>Designing Multiple Queues to Support Asynchronous Traffic Shaping in TSN Switches</i>. IEEE
-          Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD), 2026.<br />
-          <a href="https://ieeexplore.ieee.org/document/11455258" data-link-key="tcad2026_pdf" data-kind="pdf"
-            target="_blank" class="cta" aria-label="PDF">
-            <span class="icon-chip">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M7 3h9l5 5v13H7z" />
-                <path d="M16 3v5h5" />
-                <path d="M10 16h4" />
-                <path d="M10 12h3" />
-                <path d="M10 8h4" />
-              </svg>
-            </span>
-            <span class="cta-text">PDF</span>
-          </a>
-          <a href="https://github.com/dhf1999sd/MQ" data-link-key="tcad2026_code" data-kind="code" target="_blank"
-            class="cta" aria-label="Code">
-            <span class="icon-chip">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M9 8l-4 4 4 4" />
-                <path d="M15 8l4 4-4 4" />
-                <path d="M13 8l-2 8" />
-              </svg>
-            </span>
-            <span class="cta-text">Code</span>
-          </a>
-        </li>
+          <li>
+            <div class="row bib-row">
+              <div class="col col-sm-2 abbr" style="width: 15%">
+                <abbr class="badge rounded w-100 ccf-a">CCF A</abbr>
+              </div>
+              <div class="col-sm-10">
+                <div class="title"><strong>Per Flow Asynchronous Traffic Shaping in Time-Sensitive Networking</strong></div>
+                <div class="author">
+                  <em><strong>Wenxue Wu</strong></em>, Tong Zhang, Wanchun Jiang, Wufan Wang, Zhen Li, Fengyuan Ren.
+                </div>
+                <div class="periodical"><em>The 63rd ACM/IEEE Design Automation Conference (DAC)</em>, 2026</div>
+                <div class="links">
+                  <a href="https://doi.org/10.1145/3770743.3803920" class="btn" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M7 3h9l5 5v13H7z"/><path d="M16 3v5h5"/><path d="M10 16h4"/><path d="M10 12h3"/><path d="M10 8h4"/></svg>
+                    Paper
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
 
-        <li>
-          [ACM/IEEE DAC 2026, CCF A] <strong>Wenxue Wu</strong>, Tong Zhang, Wanchun Jiang, Wufan Wang, Zhen Li,
-          Fengyuan Ren. <i>Per Flow Asynchronous Traffic Shaping in Time-Sensitive Networking</i>. The 63rd ACM/IEEE
-          Design Automation Conference (DAC), 2026.<br />
-          <a href="https://doi.org/10.1145/3770743.3803920" data-kind="pdf" target="_blank" class="cta"
-            aria-label="PDF">
-            <span class="icon-chip">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M7 3h9l5 5v13H7z" />
-                <path d="M16 3v5h5" />
-                <path d="M10 16h4" />
-                <path d="M10 12h3" />
-                <path d="M10 8h4" />
-              </svg>
-            </span>
-            <span class="cta-text">PDF</span>
-          </a>
-        </li>
+          <li>
+            <div class="row bib-row">
+              <div class="col col-sm-2 abbr" style="width: 15%">
+                <abbr class="badge rounded w-100 ccf-c">CCF C</abbr>
+              </div>
+              <div class="col-sm-10">
+                <div class="title"><strong>Enhancing CQF Robustness to Time Synchronization Errors Using Shadow Queues in Time-Sensitive Network</strong></div>
+                <div class="author">
+                  Hao Yang, Tong Zhang, Xiaoqin Feng, Yanying Ma, Liwei Zhang, Ping Liu, <em><strong>Wenxue Wu</strong></em>, Feng Jing, Fengyuan Ren.
+                </div>
+                <div class="periodical"><em>IEEE Internet of Things Journal (IoT)</em>, 2026</div>
+                <div class="links">
+                  <a href="https://ieeexplore.ieee.org/document/11496649" class="btn" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M7 3h9l5 5v13H7z"/><path d="M16 3v5h5"/><path d="M10 16h4"/><path d="M10 12h3"/><path d="M10 8h4"/></svg>
+                    Paper
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ol>
 
-        <li>
-          [IEEE IoT 2026, CCF C] Hao Yang, Tong Zhang, Xiaoqin Feng, Yanying Ma, Liwei Zhang, Ping Liu, <strong>Wenxue
-            Wu</strong>, Feng Jing, Fengyuan Ren. <i>Enhancing CQF Robustness to Time Synchronization Errors Using
-            Shadow Queues in Time-Sensitive Network</i>. IEEE Internet of Things Journal (IoT), 2026.<br />
-          <a href="https://ieeexplore.ieee.org/document/11496649" data-kind="pdf" target="_blank" class="cta"
-            aria-label="PDF">
-            <span class="icon-chip">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M7 3h9l5 5v13H7z" />
-                <path d="M16 3v5h5" />
-                <path d="M10 16h4" />
-                <path d="M10 12h3" />
-                <path d="M10 8h4" />
-              </svg>
-            </span>
-            <span class="cta-text">PDF</span>
-          </a>
-        </li>
+        <h2 class="bibliography">2025</h2>
+        <ol class="bibliography">
+          <li>
+            <div class="row bib-row">
+              <div class="col col-sm-2 abbr" style="width: 15%">
+                <abbr class="badge rounded w-100 ccf-b">CCF B</abbr>
+              </div>
+              <div class="col-sm-10">
+                <div class="title"><strong>Dynamic Per-Flow Queues in Shared Buffer TSN Switches</strong></div>
+                <div class="author">
+                  <em><strong>Wenxue Wu</strong></em>, Tong Zhang, Zhen Li, Xiaoqin Feng, Liwei Zhang, Fengyuan Ren.
+                </div>
+                <div class="periodical"><em>ACM Transactions on Design Automation of Electronic Systems (TODAES)</em>, 2025</div>
+                <div class="links">
+                  <a href="https://dl.acm.org/doi/epdf/10.1145/3718087" class="btn" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M7 3h9l5 5v13H7z"/><path d="M16 3v5h5"/><path d="M10 16h4"/><path d="M10 12h3"/><path d="M10 8h4"/></svg>
+                    Paper
+                  </a>
+                  <a href="https://github.com/dhf1999sd/DFQ" class="btn" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M9 8l-4 4 4 4"/><path d="M15 8l4 4-4 4"/><path d="M13 8l-2 8"/></svg>
+                    Code
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ol>
 
-        <li>
-          [ACM TODAES 2025, CCF B] <strong>Wenxue Wu</strong>, Tong Zhang, Zhen Li, Xiaoqin Feng, Liwei Zhang, Fengyuan
-          Ren. <i>Dynamic Per-Flow Queues in Shared Buffer TSN Switches</i>. ACM Transactions on Design Automation of
-          Electronic Systems (TODAES), 2025.<br />
-          <a href="https://dl.acm.org/doi/epdf/10.1145/3718087" data-link-key="todaes2025_pdf" data-kind="pdf"
-            target="_blank" class="cta" aria-label="PDF">
-            <span class="icon-chip">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M7 3h9l5 5v13H7z" />
-                <path d="M16 3v5h5" />
-                <path d="M10 16h4" />
-                <path d="M10 12h3" />
-                <path d="M10 8h4" />
-              </svg>
-            </span>
-            <span class="cta-text">PDF</span>
-          </a>
-          <a href="https://github.com/dhf1999sd/DFQ" data-link-key="todaes2025_code" data-kind="code" target="_blank"
-            class="cta" aria-label="Code">
-            <span class="icon-chip">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M9 8l-4 4 4 4" />
-                <path d="M15 8l4 4-4 4" />
-                <path d="M13 8l-2 8" />
-              </svg>
-            </span>
-            <span class="cta-text">Code</span>
-          </a>
-        </li>
+        <h2 class="bibliography">2024</h2>
+        <ol class="bibliography">
+          <li>
+            <div class="row bib-row">
+              <div class="col col-sm-2 abbr" style="width: 15%">
+                <abbr class="badge rounded w-100 ccf-b">CCF B</abbr>
+              </div>
+              <div class="col-sm-10">
+                <div class="title"><strong>Dynamic Per-Flow Queues for TSN Switches</strong></div>
+                <div class="author">
+                  <em><strong>Wenxue Wu</strong></em>, Tong Zhang, Zhen Li, Xiaoqin Feng, Liwei Zhang, Fengyuan Ren.
+                </div>
+                <div class="periodical"><em>The 27th IEEE Design, Automation and Test in Europe Conference (DATE)</em>, 2024</div>
+                <div class="links">
+                  <a href="https://ieeexplore.ieee.org/document/10546696/" class="btn" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M7 3h9l5 5v13H7z"/><path d="M16 3v5h5"/><path d="M10 16h4"/><path d="M10 12h3"/><path d="M10 8h4"/></svg>
+                    Paper
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
 
-        <li>
-          [IEEE DATE 2024, CCF B] <strong>Wenxue Wu</strong>, Tong Zhang, Zhen Li, Xiaoqin Feng, Liwei Zhang, Fengyuan
-          Ren. <i>Dynamic Per-Flow Queues for TSN Switches</i>. The 27th IEEE Design, Automation and Test in Europe
-          Conference (DATE), 2024.<br />
-          <a href="https://ieeexplore.ieee.org/document/10546696/" data-link-key="date2024_dfq_pdf" data-kind="pdf"
-            target="_blank" class="cta" aria-label="PDF">
-            <span class="icon-chip">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M7 3h9l5 5v13H7z" />
-                <path d="M16 3v5h5" />
-                <path d="M10 16h4" />
-                <path d="M10 12h3" />
-                <path d="M10 8h4" />
-              </svg>
-            </span>
-            <span class="cta-text">PDF</span>
-          </a>
-        </li>
-
-        <li>
-          [IEEE DATE 2024, CCF B] Liwei Zhang, Tong Zhang, <strong>Wenxue Wu</strong>, Xiaoqin Feng, Guoxi Lin, Fengyuan
-          Ren. <i>Fault-Tolerant Cyclic Queuing and Forwarding in Time-Sensitive Networking</i>. The 27th IEEE Design,
-          Automation and Test in Europe Conference (DATE), 2024.<br />
-          <a href="https://ieeexplore.ieee.org/document/10546689" data-link-key="date2024_ftcqf_pdf" data-kind="pdf"
-            target="_blank" class="cta" aria-label="PDF">
-            <span class="icon-chip">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M7 3h9l5 5v13H7z" />
-                <path d="M16 3v5h5" />
-                <path d="M10 16h4" />
-                <path d="M10 12h3" />
-                <path d="M10 8h4" />
-              </svg>
-            </span>
-            <span class="cta-text">PDF</span>
-          </a>
-        </li>
-      </ul>
-
+          <li>
+            <div class="row bib-row">
+              <div class="col col-sm-2 abbr" style="width: 15%">
+                <abbr class="badge rounded w-100 ccf-b">CCF B</abbr>
+              </div>
+              <div class="col-sm-10">
+                <div class="title"><strong>Fault-Tolerant Cyclic Queuing and Forwarding in Time-Sensitive Networking</strong></div>
+                <div class="author">
+                  Liwei Zhang, Tong Zhang, <em><strong>Wenxue Wu</strong></em>, Xiaoqin Feng, Guoxi Lin, Fengyuan Ren.
+                </div>
+                <div class="periodical"><em>The 27th IEEE Design, Automation and Test in Europe Conference (DATE)</em>, 2024</div>
+                <div class="links">
+                  <a href="https://ieeexplore.ieee.org/document/10546689" class="btn" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M7 3h9l5 5v13H7z"/><path d="M16 3v5h5"/><path d="M10 16h4"/><path d="M10 12h3"/><path d="M10 8h4"/></svg>
+                    Paper
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
     </section>
 
     <section class="section">

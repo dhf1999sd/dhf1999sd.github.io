@@ -576,43 +576,32 @@
         }
 
         .publications .links {
-            display: inline-flex;
-            gap: 8px;
+            display: inline;
             margin-left: 10px;
-            vertical-align: middle;
-            flex-wrap: wrap;
+            white-space: nowrap;
         }
 
         .publications .links .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            padding: 3px 10px;
-            font-size: 11px;
-            font-weight: 500;
-            color: #1890ff;
-            background: rgba(24, 144, 255, 0.1);
-            border: 1px solid rgba(24, 144, 255, 0.3);
-            border-radius: 999px;
+            display: inline;
+            padding: 0;
+            font-size: 13px;
+            font-weight: 600;
+            color: #2563eb;
+            background: transparent;
+            border: 0;
+            border-radius: 0;
             text-decoration: none;
-            transition: all 0.2s ease;
+            transition: color 0.2s ease, text-decoration-color 0.2s ease;
+            text-decoration-thickness: from-font;
+        }
+
+        .publications .links .btn + .btn {
+            margin-left: 10px;
         }
 
         .publications .links .btn:hover {
-            background: rgba(24, 144, 255, 0.2);
-            border-color: #1890ff;
-            text-decoration: none;
-        }
-
-        .publications .links .btn .icon {
-            width: 14px;
-            height: 14px;
-        }
-
-        .publications .links .btn svg {
-            width: 14px;
-            height: 14px;
-            fill: currentColor;
+            color: #1d4ed8;
+            text-decoration: underline;
         }
 
         @media (max-width: 576px) {
@@ -738,11 +727,9 @@
                   <em>IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD)</em>, 2026
                   <span class="links">
                     <a href="https://ieeexplore.ieee.org/document/11455258" class="btn" target="_blank" rel="noopener">
-                      <svg viewBox="0 0 24 24"><path d="M7 3h9l5 5v13H7z"/><path d="M16 3v5h5"/><path d="M10 16h4"/><path d="M10 12h3"/><path d="M10 8h4"/></svg>
                       PDF
                     </a>
                     <a href="https://github.com/dhf1999sd/MQ" class="btn" target="_blank" rel="noopener">
-                      <svg viewBox="0 0 24 24"><path d="M9 8l-4 4 4 4"/><path d="M15 8l4 4-4 4"/><path d="M13 8l-2 8"/></svg>
                       Code
                     </a>
                   </span>
@@ -765,7 +752,6 @@
                   <em>The 63rd ACM/IEEE Design Automation Conference (DAC)</em>, 2026
                   <span class="links">
                     <a href="https://doi.org/10.1145/3770743.3803920" class="btn" target="_blank" rel="noopener">
-                      <svg viewBox="0 0 24 24"><path d="M7 3h9l5 5v13H7z"/><path d="M16 3v5h5"/><path d="M10 16h4"/><path d="M10 12h3"/><path d="M10 8h4"/></svg>
                       PDF
                     </a>
                   </span>
@@ -788,7 +774,6 @@
                   <em>IEEE Internet of Things Journal (IoT)</em>, 2026
                   <span class="links">
                     <a href="https://ieeexplore.ieee.org/document/11496649" class="btn" target="_blank" rel="noopener">
-                      <svg viewBox="0 0 24 24"><path d="M7 3h9l5 5v13H7z"/><path d="M16 3v5h5"/><path d="M10 16h4"/><path d="M10 12h3"/><path d="M10 8h4"/></svg>
                       PDF
                     </a>
                   </span>
@@ -814,11 +799,9 @@
                   <em>ACM Transactions on Design Automation of Electronic Systems (TODAES)</em>, 2025
                   <span class="links">
                     <a href="https://dl.acm.org/doi/epdf/10.1145/3718087" class="btn" target="_blank" rel="noopener">
-                      <svg viewBox="0 0 24 24"><path d="M7 3h9l5 5v13H7z"/><path d="M16 3v5h5"/><path d="M10 16h4"/><path d="M10 12h3"/><path d="M10 8h4"/></svg>
                       PDF
                     </a>
                     <a href="https://github.com/dhf1999sd/DFQ" class="btn" target="_blank" rel="noopener">
-                      <svg viewBox="0 0 24 24"><path d="M9 8l-4 4 4 4"/><path d="M15 8l4 4-4 4"/><path d="M13 8l-2 8"/></svg>
                       Code
                     </a>
                   </span>
@@ -844,7 +827,6 @@
                   <em>The 27th IEEE Design, Automation and Test in Europe Conference (DATE)</em>, 2024
                   <span class="links">
                     <a href="https://ieeexplore.ieee.org/document/10546696/" class="btn" target="_blank" rel="noopener">
-                      <svg viewBox="0 0 24 24"><path d="M7 3h9l5 5v13H7z"/><path d="M16 3v5h5"/><path d="M10 16h4"/><path d="M10 12h3"/><path d="M10 8h4"/></svg>
                       PDF
                     </a>
                   </span>
@@ -867,7 +849,6 @@
                   <em>The 27th IEEE Design, Automation and Test in Europe Conference (DATE)</em>, 2024
                   <span class="links">
                     <a href="https://ieeexplore.ieee.org/document/10546689" class="btn" target="_blank" rel="noopener">
-                      <svg viewBox="0 0 24 24"><path d="M7 3h9l5 5v13H7z"/><path d="M16 3v5h5"/><path d="M10 16h4"/><path d="M10 12h3"/><path d="M10 8h4"/></svg>
                       PDF
                     </a>
                   </span>

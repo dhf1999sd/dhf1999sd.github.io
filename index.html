@@ -504,6 +504,7 @@
 
         .publications .bib-row {
             display: flex;
+            align-items: flex-start;
             margin-bottom: 25px;
             padding-bottom: 20px;
             border-bottom: 1px solid #f0f0f0;
@@ -515,19 +516,23 @@
 
         .publications .abbr {
             flex-shrink: 0;
-            margin-right: 15px;
+            width: 72px;
+            display: flex;
+            justify-content: center;
+            margin-right: 0;
         }
 
         .publications .badge {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            font-size: 14px;
+            padding: 4px 10px;
+            height: 24px;
+            border-radius: 999px;
+            font-size: 11px;
             font-weight: 700;
             color: #fff;
+            white-space: nowrap;
         }
 
         .publications .badge.ccf-a {
@@ -571,8 +576,10 @@
         }
 
         .publications .links {
-            display: flex;
-            gap: 10px;
+            display: inline-flex;
+            gap: 8px;
+            margin-left: 10px;
+            vertical-align: middle;
             flex-wrap: wrap;
         }
 
@@ -580,13 +587,13 @@
             display: inline-flex;
             align-items: center;
             gap: 5px;
-            padding: 5px 12px;
-            font-size: 12px;
+            padding: 3px 10px;
+            font-size: 11px;
             font-weight: 500;
             color: #1890ff;
             background: rgba(24, 144, 255, 0.1);
             border: 1px solid rgba(24, 144, 255, 0.3);
-            border-radius: 6px;
+            border-radius: 999px;
             text-decoration: none;
             transition: all 0.2s ease;
         }
@@ -719,8 +726,8 @@
         <ol class="bibliography">
           <li>
             <div class="row bib-row">
-              <div class="col col-sm-2 abbr" style="width: 15%">
-                <abbr class="badge rounded w-100 ccf-a">A</abbr>
+              <div class="abbr">
+                <abbr class="badge ccf-a">CCF A</abbr>
               </div>
               <div class="col-sm-10">
                 <div class="title"><strong>Designing Multiple Queues to Support Asynchronous Traffic Shaping in TSN Switches</strong></div>
@@ -746,8 +753,8 @@
 
           <li>
             <div class="row bib-row">
-              <div class="col col-sm-2 abbr" style="width: 15%">
-                <abbr class="badge rounded w-100 ccf-a">A</abbr>
+              <div class="abbr">
+                <abbr class="badge ccf-a">CCF A</abbr>
               </div>
               <div class="col-sm-10">
                 <div class="title"><strong>Per Flow Asynchronous Traffic Shaping in Time-Sensitive Networking</strong></div>
@@ -769,8 +776,8 @@
 
           <li>
             <div class="row bib-row">
-              <div class="col col-sm-2 abbr" style="width: 15%">
-                <abbr class="badge rounded w-100 ccf-c">C</abbr>
+              <div class="abbr">
+                <abbr class="badge ccf-c">CCF C</abbr>
               </div>
               <div class="col-sm-10">
                 <div class="title"><strong>Enhancing CQF Robustness to Time Synchronization Errors Using Shadow Queues in Time-Sensitive Network</strong></div>
@@ -795,8 +802,8 @@
         <ol class="bibliography">
           <li>
             <div class="row bib-row">
-              <div class="col col-sm-2 abbr" style="width: 15%">
-                <abbr class="badge rounded w-100 ccf-b">B</abbr>
+              <div class="abbr">
+                <abbr class="badge ccf-b">CCF B</abbr>
               </div>
               <div class="col-sm-10">
                 <div class="title"><strong>Dynamic Per-Flow Queues in Shared Buffer TSN Switches</strong></div>
@@ -825,8 +832,8 @@
         <ol class="bibliography">
           <li>
             <div class="row bib-row">
-              <div class="col col-sm-2 abbr" style="width: 15%">
-                <abbr class="badge rounded w-100 ccf-b">B</abbr>
+              <div class="abbr">
+                <abbr class="badge ccf-b">CCF B</abbr>
               </div>
               <div class="col-sm-10">
                 <div class="title"><strong>Dynamic Per-Flow Queues for TSN Switches</strong></div>
@@ -848,8 +855,8 @@
 
           <li>
             <div class="row bib-row">
-              <div class="col col-sm-2 abbr" style="width: 15%">
-                <abbr class="badge rounded w-100 ccf-b">B</abbr>
+              <div class="abbr">
+                <abbr class="badge ccf-b">CCF B</abbr>
               </div>
               <div class="col-sm-10">
                 <div class="title"><strong>Fault-Tolerant Cyclic Queuing and Forwarding in Time-Sensitive Networking</strong></div>

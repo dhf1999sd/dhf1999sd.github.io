@@ -822,7 +822,6 @@
         <img id="myPicture" class="avatar" src="monkey.png" alt="Wenxue Wu" />
       </div>
       <h1>Wenxue Wu</h1>
-      <p class="affiliation">Ph.D. Candidate &middot; <i>Lanzhou University</i></p>
       <div class="links">
         <a href="https://scholar.google.com/citations?user=2XCLe8IAAAAJ&hl=zh-CN" target="_blank"
           title="Google Scholar">
@@ -1057,7 +1056,14 @@
     </p>
     <script>
       function updateLastUpdateTime() {
-        var lastUpdateDate = new Date("2026-07-04");
+        // Automatically read the page's last-modified time. GitHub Pages serves
+        // a Last-Modified header, so this updates on every deploy without any
+        // manual edit. Falls back to "now" if the value is missing/invalid.
+        var raw = document.lastModified;
+        var lastUpdateDate = raw ? new Date(raw) : new Date();
+        if (isNaN(lastUpdateDate.getTime())) {
+          lastUpdateDate = new Date();
+        }
         var options = { year: "numeric", month: "long", day: "numeric" };
         var formattedDate = lastUpdateDate.toLocaleDateString(
           "en-US",

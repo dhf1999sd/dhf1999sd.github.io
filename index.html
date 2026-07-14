@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
   <title>Wenxue Wu's Homepage</title>
@@ -73,7 +74,7 @@
     }
 
     .container-max {
-      max-width: 680px;
+      max-width: 800px;
       margin: 0 auto;
       padding: 0 24px;
     }
@@ -283,6 +284,40 @@
         transform 0.2s ease,
         box-shadow 0.2s ease,
         border-color 0.2s ease;
+    }
+
+    body.dark-mode .icon-chip {
+      background: linear-gradient(160deg,
+          rgba(38, 52, 74, 0.95),
+          rgba(28, 40, 60, 0.88));
+      border-color: rgba(110, 155, 205, 0.28);
+      box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    }
+
+    body.dark-mode .cta .icon {
+      stroke: #8dbdf0;
+    }
+
+    body.dark-mode .cta-text {
+      color: #a9cbef;
+      text-shadow: none;
+    }
+
+    body.dark-mode .cta[data-kind="code"] .icon-chip {
+      background: linear-gradient(160deg,
+          rgba(52, 46, 82, 0.95),
+          rgba(40, 36, 66, 0.88));
+      border-color: rgba(140, 126, 210, 0.32);
+    }
+
+    body.dark-mode .cta[data-kind="code"] .icon {
+      stroke: #b9adf0;
+    }
+
+    body.dark-mode .cta[data-kind="code"] .cta-text {
+      color: #c3b8f2;
     }
 
     .cta:hover .icon-chip {
@@ -550,16 +585,6 @@
     gtag("js", new Date());
     gtag("config", "UA-23931362-2");
   </script>
-
-  <script type="text/javascript">
-    function choosePic() {
-      var el = document.getElementById("myPicture");
-      el.src = "monkey.png";
-      el.onerror = function () {
-        el.src = "monkey.png";
-      };
-    }
-  </script>
 </head>
 
 <body>
@@ -588,9 +613,6 @@
   <div class="container-max">
     <section class="hero">
       <img id="myPicture" class="avatar" src="monkey.png" alt="Wenxue Wu" />
-      <script>
-        choosePic();
-      </script>
       <h1>Wenxue Wu</h1>
       <div class="links">
         <a href="https://scholar.google.com/citations?user=2XCLe8IAAAAJ&hl=zh-CN" target="_blank"
@@ -614,8 +636,7 @@
 
     <section class="section">
       <h2>Biography</h2>
-      <ul>
-        <!-- <li> -->
+      <p>
         I am currently pursuing my Ph.D. degree at
         <i>Lanzhou University</i>, under the supervision of
         <b><a href="https://www.cs.tsinghua.edu.cn/csen/info/1309/4350.htm">Prof. Fengyuan Ren</a></b>, with additional mentorship from
@@ -626,9 +647,7 @@
         programmable network hardware, and real-time embedded systems. Here is
         my
         <a href="CV.pdf" target="_blank" class="cv-link">CV</a>.
-
-        <!-- </li> -->
-      </ul>
+      </p>
     </section>
 
     <section class="section">

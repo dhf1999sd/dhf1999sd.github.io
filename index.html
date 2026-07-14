@@ -47,9 +47,69 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       text-rendering: optimizeLegibility;
+      font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+      font-kerning: normal;
       transition:
         background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
         color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    ::selection {
+      background: rgba(37, 99, 235, 0.14);
+      color: var(--text);
+    }
+
+    body.dark-mode ::selection {
+      background: rgba(141, 189, 240, 0.22);
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(120, 130, 150, 0.28);
+      border-radius: 999px;
+      border: 2px solid transparent;
+      background-clip: content-box;
+      transition: background 0.2s ease;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(120, 130, 150, 0.5);
+      background-clip: content-box;
+    }
+
+    body.dark-mode ::-webkit-scrollbar-thumb {
+      background: rgba(150, 165, 190, 0.24);
+      background-clip: content-box;
+    }
+
+    body.dark-mode ::-webkit-scrollbar-thumb:hover {
+      background: rgba(150, 165, 190, 0.42);
+      background-clip: content-box;
+    }
+
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(120, 130, 150, 0.28) transparent;
+    }
+
+    a:focus-visible,
+    .theme-option:focus-visible,
+    .links a:focus-visible {
+      outline: 2px solid var(--link);
+      outline-offset: 3px;
+      border-radius: 6px;
     }
 
     body.dark-mode {
@@ -122,11 +182,18 @@
       letter-spacing: -0.01em;
       margin: 44px 0 16px 0;
       padding-bottom: 10px;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
+      border-bottom: 1px solid transparent;
+      border-image: linear-gradient(to right,
+          rgba(0, 0, 0, 0.11),
+          rgba(0, 0, 0, 0.04) 55%,
+          rgba(0, 0, 0, 0)) 1;
     }
 
     body.dark-mode h2 {
-      border-bottom-color: rgba(255,255,255,0.06);
+      border-image: linear-gradient(to right,
+          rgba(255, 255, 255, 0.12),
+          rgba(255, 255, 255, 0.04) 55%,
+          rgba(255, 255, 255, 0)) 1;
     }
 
     body.dark-mode .avatar {

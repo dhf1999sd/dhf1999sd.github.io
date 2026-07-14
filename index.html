@@ -286,6 +286,29 @@
       transform: scale(1.1);
     }
 
+    .links svg.social-icon {
+      width: 21px;
+      height: 21px;
+      stroke: var(--muted);
+      fill: none;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: transform 0.3s ease, stroke 0.25s ease;
+    }
+
+    .links a:hover svg.social-icon {
+      transform: scale(1.12);
+      stroke: var(--link);
+    }
+
+    /* Scholar keeps its four-quadrant graduation-cap mark, drawn with a
+       single stroke color so it matches the rest of the set. */
+    .links svg.social-icon .scholar-fill {
+      stroke: inherit;
+      fill: none;
+    }
+
     .section {
       margin-top: 14px;
       margin-bottom: 8px;

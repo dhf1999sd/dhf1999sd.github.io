@@ -185,6 +185,17 @@
       display: block;
       background: var(--bg);
       object-fit: cover;
+      animation: rotate_avatar 1.2s linear infinite;
+    }
+
+    @keyframes rotate_avatar {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     body.dark-mode .avatar-ring {

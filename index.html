@@ -209,17 +209,6 @@
       margin-bottom: 8px;
     }
 
-    .affiliation {
-      font-size: 14px;
-      color: var(--muted);
-      letter-spacing: 0.01em;
-      margin-bottom: 4px;
-    }
-
-    .affiliation i {
-      font-style: italic;
-    }
-
     h2 {
       font-family: "Newsreader", Georgia, "Times New Roman", serif;
       font-size: 20px;
@@ -282,29 +271,6 @@
 
     .links a:hover img {
       transform: scale(1.1);
-    }
-
-    .links svg.social-icon {
-      width: 21px;
-      height: 21px;
-      stroke: var(--muted);
-      fill: none;
-      stroke-width: 1.7;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      transition: transform 0.3s ease, stroke 0.25s ease;
-    }
-
-    .links a:hover svg.social-icon {
-      transform: scale(1.12);
-      stroke: var(--link);
-    }
-
-    /* Scholar keeps its four-quadrant graduation-cap mark, drawn with a
-       single stroke color so it matches the rest of the set. */
-    .links svg.social-icon .scholar-fill {
-      stroke: inherit;
-      fill: none;
     }
 
     .section {
@@ -888,7 +854,7 @@
           <div class="pub-authors"><strong>Wenxue Wu</strong>, Tong Zhang, Zhen Li, Liwei Zhang, Hao Yang, Fengyuan Ren
           </div>
           <div class="pub-actions">
-            <a href="https://ieeexplore.ieee.org/document/11455258" data-link-key="tcad2026_pdf" data-kind="pdf"
+            <a href="https://ieeexplore.ieee.org/document/11455258" data-kind="pdf"
               target="_blank" class="cta" aria-label="PDF">
               <span class="icon-chip">
                 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -900,7 +866,7 @@
               </span>
               <span class="cta-text">PDF</span>
             </a>
-            <a href="https://github.com/dhf1999sd/MQ" data-link-key="tcad2026_code" data-kind="code" target="_blank" rel="noopener"
+            <a href="https://github.com/dhf1999sd/MQ" data-kind="code" target="_blank" rel="noopener"
               class="cta" aria-label="Code">
               <span class="icon-chip">
                 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -973,7 +939,7 @@
           <div class="pub-authors"><strong>Wenxue Wu</strong>, Tong Zhang, Zhen Li, Xiaoqin Feng, Liwei Zhang, Fengyuan
             Ren</div>
           <div class="pub-actions">
-            <a href="https://dl.acm.org/doi/10.1145/3718087" data-link-key="todaes2025_pdf" data-kind="pdf"
+            <a href="https://dl.acm.org/doi/epdf/10.1145/3718087" data-kind="pdf"
               target="_blank" class="cta" aria-label="PDF">
               <span class="icon-chip">
                 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -985,7 +951,7 @@
               </span>
               <span class="cta-text">PDF</span>
             </a>
-            <a href="https://github.com/dhf1999sd/DFQ" data-link-key="todaes2025_code" data-kind="code" target="_blank" rel="noopener"
+            <a href="https://github.com/dhf1999sd/DFQ" data-kind="code" target="_blank" rel="noopener"
               class="cta" aria-label="Code">
               <span class="icon-chip">
                 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -1008,7 +974,7 @@
           <div class="pub-authors"><strong>Wenxue Wu</strong>, Tong Zhang, Zhen Li, Xiaoqin Feng, Liwei Zhang, Fengyuan
             Ren</div>
           <div class="pub-actions">
-            <a href="https://ieeexplore.ieee.org/document/10546696/" data-link-key="date2024_dfq_pdf" data-kind="pdf"
+            <a href="https://ieeexplore.ieee.org/document/10546696/" data-kind="pdf"
               target="_blank" class="cta" aria-label="PDF">
               <span class="icon-chip">
                 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -1032,7 +998,7 @@
           <div class="pub-authors">Liwei Zhang, Tong Zhang, <strong>Wenxue Wu</strong>, Xiaoqin Feng, Guoxi Lin, Fengyuan
             Ren</div>
           <div class="pub-actions">
-            <a href="https://ieeexplore.ieee.org/document/10546689" data-link-key="date2024_ftcqf_pdf" data-kind="pdf"
+            <a href="https://ieeexplore.ieee.org/document/10546689" data-kind="pdf"
               target="_blank" class="cta" aria-label="PDF">
               <span class="icon-chip">
                 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -1083,25 +1049,6 @@
     </script>
 
   </div>
-  <script>
-    (function () {
-      var publicationLinks = {
-        tcad2026_pdf: "https://ieeexplore.ieee.org/document/11455258",
-        tcad2026_code: "https://github.com/dhf1999sd/MQ",
-        todaes2025_pdf: "https://dl.acm.org/doi/epdf/10.1145/3718087",
-        todaes2025_code: "https://github.com/dhf1999sd/DFQ",
-        date2024_dfq_pdf: "https://ieeexplore.ieee.org/document/10546696/",
-        date2024_ftcqf_pdf: "https://ieeexplore.ieee.org/document/10546689",
-      };
-      var nodes = document.querySelectorAll("[data-link-key]");
-      for (var i = 0; i < nodes.length; i++) {
-        var key = nodes[i].getAttribute("data-link-key");
-        if (publicationLinks[key]) {
-          nodes[i].setAttribute("href", publicationLinks[key]);
-        }
-      }
-    })();
-  </script>
   <script>
     (function () {
       var storageKey = "theme-mode";

@@ -9,13 +9,42 @@
     content="Wenxue Wu personal homepage: time-sensitive networking, programmable network hardware, real-time embedded systems." />
 
   <link rel="icon" href="monkey.png" type="image/png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..700;1,14..32,400..600&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&display=swap"
-    rel="stylesheet" />
 
   <style type="text/css">
+    /* Self-hosted variable fonts (Inter v4 / Newsreader v2, via Fontsource 5.3.0)
+       so the page does not depend on Google Fonts, which is unreliable in mainland China. */
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 100 900;
+      font-display: swap;
+      src: url("fonts/inter-latin-wght-normal.woff2") format("woff2-variations");
+    }
+
+    @font-face {
+      font-family: "Inter";
+      font-style: italic;
+      font-weight: 100 900;
+      font-display: swap;
+      src: url("fonts/inter-latin-wght-italic.woff2") format("woff2-variations");
+    }
+
+    @font-face {
+      font-family: "Newsreader";
+      font-style: normal;
+      font-weight: 200 800;
+      font-display: swap;
+      src: url("fonts/newsreader-latin-wght-normal.woff2") format("woff2-variations");
+    }
+
+    @font-face {
+      font-family: "Newsreader";
+      font-style: italic;
+      font-weight: 200 800;
+      font-display: swap;
+      src: url("fonts/newsreader-latin-wght-italic.woff2") format("woff2-variations");
+    }
+
     :root {
       --bg: #ffffff;
       --text: #111827;

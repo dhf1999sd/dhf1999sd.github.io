@@ -5,10 +5,52 @@
   <title>Wenxue Wu's Homepage</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Wenxue Wu" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#060b14" media="(prefers-color-scheme: dark)" />
+  <link rel="canonical" href="https://dhf1999sd.github.io/" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Wenxue Wu — Ph.D. Candidate, Lanzhou University" />
+  <meta property="og:description"
+    content="Wenxue Wu personal homepage: time-sensitive networking, programmable network hardware, real-time embedded systems." />
+  <meta property="og:url" content="https://dhf1999sd.github.io/" />
+  <meta property="og:image" content="https://dhf1999sd.github.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Wenxue Wu — personal academic homepage" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Wenxue Wu — Ph.D. Candidate, Lanzhou University" />
+  <meta name="twitter:description"
+    content="Time-sensitive networking, programmable network hardware, and real-time embedded systems." />
+  <meta name="twitter:image" content="https://dhf1999sd.github.io/og-image.png" />
+  <link rel="preload" href="fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/newsreader-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Wenxue Wu",
+      "url": "https://dhf1999sd.github.io/",
+      "image": "https://dhf1999sd.github.io/avatar.webp",
+      "jobTitle": "Ph.D. Candidate",
+      "affiliation": { "@type": "CollegeOrUniversity", "name": "Lanzhou University" },
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "Northwestern Polytechnical University" },
+        { "@type": "CollegeOrUniversity", "name": "Lanzhou University" }
+      ],
+      "sameAs": [
+        "https://scholar.google.com/citations?user=2XCLe8IAAAAJ&hl=zh-CN",
+        "https://orcid.org/0009-0009-3551-606X",
+        "https://github.com/dhf1999sd",
+        "https://www.researchgate.net/profile/Wenxue-Wu-8?ev=hdr_xprf"
+      ]
+    }
+  </script>
   <meta name="description"
     content="Wenxue Wu personal homepage: time-sensitive networking, programmable network hardware, real-time embedded systems." />
 
-  <link rel="icon" href="monkey.png" type="image/png" />
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
   <style type="text/css">
     /* Self-hosted variable fonts (Inter v4 / Newsreader v2, via Fontsource 5.3.0)
@@ -63,7 +105,6 @@
       --toggle-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
       --toggle-text: #1d1d1f;
       --toggle-text-muted: #86868b;
-      --mail-filter: invert(0.3);
       --wind-core: rgba(255, 255, 255, 0.98);
       --wind-mid: rgba(129, 212, 255, 0.62);
       --wind-edge: rgba(129, 212, 255, 0);
@@ -143,6 +184,7 @@
 
     a:focus-visible,
     .theme-option:focus-visible,
+    .cite-btn:focus-visible,
     .links a:focus-visible {
       outline: 2px solid var(--link);
       outline-offset: 3px;
@@ -281,14 +323,267 @@
       text-decoration: none;
     }
 
-    .links a img {
+    .links a {
+      color: #24292f;
+    }
+
+    body.dark-mode .links a {
+      color: #e6edf7;
+    }
+
+    .links a svg.gh {
+      fill: currentColor;
+    }
+
+    .links a svg {
       width: 21px;
       height: 21px;
       transition: transform 0.3s ease;
     }
 
-    .links a:hover img {
+    .links a:hover svg {
       transform: scale(1.1);
+    }
+
+    .hero-tagline {
+      margin: 0 0 4px;
+      font-size: 15px;
+      color: var(--muted);
+      letter-spacing: 0.01em;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .section-head h2 {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .bib-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--link);
+      text-decoration: none;
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--card-border);
+      background: var(--chip-bg);
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .bib-link:hover {
+      background: var(--chip-hover);
+      border-color: var(--card-border-hover);
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    .section .interest-grid {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 12px;
+    }
+
+    .interest-grid li {
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+      padding: 15px 16px;
+      border-radius: 14px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      transition:
+        transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .interest-grid li:hover {
+      transform: translateY(-2px);
+      border-color: var(--card-border-hover);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+    }
+
+    body.dark-mode .interest-grid li:hover {
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.32);
+    }
+
+    .interest-icon {
+      flex: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(160deg,
+          rgba(255, 255, 255, 0.95),
+          rgba(236, 244, 255, 0.86));
+      border: 1px solid rgba(126, 166, 206, 0.25);
+      box-shadow: 0 4px 12px rgba(43, 90, 138, 0.12);
+      color: #2563eb;
+    }
+
+    body.dark-mode .interest-icon {
+      background: linear-gradient(160deg,
+          rgba(38, 52, 74, 0.95),
+          rgba(28, 40, 60, 0.88));
+      border-color: rgba(110, 155, 205, 0.28);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      color: #8dbdf0;
+    }
+
+    .interest-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .interest-grid h3 {
+      margin: 0 0 3px;
+      font-size: 15px;
+      font-weight: 650;
+      color: var(--text);
+      letter-spacing: -0.005em;
+    }
+
+    .interest-grid p {
+      margin: 0;
+      font-size: 13.5px;
+      line-height: 1.5;
+    }
+
+    .section .edu-list {
+      list-style: none;
+      margin: 2px 0 0 8px;
+      padding: 0 0 4px 22px;
+      border-left: 2px solid var(--card-border);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .edu-list li {
+      position: relative;
+    }
+
+    .edu-dot {
+      position: absolute;
+      left: -29px;
+      top: 7px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 3px solid var(--link);
+    }
+
+    .edu-when {
+      font-size: 11.5px;
+      font-weight: 650;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--link);
+    }
+
+    .edu-degree {
+      margin-top: 2px;
+      font-size: 15.5px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .edu-note {
+      margin-top: 2px;
+      font-size: 13.5px;
+      line-height: 1.5;
+    }
+
+    button.cta {
+      -webkit-appearance: none;
+      appearance: none;
+      background: none;
+      border: none;
+      font: inherit;
+      cursor: pointer;
+      color: var(--link);
+    }
+
+    .cta[data-kind="bib"] .icon-chip {
+      background: linear-gradient(160deg,
+          rgba(255, 250, 240, 0.96),
+          rgba(255, 238, 214, 0.9));
+      border-color: rgba(217, 119, 6, 0.3);
+      box-shadow:
+        0 4px 12px rgba(180, 110, 20, 0.14),
+        inset 0 1px 0 rgba(255, 255, 255, 0.85);
+    }
+
+    .cta[data-kind="bib"] .icon {
+      stroke: #b45309;
+    }
+
+    .cta[data-kind="bib"] .cta-text {
+      color: #92400e;
+    }
+
+    .cta[data-kind="bib"].copied .icon-chip {
+      background: linear-gradient(160deg,
+          rgba(240, 253, 244, 0.96),
+          rgba(220, 252, 231, 0.9));
+      border-color: rgba(22, 163, 74, 0.32);
+    }
+
+    .cta[data-kind="bib"].copied .icon {
+      stroke: #15803d;
+    }
+
+    .cta[data-kind="bib"].copied .cta-text {
+      color: #15803d;
+    }
+
+    body.dark-mode .cta[data-kind="bib"] .icon-chip {
+      background: linear-gradient(160deg,
+          rgba(69, 54, 32, 0.95),
+          rgba(56, 44, 28, 0.88));
+      border-color: rgba(251, 191, 36, 0.3);
+    }
+
+    body.dark-mode .cta[data-kind="bib"] .icon-chip .icon {
+      stroke: #fbbf24;
+    }
+
+    body.dark-mode .cta[data-kind="bib"] .cta-text {
+      color: #fcd34d;
+    }
+
+    body.dark-mode .cta[data-kind="bib"].copied .icon-chip {
+      background: linear-gradient(160deg,
+          rgba(20, 58, 36, 0.95),
+          rgba(16, 48, 30, 0.9));
+      border-color: rgba(74, 222, 128, 0.32);
+    }
+
+    body.dark-mode .cta[data-kind="bib"].copied .icon {
+      stroke: #4ade80;
+    }
+
+    body.dark-mode .cta[data-kind="bib"].copied .cta-text {
+      color: #4ade80;
     }
 
     .section {
@@ -668,10 +963,6 @@
       line-height: 1;
     }
 
-    .links a[href^="mailto:"] img {
-      filter: var(--mail-filter);
-    }
-
     .wind-layer {
       position: fixed;
       inset: 0;
@@ -802,7 +1093,8 @@
   <div id="windLayer" class="wind-layer" aria-hidden="true"></div>
   <div class="theme-toggle-group" id="themeToggleGroup">
     <div class="theme-selection-indicator" id="themeIndicator"></div>
-    <button type="button" class="theme-option" data-mode="light" title="Light" aria-label="Light theme">
+    <button type="button" class="theme-option" data-mode="light" title="Light" aria-label="Light theme"
+      aria-pressed="false">
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <circle cx="12" cy="12" r="4.5"></circle>
         <path
@@ -810,39 +1102,72 @@
         </path>
       </svg>
     </button>
-    <button type="button" class="theme-option" data-mode="dark" title="Dark" aria-label="Dark theme">
+    <button type="button" class="theme-option" data-mode="dark" title="Dark" aria-label="Dark theme"
+      aria-pressed="false">
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path
           d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.38 5.38 0 0 1-4.4 2.26 5.4 5.4 0 0 1-4.14-8.9c.24-.27.5-.5.78-.72A9 9 0 0 0 12 3z">
         </path>
       </svg>
     </button>
-    <button type="button" class="theme-option" data-mode="auto" title="Auto" aria-label="Auto theme">
+    <button type="button" class="theme-option" data-mode="auto" title="Auto" aria-label="Auto theme"
+      aria-pressed="false">
       <span class="theme-option-label">A</span>
     </button>
   </div>
   <div class="container-max">
     <section class="hero">
       <div class="avatar-ring">
-        <img id="myPicture" class="avatar" src="monkey.png" alt="Wenxue Wu" />
+        <img id="myPicture" class="avatar" src="avatar.webp" alt="Wenxue Wu" width="132" height="132" />
       </div>
       <h1>Wenxue Wu</h1>
+      <p class="hero-tagline">Ph.D. Candidate · Lanzhou University · Time-Sensitive Networking</p>
       <div class="links">
-        <a href="https://scholar.google.com/citations?user=2XCLe8IAAAAJ&hl=zh-CN" target="_blank" rel="noopener"
+        <a href="https://scholar.google.com/citations?user=2XCLe8IAAAAJ&hl=zh-CN" target="_blank" rel="noopener me"
           title="Google Scholar">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg" alt="Google Scholar" />
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="12" fill="#4285F4" />
+            <g fill="#ffffff" transform="translate(4.92 4.92) scale(0.59)">
+              <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z" />
+            </g>
+          </svg>
         </a>
-        <a href="https://orcid.org/0009-0009-3551-606X" target="_blank" rel="noopener" title="ORCID">
-          <img src="https://orcid.org/assets/vectors/orcid.logo.icon.svg" alt="ORCID" />
+        <a href="https://orcid.org/0009-0009-3551-606X" target="_blank" rel="noopener me" title="ORCID">
+          <svg viewBox="0 0 72 72" aria-hidden="true">
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g fill-rule="nonzero">
+                <path d="M72,36 C72,55.884375 55.884375,72 36,72 C16.115625,72 0,55.884375 0,36 C0,16.115625 16.115625,0 36,0 C55.884375,0 72,16.115625 72,36 Z" fill="#A6CE39"></path>
+                <g transform="translate(18.868966, 12.910345)" fill="#FFFFFF">
+                  <polygon points="5.03734929 39.1250878 0.695429861 39.1250878 0.695429861 9.14431787 5.03734929 9.14431787 5.03734929 22.6930505 5.03734929 39.1250878"></polygon>
+                  <path d="M11.409257,9.14431787 L23.1380784,9.14431787 C34.303014,9.14431787 39.2088191,17.0664074 39.2088191,24.1486995 C39.2088191,31.846843 33.1470485,39.1530811 23.1944669,39.1530811 L11.409257,39.1530811 L11.409257,9.14431787 Z M15.7511765,35.2620194 L22.6587756,35.2620194 C32.49858,35.2620194 34.7541226,27.8438084 34.7541226,24.1486995 C34.7541226,18.1301509 30.8915059,13.0353795 22.4332213,13.0353795 L15.7511765,13.0353795 L15.7511765,35.2620194 Z"></path>
+                  <path d="M5.71401206,2.90182329 C5.71401206,4.441452 4.44526937,5.72914146 2.86638958,5.72914146 C1.28750978,5.72914146 0.0187670918,4.441452 0.0187670918,2.90182329 C0.0187670918,1.33420133 1.28750978,0.0745051096 2.86638958,0.0745051096 C4.44526937,0.0745051096 5.71401206,1.36219458 5.71401206,2.90182329 Z"></path>
+                </g>
+              </g>
+            </g>
+          </svg>
         </a>
-        <a href="https://github.com/dhf1999sd" target="_blank" title="GitHub">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+        <a href="https://github.com/dhf1999sd" target="_blank" rel="noopener me" title="GitHub">
+          <svg class="gh" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+          </svg>
         </a>
-        <a href="https://www.researchgate.net/profile/Wenxue-Wu-8?ev=hdr_xprf" target="_blank" title="ResearchGate">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/ResearchGate_icon_SVG.svg" alt="ResearchGate" />
+        <a href="https://www.researchgate.net/profile/Wenxue-Wu-8?ev=hdr_xprf" target="_blank" rel="noopener me"
+          title="ResearchGate">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect width="24" height="24" rx="5.4" fill="#00CCBB" />
+            <g fill="#ffffff" transform="translate(4.92 4.92) scale(0.59)">
+              <path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a3.193 3.193 0 0 0-.112.437 8.365 8.365 0 0 0-.078.53 9 9 0 0 0-.05.727c-.01.282-.013.621-.013 1.016a31.121 31.123 0 0 0 .014 1.017 9 9 0 0 0 .05.727 7.946 7.946 0 0 0 .077.53h-.005a3.334 3.334 0 0 0 .113.438c.245.743.65 1.303 1.214 1.68.565.376 1.256.564 2.075.564.8 0 1.536-.213 2.105-.603.57-.39.94-.916 1.175-1.65.076-.235.135-.558.177-.93a10.9 10.9 0 0 0 .043-1.207v-.82c0-.095-.047-.142-.14-.142h-3.064c-.094 0-.14.047-.14.141v.956c0 .094.046.14.14.14h1.666c.056 0 .084.03.084.086 0 .36 0 .62-.036.865-.038.244-.1.447-.147.606-.108.385-.348.664-.638.876-.29.212-.738.35-1.227.35-.545 0-.901-.15-1.21-.353-.306-.203-.517-.454-.67-.915a3.136 3.136 0 0 1-.147-.762 17.366 17.367 0 0 1-.034-.656c-.01-.26-.014-.572-.014-.939a26.401 26.403 0 0 1 .014-.938 15.821 15.822 0 0 1 .035-.656 3.19 3.19 0 0 1 .148-.76 1.89 1.89 0 0 1 .742-1.01c.344-.244.593-.352 1.137-.352.508 0 .815.096 1.144.303.33.207.528.492.764.925.047.094.111.118.198.07l1.044-.43c.075-.048.09-.115.042-.199a3.549 3.549 0 0 0-.466-.742 3 3 0 0 0-.679-.607 3.313 3.313 0 0 0-.903-.41A4.068 4.068 0 0 0 19.586 0zM8.217 5.836c-1.69 0-3.036.086-4.297.086-1.146 0-2.291 0-3.007-.029v.831l1.088.2c.744.144 1.174.488 1.174 2.264v11.288c0 1.777-.43 2.12-1.174 2.263l-1.088.2v.832c.773-.029 2.12-.086 3.465-.086 1.29 0 2.951.057 3.667.086v-.831l-1.49-.2c-.773-.115-1.174-.487-1.174-2.264v-4.784c.688.057 1.29.057 2.206.057 1.748 3.123 3.41 5.472 4.355 6.56.86 1.032 2.177 1.691 3.839 1.691.487 0 1.003-.086 1.318-.23v-.744c-1.031 0-2.063-.716-2.808-1.518-1.26-1.376-2.95-3.582-4.355-6.074 2.32-.545 4.04-2.722 4.04-4.9 0-3.208-2.492-4.698-5.758-4.698zm-.515 1.29c2.406 0 3.839 1.26 3.839 3.552 0 2.263-1.547 3.782-4.097 3.782-.974 0-1.404-.03-2.063-.086v-7.19c.66-.059 1.547-.059 2.32-.059z" />
+            </g>
+          </svg>
         </a>
         <a href="mailto:wuwx2024@lzu.edu.cn" title="Email">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg" alt="Email" />
+          <svg viewBox="0 0 512 512" aria-hidden="true">
+            <path d="m76 190v171q0 30 30 30h52V190" fill="#4285f4" />
+            <path d="m354 190v201h52q30 0 30-30V190" fill="#34a853" />
+            <path d="m350 255V149l28-21c24-18 58 2 58 30v32" fill="#fbbc04" />
+            <path d="m154 249V143l102 77 98-74v106l-98 74" fill="#ea4335" />
+            <path d="m76 190v-32c0-29 34-48 58-30l24 18v106" fill="#c5221f" />
+          </svg>
         </a>
       </div>
     </section>
@@ -851,22 +1176,90 @@
       <h2>Biography</h2>
       <p>
         I am currently pursuing my Ph.D. degree at
-        <i>Lanzhou University</i>, under the supervision of
-        <b><a href="https://www.cs.tsinghua.edu.cn/csen/info/1309/4350.htm">Prof. Fengyuan Ren</a></b>, with additional
-        mentorship from
-        <b><a href="https://faculty.nuaa.edu.cn/zhangtong/en/index.htm">Assoc. Prof. Tong Zhang</a></b>. From Sep. 2021
-        to
-        Jun. 2024, I received my Master's degree from
-        <i>Lanzhou University</i>. From Sep. 2017 to Jun. 2021, I received my Bachelor's degree from
-        <i>Northwestern Polytechnical University</i>. My work explores the intersection of time-sensitive networking,
+        <em>Lanzhou University</em>, under the supervision of
+        <strong><a href="https://www.cs.tsinghua.edu.cn/csen/info/1309/4350.htm">Prof. Fengyuan Ren</a></strong>, with
+        additional mentorship from
+        <strong><a href="https://faculty.nuaa.edu.cn/zhangtong/en/index.htm">Assoc. Prof. Tong Zhang</a></strong>. From
+        Sep. 2021 to Jun. 2024, I received my Master's degree from
+        <em>Lanzhou University</em>. From Sep. 2017 to Jun. 2021, I received my Bachelor's degree from
+        <em>Northwestern Polytechnical University</em>. My work explores the intersection of time-sensitive networking,
         programmable network hardware, and real-time embedded systems. Here is
         my
-        <a href="CV.pdf" target="_blank" class="cv-link">CV</a>.
+        <a href="CV.pdf" target="_blank" rel="noopener" class="cv-link">CV</a>.
       </p>
     </section>
 
     <section class="section">
-      <h2>Publications</h2>
+      <h2>Research Interests</h2>
+      <ul class="interest-grid">
+        <li>
+          <span class="interest-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="8.5" />
+              <path d="M12 7.5V12l3 1.8" />
+            </svg>
+          </span>
+          <div>
+            <h3>Time-Sensitive Networking</h3>
+            <p>Deterministic low-latency communication: traffic scheduling, shaping (ATS, CQF), and fault tolerance in
+              TSN.</p>
+          </div>
+        </li>
+        <li>
+          <span class="interest-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="7" y="7" width="10" height="10" rx="2" />
+              <rect x="10.2" y="10.2" width="3.6" height="3.6" rx="0.8" />
+              <path d="M9 3.5v3M15 3.5v3M9 17.5v3M15 17.5v3M3.5 9h3M3.5 15h3M17.5 9h3M17.5 15h3" />
+            </svg>
+          </span>
+          <div>
+            <h3>Programmable Network Hardware</h3>
+            <p>Switch and queue architecture design, and data-plane acceleration for next-generation networks.</p>
+          </div>
+        </li>
+        <li>
+          <span class="interest-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M13 2.5 4.8 13.5h6.1L11 21.5l8.2-11h-6.1z" />
+            </svg>
+          </span>
+          <div>
+            <h3>Real-Time Embedded Systems</h3>
+            <p>Time synchronization and real-time software/hardware co-design for industrial and automotive networks.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Education</h2>
+      <ul class="edu-list">
+        <li>
+          <span class="edu-dot" aria-hidden="true"></span>
+          <div class="edu-when">Sep. 2024 — Present</div>
+          <div class="edu-degree">Ph.D. Candidate, Lanzhou University</div>
+          <div class="edu-note">Supervised by Prof. Fengyuan Ren, with additional mentorship from Assoc. Prof. Tong
+            Zhang.</div>
+        </li>
+        <li>
+          <span class="edu-dot" aria-hidden="true"></span>
+          <div class="edu-when">Sep. 2021 — Jun. 2024</div>
+          <div class="edu-degree">Master's Degree, Lanzhou University</div>
+        </li>
+        <li>
+          <span class="edu-dot" aria-hidden="true"></span>
+          <div class="edu-when">Sep. 2017 — Jun. 2021</div>
+          <div class="edu-degree">Bachelor's Degree, Northwestern Polytechnical University</div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Publications</h2>
+        <a class="bib-link" href="publications.bib" download>Download all · BibTeX</a>
+      </div>
       <ul class="publication-list">
         <li>
           <div class="pub-tags">
@@ -900,6 +1293,24 @@
               </span>
               <span class="cta-text">Code</span>
             </a>
+            <button type="button" class="cta cite-btn" data-kind="bib"
+              data-bibtex="@article{wu2026designing,
+  author = {Wu, Wenxue and Zhang, Tong and Li, Zhen and Zhang, Liwei and Yang, Hao and Ren, Fengyuan},
+  title = {Designing Multiple Queues to Support Asynchronous Traffic Shaping in {TSN} Switches},
+  journal = {IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems},
+  year = {2026},
+  doi = {10.1109/TCAD.2026.3677291},
+  note = {Early Access}
+}"
+              aria-label="Copy BibTeX citation">
+              <span class="icon-chip">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9.5 7.5c-2 1-3.5 2.9-3.5 5.2 0 1.9 1.4 3.3 3.2 3.3 1.6 0 2.8-1.2 2.8-2.8 0-1.5-1.2-2.6-2.7-2.6.7-1.4 1.7-2.3 2.7-2.8z" />
+                  <path d="M17.5 7.5c-2 1-3.5 2.9-3.5 5.2 0 1.9 1.4 3.3 3.2 3.3 1.6 0 2.8-1.2 2.8-2.8 0-1.5-1.2-2.6-2.7-2.6.7-1.4 1.7-2.3 2.7-2.8z" />
+                </svg>
+              </span>
+              <span class="cta-text cite-label" aria-live="polite">BibTeX</span>
+            </button>
           </div>
         </li>
 
@@ -912,8 +1323,9 @@
           <div class="pub-authors"><strong>Wenxue Wu</strong>, Tong Zhang, Wanchun Jiang, Wufan Wang, Zhen Li, Fengyuan
             Ren</div>
           <div class="pub-actions">
-            <a href="https://doi.org/10.1145/3770743.3803920" data-kind="pdf" target="_blank" class="cta"
-              aria-label="PDF">
+            <!-- DOI 10.1145/3770743.3803920 is not registered yet; replace with the permanent DOI link once it resolves. -->
+            <a href="https://dl.acm.org/action/doSearch?AllField=Per+Flow+Asynchronous+Traffic+Shaping+Time-Sensitive+Networking"
+              data-kind="pdf" target="_blank" rel="noopener" class="cta" aria-label="PDF">
               <span class="icon-chip">
                 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M6.5 2.5h7L18.5 7v13.5a1 1 0 0 1-1 1H6.5a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1z" />
@@ -924,6 +1336,22 @@
               </span>
               <span class="cta-text">PDF</span>
             </a>
+            <button type="button" class="cta cite-btn" data-kind="bib"
+              data-bibtex="@inproceedings{wu2026perflow,
+  author = {Wu, Wenxue and Zhang, Tong and Jiang, Wanchun and Wang, Wufan and Li, Zhen and Ren, Fengyuan},
+  title = {Per Flow Asynchronous Traffic Shaping in Time-Sensitive Networking},
+  booktitle = {Proceedings of the ACM/IEEE Design Automation Conference (DAC)},
+  year = {2026}
+}"
+              aria-label="Copy BibTeX citation">
+              <span class="icon-chip">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9.5 7.5c-2 1-3.5 2.9-3.5 5.2 0 1.9 1.4 3.3 3.2 3.3 1.6 0 2.8-1.2 2.8-2.8 0-1.5-1.2-2.6-2.7-2.6.7-1.4 1.7-2.3 2.7-2.8z" />
+                  <path d="M17.5 7.5c-2 1-3.5 2.9-3.5 5.2 0 1.9 1.4 3.3 3.2 3.3 1.6 0 2.8-1.2 2.8-2.8 0-1.5-1.2-2.6-2.7-2.6.7-1.4 1.7-2.3 2.7-2.8z" />
+                </svg>
+              </span>
+              <span class="cta-text cite-label" aria-live="polite">BibTeX</span>
+            </button>
           </div>
         </li>
 
@@ -950,6 +1378,26 @@
               </span>
               <span class="cta-text">PDF</span>
             </a>
+            <button type="button" class="cta cite-btn" data-kind="bib"
+              data-bibtex="@article{yang2026shadow,
+  author = {Yang, Hao and Zhang, Tong and Feng, Xiaoqin and Ma, Yanying and Zhang, Liwei and Liu, Ping and Wu, Wenxue and Jing, Feng and Ren, Fengyuan},
+  title = {Enhancing {CQF} Robustness to Time Synchronization Errors Using Shadow Queues in Time-Sensitive Network},
+  journal = {IEEE Internet of Things Journal},
+  year = {2026},
+  volume = {13},
+  number = {14},
+  pages = {31493--31508},
+  doi = {10.1109/JIOT.2026.3688235}
+}"
+              aria-label="Copy BibTeX citation">
+              <span class="icon-chip">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9.5 7.5c-2 1-3.5 2.9-3.5 5.2 0 1.9 1.4 3.3 3.2 3.3 1.6 0 2.8-1.2 2.8-2.8 0-1.5-1.2-2.6-2.7-2.6.7-1.4 1.7-2.3 2.7-2.8z" />
+                  <path d="M17.5 7.5c-2 1-3.5 2.9-3.5 5.2 0 1.9 1.4 3.3 3.2 3.3 1.6 0 2.8-1.2 2.8-2.8 0-1.5-1.2-2.6-2.7-2.6.7-1.4 1.7-2.3 2.7-2.8z" />
+                </svg>
+              </span>
+              <span class="cta-text cite-label" aria-live="polite">BibTeX</span>
+            </button>
           </div>
         </li>
 
@@ -985,6 +1433,26 @@
               </span>
               <span class="cta-text">Code</span>
             </a>
+            <button type="button" class="cta cite-btn" data-kind="bib"
+              data-bibtex="@article{wu2025dynamic,
+  author = {Wu, Wenxue and Zhang, Tong and Li, Zhen and Feng, Xiaoqin and Zhang, Liwei and Ren, Fengyuan},
+  title = {Dynamic Per-Flow Queues in Shared Buffer {TSN} Switches},
+  journal = {ACM Transactions on Design Automation of Electronic Systems},
+  year = {2025},
+  volume = {30},
+  number = {3},
+  pages = {1--21},
+  doi = {10.1145/3718087}
+}"
+              aria-label="Copy BibTeX citation">
+              <span class="icon-chip">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9.5 7.5c-2 1-3.5 2.9-3.5 5.2 0 1.9 1.4 3.3 3.2 3.3 1.6 0 2.8-1.2 2.8-2.8 0-1.5-1.2-2.6-2.7-2.6.7-1.4 1.7-2.3 2.7-2.8z" />
+                  <path d="M17.5 7.5c-2 1-3.5 2.9-3.5 5.2 0 1.9 1.4 3.3 3.2 3.3 1.6 0 2.8-1.2 2.8-2.8 0-1.5-1.2-2.6-2.7-2.6.7-1.4 1.7-2.3 2.7-2.8z" />
+                </svg>
+              </span>
+              <span class="cta-text cite-label" aria-live="polite">BibTeX</span>
+            </button>
           </div>
         </li>
 
@@ -1009,6 +1477,24 @@
               </span>
               <span class="cta-text">PDF</span>
             </a>
+            <button type="button" class="cta cite-btn" data-kind="bib"
+              data-bibtex="@inproceedings{wu2024dynamic,
+  author = {Wu, Wenxue and Zhang, Tong and Li, Zhen and Feng, Xiaoqin and Zhang, Liwei and Ren, Fengyuan},
+  title = {Dynamic Per-Flow Queues for {TSN} Switches},
+  booktitle = {2024 Design, Automation &amp; Test in Europe Conference &amp; Exhibition (DATE)},
+  year = {2024},
+  pages = {1--2},
+  doi = {10.23919/DATE58400.2024.10546696}
+}"
+              aria-label="Copy BibTeX citation">
+              <span class="icon-chip">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9.5 7.5c-2 1-3.5 2.9-3.5 5.2 0 1.9 1.4 3.3 3.2 3.3 1.6 0 2.8-1.2 2.8-2.8 0-1.5-1.2-2.6-2.7-2.6.7-1.4 1.7-2.3 2.7-2.8z" />
+                  <path d="M17.5 7.5c-2 1-3.5 2.9-3.5 5.2 0 1.9 1.4 3.3 3.2 3.3 1.6 0 2.8-1.2 2.8-2.8 0-1.5-1.2-2.6-2.7-2.6.7-1.4 1.7-2.3 2.7-2.8z" />
+                </svg>
+              </span>
+              <span class="cta-text cite-label" aria-live="polite">BibTeX</span>
+            </button>
           </div>
         </li>
 
@@ -1033,6 +1519,24 @@
               </span>
               <span class="cta-text">PDF</span>
             </a>
+            <button type="button" class="cta cite-btn" data-kind="bib"
+              data-bibtex="@inproceedings{zhang2024fault,
+  author = {Zhang, Liwei and Zhang, Tong and Wu, Wenxue and Feng, Xiaoqin and Lin, Guoxi and Ren, Fengyuan},
+  title = {Fault-Tolerant Cyclic Queuing and Forwarding in Time-Sensitive Networking},
+  booktitle = {2024 Design, Automation &amp; Test in Europe Conference &amp; Exhibition (DATE)},
+  year = {2024},
+  pages = {1--6},
+  doi = {10.23919/DATE58400.2024.10546689}
+}"
+              aria-label="Copy BibTeX citation">
+              <span class="icon-chip">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9.5 7.5c-2 1-3.5 2.9-3.5 5.2 0 1.9 1.4 3.3 3.2 3.3 1.6 0 2.8-1.2 2.8-2.8 0-1.5-1.2-2.6-2.7-2.6.7-1.4 1.7-2.3 2.7-2.8z" />
+                  <path d="M17.5 7.5c-2 1-3.5 2.9-3.5 5.2 0 1.9 1.4 3.3 3.2 3.3 1.6 0 2.8-1.2 2.8-2.8 0-1.5-1.2-2.6-2.7-2.6.7-1.4 1.7-2.3 2.7-2.8z" />
+                </svg>
+              </span>
+              <span class="cta-text cite-label" aria-live="polite">BibTeX</span>
+            </button>
           </div>
         </li>
       </ul>
@@ -1049,17 +1553,20 @@
 
 
     <p class="last-update">
-      <i>Last update: <span id="lastUpdate"></span></i>
+      <em>Last update: <span id="lastUpdate"></span></em>
     </p>
     <script>
       function updateLastUpdateTime() {
         // Automatically read the page's last-modified time. GitHub Pages serves
         // a Last-Modified header, so this updates on every deploy without any
-        // manual edit. Falls back to "now" if the value is missing/invalid.
+        // manual edit. Falls back to a fixed date if the value is missing/invalid.
         var raw = document.lastModified;
-        var lastUpdateDate = raw ? new Date(raw) : new Date();
+        // Fallback shown only when the server omits Last-Modified.
+        // Keep this date in sync with the latest content change.
+        var fallbackDate = new Date("2026-08-03T00:00:00Z");
+        var lastUpdateDate = raw ? new Date(raw) : fallbackDate;
         if (isNaN(lastUpdateDate.getTime())) {
-          lastUpdateDate = new Date();
+          lastUpdateDate = fallbackDate;
         }
         var options = { year: "numeric", month: "long", day: "numeric" };
         var formattedDate = lastUpdateDate.toLocaleDateString(
@@ -1108,6 +1615,7 @@
         options.forEach((opt) => {
           var isActive = opt.getAttribute("data-mode") === mode;
           opt.classList.toggle("active", isActive);
+          opt.setAttribute("aria-pressed", String(isActive));
           if (isActive) {
             indicator.style.width = opt.offsetWidth + "px";
             indicator.style.transform = `translateX(${opt.offsetLeft - 2}px)`;
@@ -1137,10 +1645,52 @@
   </script>
   <script>
     (function () {
+      var buttons = document.querySelectorAll(".cite-btn");
+      if (!buttons.length) return;
+      function legacyCopy(text, done) {
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+          document.execCommand("copy");
+          done();
+        } catch (e) { }
+        document.body.removeChild(ta);
+      }
+      buttons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var bib = btn.getAttribute("data-bibtex");
+          var label = btn.querySelector(".cite-label");
+          var done = function () {
+            btn.classList.add("copied");
+            if (label) label.textContent = "Copied!";
+            setTimeout(function () {
+              btn.classList.remove("copied");
+              if (label) label.textContent = "BibTeX";
+            }, 1800);
+          };
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(bib).then(done, function () {
+              legacyCopy(bib, done);
+            });
+          } else {
+            legacyCopy(bib, done);
+          }
+        });
+      });
+    })();
+  </script>
+  <script>
+    (function () {
       var layer = document.getElementById("windLayer");
       if (
         !layer ||
-        window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+        window.matchMedia("(pointer: coarse)").matches
       ) {
         return;
       }

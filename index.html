@@ -345,46 +345,6 @@
       transform: scale(1.1);
     }
 
-    .hero-tagline {
-      margin: 0 0 4px;
-      font-size: 15px;
-      color: var(--muted);
-      letter-spacing: 0.01em;
-    }
-
-    .section-head {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .section-head h2 {
-      flex: 1;
-      min-width: 200px;
-    }
-
-    .bib-link {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--link);
-      text-decoration: none;
-      padding: 4px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--card-border);
-      background: var(--chip-bg);
-      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-      white-space: nowrap;
-    }
-
-    .bib-link:hover {
-      background: var(--chip-hover);
-      border-color: var(--card-border-hover);
-      transform: translateY(-1px);
-      text-decoration: none;
-    }
-
     .section .interest-grid {
       list-style: none;
       margin: 0;
@@ -1121,7 +1081,6 @@
         <img id="myPicture" class="avatar" src="avatar.webp" alt="Wenxue Wu" width="132" height="132" />
       </div>
       <h1>Wenxue Wu</h1>
-      <p class="hero-tagline">Ph.D. Candidate · Lanzhou University · Time-Sensitive Networking</p>
       <div class="links">
         <a href="https://scholar.google.com/citations?user=2XCLe8IAAAAJ&hl=zh-CN" target="_blank" rel="noopener me"
           title="Google Scholar">
@@ -1256,10 +1215,7 @@
     </section>
 
     <section class="section">
-      <div class="section-head">
-        <h2>Publications</h2>
-        <a class="bib-link" href="publications.bib" download>Download all · BibTeX</a>
-      </div>
+      <h2>Publications</h2>
       <ul class="publication-list">
         <li>
           <div class="pub-tags">

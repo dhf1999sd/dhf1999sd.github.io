@@ -182,7 +182,6 @@
 
     a:focus-visible,
     .theme-toggle:focus-visible,
-    .cite-btn:focus-visible,
     .links a:focus-visible {
       outline: 2px solid var(--link);
       outline-offset: 3px;
@@ -397,69 +396,6 @@
       font: inherit;
       cursor: pointer;
       color: var(--link);
-    }
-
-    .cta[data-kind="bib"] .icon-chip {
-      background: linear-gradient(160deg,
-          rgba(255, 250, 240, 0.96),
-          rgba(255, 238, 214, 0.9));
-      border-color: rgba(217, 119, 6, 0.3);
-      box-shadow:
-        0 4px 12px rgba(180, 110, 20, 0.14),
-        inset 0 1px 0 rgba(255, 255, 255, 0.85);
-    }
-
-    .cta[data-kind="bib"] .icon {
-      stroke: #b45309;
-    }
-
-    .cta[data-kind="bib"] .cta-text {
-      color: #92400e;
-    }
-
-    .cta[data-kind="bib"].copied .icon-chip {
-      background: linear-gradient(160deg,
-          rgba(240, 253, 244, 0.96),
-          rgba(220, 252, 231, 0.9));
-      border-color: rgba(22, 163, 74, 0.32);
-    }
-
-    .cta[data-kind="bib"].copied .icon {
-      stroke: #15803d;
-    }
-
-    .cta[data-kind="bib"].copied .cta-text {
-      color: #15803d;
-    }
-
-    body.dark-mode .cta[data-kind="bib"] .icon-chip {
-      background: linear-gradient(160deg,
-          rgba(69, 54, 32, 0.95),
-          rgba(56, 44, 28, 0.88));
-      border-color: rgba(251, 191, 36, 0.3);
-    }
-
-    body.dark-mode .cta[data-kind="bib"] .icon-chip .icon {
-      stroke: #fbbf24;
-    }
-
-    body.dark-mode .cta[data-kind="bib"] .cta-text {
-      color: #fcd34d;
-    }
-
-    body.dark-mode .cta[data-kind="bib"].copied .icon-chip {
-      background: linear-gradient(160deg,
-          rgba(20, 58, 36, 0.95),
-          rgba(16, 48, 30, 0.9));
-      border-color: rgba(74, 222, 128, 0.32);
-    }
-
-    body.dark-mode .cta[data-kind="bib"].copied .icon {
-      stroke: #4ade80;
-    }
-
-    body.dark-mode .cta[data-kind="bib"].copied .cta-text {
-      color: #4ade80;
     }
 
     .section {
@@ -1082,24 +1018,6 @@
               </span>
               <span class="cta-text">Code</span>
             </a>
-            <button type="button" class="cta cite-btn" data-kind="bib"
-              data-bibtex="@article{wu2026designing,
-  author = {Wu, Wenxue and Zhang, Tong and Li, Zhen and Zhang, Liwei and Yang, Hao and Ren, Fengyuan},
-  title = {Designing Multiple Queues to Support Asynchronous Traffic Shaping in {TSN} Switches},
-  journal = {IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems},
-  year = {2026},
-  doi = {10.1109/TCAD.2026.3677291},
-  note = {Early Access}
-}"
-              aria-label="Copy BibTeX citation">
-              <span class="icon-chip">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M9.5 7.5c-2 1-3.5 2.9-3.5 5.2 0 1.9 1.4 3.3 3.2 3.3 1.6 0 2.8-1.2 2.8-2.8 0-1.5-1.2-2.6-2.7-2.6.7-1.4 1.7-2.3 2.7-2.8z" />
-                  <path d="M17.5 7.5c-2 1-3.5 2.9-3.5 5.2 0 1.9 1.4 3.3 3.2 3.3 1.6 0 2.8-1.2 2.8-2.8 0-1.5-1.2-2.6-2.7-2.6.7-1.4 1.7-2.3 2.7-2.8z" />
-                </svg>
-              </span>
-              <span class="cta-text cite-label" aria-live="polite">BibTeX</span>
-            </button>
           </div>
         </li>
 
@@ -1125,22 +1043,6 @@
               </span>
               <span class="cta-text">PDF</span>
             </a>
-            <button type="button" class="cta cite-btn" data-kind="bib"
-              data-bibtex="@inproceedings{wu2026perflow,
-  author = {Wu, Wenxue and Zhang, Tong and Jiang, Wanchun and Wang, Wufan and Li, Zhen and Ren, Fengyuan},
-  title = {Per Flow Asynchronous Traffic Shaping in Time-Sensitive Networking},
-  booktitle = {Proceedings of the ACM/IEEE Design Automation Conference (DAC)},
-  year = {2026}
-}"
-              aria-label="Copy BibTeX citation">
-              <span class="icon-chip">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M9.5 7.5c-2 1-3.5 2.9-3.5 5.2 0 1.9 1.4 3.3 3.2 3.3 1.6 0 2.8-1.2 2.8-2.8 0-1.5-1.2-2.6-2.7-2.6.7-1.4 1.7-2.3 2.7-2.8z" />
-                  <path d="M17.5 7.5c-2 1-3.5 2.9-3.5 5.2 0 1.9 1.4 3.3 3.2 3.3 1.6 0 2.8-1.2 2.8-2.8 0-1.5-1.2-2.6-2.7-2.6.7-1.4 1.7-2.3 2.7-2.8z" />
-                </svg>
-              </span>
-              <span class="cta-text cite-label" aria-live="polite">BibTeX</span>
-            </button>
           </div>
         </li>
 
@@ -1167,26 +1069,6 @@
               </span>
               <span class="cta-text">PDF</span>
             </a>
-            <button type="button" class="cta cite-btn" data-kind="bib"
-              data-bibtex="@article{yang2026shadow,
-  author = {Yang, Hao and Zhang, Tong and Feng, Xiaoqin and Ma, Yanying and Zhang, Liwei and Liu, Ping and Wu, Wenxue and Jing, Feng and Ren, Fengyuan},
-  title = {Enhancing {CQF} Robustness to Time Synchronization Errors Using Shadow Queues in Time-Sensitive Network},
-  journal = {IEEE Internet of Things Journal},
-  year = {2026},
-  volume = {13},
-  number = {14},
-  pages = {31493--31508},
-  doi = {10.1109/JIOT.2026.3688235}
-}"
-              aria-label="Copy BibTeX citation">
-              <span class="icon-chip">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M9.5 7.5c-2 1-3.5 2.9-3.5 5.2 0 1.9 1.4 3.3 3.2 3.3 1.6 0 2.8-1.2 2.8-2.8 0-1.5-1.2-2.6-2.7-2.6.7-1.4 1.7-2.3 2.7-2.8z" />
-                  <path d="M17.5 7.5c-2 1-3.5 2.9-3.5 5.2 0 1.9 1.4 3.3 3.2 3.3 1.6 0 2.8-1.2 2.8-2.8 0-1.5-1.2-2.6-2.7-2.6.7-1.4 1.7-2.3 2.7-2.8z" />
-                </svg>
-              </span>
-              <span class="cta-text cite-label" aria-live="polite">BibTeX</span>
-            </button>
           </div>
         </li>
 
@@ -1222,26 +1104,6 @@
               </span>
               <span class="cta-text">Code</span>
             </a>
-            <button type="button" class="cta cite-btn" data-kind="bib"
-              data-bibtex="@article{wu2025dynamic,
-  author = {Wu, Wenxue and Zhang, Tong and Li, Zhen and Feng, Xiaoqin and Zhang, Liwei and Ren, Fengyuan},
-  title = {Dynamic Per-Flow Queues in Shared Buffer {TSN} Switches},
-  journal = {ACM Transactions on Design Automation of Electronic Systems},
-  year = {2025},
-  volume = {30},
-  number = {3},
-  pages = {1--21},
-  doi = {10.1145/3718087}
-}"
-              aria-label="Copy BibTeX citation">
-              <span class="icon-chip">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M9.5 7.5c-2 1-3.5 2.9-3.5 5.2 0 1.9 1.4 3.3 3.2 3.3 1.6 0 2.8-1.2 2.8-2.8 0-1.5-1.2-2.6-2.7-2.6.7-1.4 1.7-2.3 2.7-2.8z" />
-                  <path d="M17.5 7.5c-2 1-3.5 2.9-3.5 5.2 0 1.9 1.4 3.3 3.2 3.3 1.6 0 2.8-1.2 2.8-2.8 0-1.5-1.2-2.6-2.7-2.6.7-1.4 1.7-2.3 2.7-2.8z" />
-                </svg>
-              </span>
-              <span class="cta-text cite-label" aria-live="polite">BibTeX</span>
-            </button>
           </div>
         </li>
 
@@ -1266,24 +1128,6 @@
               </span>
               <span class="cta-text">PDF</span>
             </a>
-            <button type="button" class="cta cite-btn" data-kind="bib"
-              data-bibtex="@inproceedings{wu2024dynamic,
-  author = {Wu, Wenxue and Zhang, Tong and Li, Zhen and Feng, Xiaoqin and Zhang, Liwei and Ren, Fengyuan},
-  title = {Dynamic Per-Flow Queues for {TSN} Switches},
-  booktitle = {2024 Design, Automation &amp; Test in Europe Conference &amp; Exhibition (DATE)},
-  year = {2024},
-  pages = {1--2},
-  doi = {10.23919/DATE58400.2024.10546696}
-}"
-              aria-label="Copy BibTeX citation">
-              <span class="icon-chip">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M9.5 7.5c-2 1-3.5 2.9-3.5 5.2 0 1.9 1.4 3.3 3.2 3.3 1.6 0 2.8-1.2 2.8-2.8 0-1.5-1.2-2.6-2.7-2.6.7-1.4 1.7-2.3 2.7-2.8z" />
-                  <path d="M17.5 7.5c-2 1-3.5 2.9-3.5 5.2 0 1.9 1.4 3.3 3.2 3.3 1.6 0 2.8-1.2 2.8-2.8 0-1.5-1.2-2.6-2.7-2.6.7-1.4 1.7-2.3 2.7-2.8z" />
-                </svg>
-              </span>
-              <span class="cta-text cite-label" aria-live="polite">BibTeX</span>
-            </button>
           </div>
         </li>
 
@@ -1308,24 +1152,6 @@
               </span>
               <span class="cta-text">PDF</span>
             </a>
-            <button type="button" class="cta cite-btn" data-kind="bib"
-              data-bibtex="@inproceedings{zhang2024fault,
-  author = {Zhang, Liwei and Zhang, Tong and Wu, Wenxue and Feng, Xiaoqin and Lin, Guoxi and Ren, Fengyuan},
-  title = {Fault-Tolerant Cyclic Queuing and Forwarding in Time-Sensitive Networking},
-  booktitle = {2024 Design, Automation &amp; Test in Europe Conference &amp; Exhibition (DATE)},
-  year = {2024},
-  pages = {1--6},
-  doi = {10.23919/DATE58400.2024.10546689}
-}"
-              aria-label="Copy BibTeX citation">
-              <span class="icon-chip">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M9.5 7.5c-2 1-3.5 2.9-3.5 5.2 0 1.9 1.4 3.3 3.2 3.3 1.6 0 2.8-1.2 2.8-2.8 0-1.5-1.2-2.6-2.7-2.6.7-1.4 1.7-2.3 2.7-2.8z" />
-                  <path d="M17.5 7.5c-2 1-3.5 2.9-3.5 5.2 0 1.9 1.4 3.3 3.2 3.3 1.6 0 2.8-1.2 2.8-2.8 0-1.5-1.2-2.6-2.7-2.6.7-1.4 1.7-2.3 2.7-2.8z" />
-                </svg>
-              </span>
-              <span class="cta-text cite-label" aria-live="polite">BibTeX</span>
-            </button>
           </div>
         </li>
       </ul>
@@ -1418,47 +1244,7 @@
       applyTheme();
     })();
   </script>
-  <script>
-    (function () {
-      var buttons = document.querySelectorAll(".cite-btn");
-      if (!buttons.length) return;
-      function legacyCopy(text, done) {
-        var ta = document.createElement("textarea");
-        ta.value = text;
-        ta.setAttribute("readonly", "");
-        ta.style.position = "fixed";
-        ta.style.opacity = "0";
-        document.body.appendChild(ta);
-        ta.select();
-        try {
-          document.execCommand("copy");
-          done();
-        } catch (e) { }
-        document.body.removeChild(ta);
-      }
-      buttons.forEach(function (btn) {
-        btn.addEventListener("click", function () {
-          var bib = btn.getAttribute("data-bibtex");
-          var label = btn.querySelector(".cite-label");
-          var done = function () {
-            btn.classList.add("copied");
-            if (label) label.textContent = "Copied!";
-            setTimeout(function () {
-              btn.classList.remove("copied");
-              if (label) label.textContent = "BibTeX";
-            }, 1800);
-          };
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(bib).then(done, function () {
-              legacyCopy(bib, done);
-            });
-          } else {
-            legacyCopy(bib, done);
-          }
-        });
-      });
-    })();
-  </script>
+
   <script>
     (function () {
       var layer = document.getElementById("windLayer");
